@@ -11,7 +11,6 @@ logging.basicConfig(filename="app.log", level=logging.DEBUG, format="%(asctime)s
 
 def run_request(messages):
     logging.info(f"Processing messages started.")
-    logging.debug(f"Processing messaages: {messages}")
 
     url = "https://api.metisai.ir/api/v1/wrapper/deepseek/chat/completions"
 
@@ -26,6 +25,8 @@ def run_request(messages):
         "messages": messages
     }
 
+    logging.debug(f"Processing data: {data}")
+
     start_time = time.time()
     response = requests.post(url, json=data, headers=headers)
     end_time = time.time()
@@ -39,5 +40,6 @@ def run_request(messages):
         return message_content
     else:
         error = f"Error: {response.status_code}, {response.text}"
+        logging.error(f"Error : {error}")
         print(error)
         raise Exception(error)
