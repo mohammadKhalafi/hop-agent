@@ -1,0 +1,13 @@
+Plugin: Detect Language
+
+Description
+
+The Detect Language transform examine text to identify the language.
+list of supported languages
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform. This name must be unique throughout the pipeline.
+ | The dependencies for this transform are not included in the application to make this work you need to include following files in the /plugins/transforms/detectlanguage/lib folder-Lingua-Fastutil

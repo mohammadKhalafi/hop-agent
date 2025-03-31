@@ -1,0 +1,23 @@
+Plugin: Pipeline Data Probe
+
+Description
+
+The Pipeline Data Probe transform receives data probe data configured by aPipeline Probemetadata type.
+Check thePipeline Probemetadata type for more information.
+
+
+Options
+
+The pipeline data probe transform doesn’t require any configuration except for the transform name.
+This transform receives data from thePipeline Probemetadata type and produces the following output:
+sourcePipelineName | the name of the pipeline passing data to this pipeline data probe transform.
+sourceTransformLogChannelId | the id for the log channel passing data to this pipeline data probe transform.
+sourceTransformName | the name of the transform in the source pipeline passing data to this pipeline data probe transform.
+sourceTransformCopy | the copy number of the transform in the source pipeline passing data to this pipeline data probe transform.
+rowNr | the row number in the source pipeline passing data to this pipeline data probe transform.
+fieldName | the field name of the field in the source pipeline passing data to this pipeline data probe transform.
+fieldType | the field type of the field in the source pipeline passing data to this pipeline data probe transform.
+fieldFormat | the field format of the field in the source pipeline passing data to this pipeline data probe transform.
+fieldLength | the field length of the field in the source pipeline passing data to this pipeline data probe transform.
+fieldPrecision | the field precision of the field in the source pipeline passing data to this pipeline data probe transform.
+value | the value of the transform in the source pipeline passing data to this pipeline data probe transform.

@@ -1,0 +1,110 @@
+Plugin: Salesforce Input
+
+Description
+
+The Salesforce Input transform reads data directly from Salesforce using the Salesforce Web Service.
+You can also use the following transforms for various ways to modify your Salesforce database:
+Salesforce Insert: Inserts records directly into your Salesforce database
+Salesforce Update: Updates records directly into your Salesforce database.
+Salesforce Upsert: Updates existing records and inserts new records into your Salesforce database.
+Salesforce Delete: Deletes records directly from your Salesforce database.
+
+
+General
+
+Enter the following information in the transform name field:
+Transform name: Specifies the unique name of the Salesforce Input transform on the canvas. You can customize the name or leave it as the default.
+ | If your organization has enabled My Domain, you may see 'Restricted Domain' in your Salesforce login history when attempting to use the default URL, as describedhere. See below for options.
+
+
+Options
+
+
+Options -> Connection
+
+Enter the connection information in the following transform options:
+Option | Description
+Salesforce Webservice URL | Specify the URL to the Salesforce Webservice. Default:https://login.salesforce.com/services/Soap/u/50.0 You may need to update this if your company uses "My Domain" on salesforce. If so, check with your Salesforce Administrator for the URL. Generally of the formathttps://NAME.my.salesforce.com/services/Soap/u/50.0. You can access a sandbox by using its URL here as well. It is strongly recommended to utilizevariablesto populate these values. 
+Username | Specify the username for authenticating to Salesforce
+Password | Specify the password for authenticating to Salesforce. Enter your password followed by your security token. For example, if your password is PASSWORD and your security token is TOKEN, you would enter PASSWORDTOKEN in this field.
+Test Connection | Click to verify the connection can be made to the Salesforce Webservice URL you specified.
+
+
+Settings
+
+In this panel, you can set the module to query from as well as the query conditions.
+Option | Description
+Specify query | Select this check box to manually execute a query based on your own SOQL statements.
+Module | Select the module (table) from which you want to retrieve data.  |  | This list will be populated upon successfully authenticating to Salesforce using the Test Connection button.
+ | This list will be populated upon successfully authenticating to Salesforce using the Test Connection button.
+Query Condition | Enter any query filters you want to apply. Variables are allowed. For example, 'fieldname=myvalue AND fieldname2=myvalue2'.  |  | You do not need to include WHERE in your condition statement.
+ | You do not need to include WHERE in your condition statement.
+
+
+Content Tab
+
+The content tab allows you to optionally include additional descriptive fields in the result set.
+
+Content Tab -> Advanced
+
+Use these options to further refine the data returned from the queries specified in the Settings tab. For example, you may want to only query deleted records within a specified date range. The Advanced panel includes the following fields:
+Option | Description
+Retrieve | Select which records you want to retrieve to further define your pool of data. You can select All, Updated, or Deleted.
+Query all records | Select the check box to query all the records you are retrieving. Clear the check box to use the date fields (below) to define a range of records to query.
+Start date | Specify the starting date for retrieving the records in the date range. The format is 'yyyy-MM-dd HH:mm:ss'.
+End date | Specify the end date for retrieving the records in the date range. The format is 'yyyy-MM-dd HH:mm:ss'.
+
+Content Tab -> Additional Fields
+
+This panel includes the following fields:
+Option | Description
+Include URL in output? & URL fieldname | Select this check box, then enter the URL used to retrieve the data.
+Include Module in output? & Module fieldname | Select this check box, then enter the name of the module from which the data was retrieved.
+Include SQL in output? & SQL fieldname | Select this check box, then enter the SQL used to generate the result set.
+Include timestamp in output? & Timestamp fieldname | Select this check box, then enter the timestamp for when the record was retrieved.
+Include Rownum in output? & Rownum fieldname | Select this check box, then enter the row number for each record retrieved.
+Include deletion date in output? & Deletion date fieldname | Select this check box, then enter the deletion date for when the record was removed.  |  | This set of fields is only enabled when the Advanced> Retrieve option is set to âDeletedâ.
+ | This set of fields is only enabled when the Advanced> Retrieve option is set to âDeletedâ.
+
+Content Tab -> Other fields
+
+Enter information for the remaining fields on the Content tab.
+Option | Description
+Time out | Specify the timeout interval in milliseconds before the transform times out.
+Use compression | Select to compress (.gzip) the data when connecting between Hop and Salesforce.
+Limit | Specify the maximum number of records to retrieve.  |  | When you set the limit to '0', there is no limit on the number of records that can be retrieved.
+ | When you set the limit to '0', there is no limit on the number of records that can be retrieved.
+
+
+Fields tab
+
+The fields tab displays the fields that are read from the Salesforce module selected on the Settings tab. You will need to go to the Fields tab and press the Get Fields button to populate the fields returned before you can preview the rows returned.
+The following are the properties display in the Fields tab:
+Option | Description
+Name | The name of the input field.
+Field | The name of the field that contains the record.
+IsIdLookup? | Specify if the field will be used as a fieldname ID (links to an External ID) when accessing the database to perform other calls, such as delete, insert, update, and upsert. Select âYâ(es) or âNâ(o).
+Type | The data type of the field.
+Format | An optional mask for converting the format of the original field.
+Length | The length of the field depends on the following field types: Number: Total number of significant figures in a number, String: Total length of string, Date: Length of printed output of the string (for example, four is a length for a year)
+Precision | Number of floating point digits for number-type fields.
+Currency | Symbol used to represent currencies ($5,000.00 or â¬5.000,00 for example).
+Decimal | A decimal point can be a "." or "," (5,000.00 or 5.000,00 for example).
+Group | A grouping can be a "," or "." (5,000.00 or 5.000,00 for example).
+Trim type | The trimming method to apply to a string. Trimming only works when no field length is specified.
+Repeat | If the corresponding value in this row is empty, repeat the one from the last time it was not empty. Select âYâ(es) or âNâ(o).
+Salesforce Input
+
+Fields tab -> Example Case: Retrieving Deleted Records from Salesforce
+
+You want to retrieve all deleted records from Salesforce, even when the dataset exceeds the default pagination size of 2000 records.
+Check the box labeledQuery all recordsin theAdvancedsection.
+This allows the transform to retrieve all available records across multiple pages.
+In theSettingstab, include the following query condition:IsDeleted = true
+This ensures the transform retrieves only deleted records.
+If "Query all records" is not enabled, the transform will retrieve only the first 2000 records due to Salesforce’s default pagination settings. Enabling "Query all records" ensures that the system processes all pages of data until all matching records are retrieved.
+You want to retrieve all customer records deleted within the past 30 days. Configure your transform as follows:
+Retrieve: Set toDeleted.
+Query Condition:IsDeleted = true AND LastModifiedDate >= LAST_N_DAYS:30
+If the transform retrieves fewer records than expected, verify thatQuery all recordsis enabled.
+Ensure your Salesforce user has appropriate permissions to access deleted records.

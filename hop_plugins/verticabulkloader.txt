@@ -1,0 +1,28 @@
+Plugin: Vertica Bulk Loader
+
+Options
+
+
+Options -> Global transform options
+
+Option | Description
+Transform name | Name of the transform.
+Connection | Name of the database connection on which the target table resides.
+Target schema | The name of the Schema for the table to write data to. This is important for data sources that allow for table names with dots '.' in it.
+Target table | Name of the target table.
+Truncate table | Truncate this table before loading data
+Truncate on first row | Only truncate this table if there is data (when the first row is received)
+Specify database fields | Enable this option to specify the fields in the Database fields tab. Otherwise all fields are taken into account by default.
+
+Options -> Main options tab
+
+Option | Description
+Insert directly to ROS | Insert directly to ROS (Read Optimized Store). A ROS (Read Optimized Store) container is a set of rows stored in a particular group of files
+Abort on error | Stop or continue loading data as soon as an error occurs
+Exceptions log file | Path to the exceptions log file
+Reject data log file | Path to the rejected data log file
+Stream name | Name for the Vertica COPY stream
+
+Options -> Database fields tab
+
+Map table columns to stream fields using 'Get Fields' and/or 'Enter Field Mapping'.

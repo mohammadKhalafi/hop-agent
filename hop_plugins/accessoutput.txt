@@ -1,0 +1,16 @@
+Plugin: Microsoft Access Output
+
+Description
+
+The Microsoft Access Output allows you to create a new Access database file as an output in a pipeline.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform. Note: This name has to be unique in a single pipeline.
+The database filename | The file name of the database file to which you are connecting
+Create database | Enable to generate a new Access database file
+Target table | Specifies the table to which you want to output data
+Create table | Enable to create a new table in the Access database
+Commit size | Defines the commit size when outputting data

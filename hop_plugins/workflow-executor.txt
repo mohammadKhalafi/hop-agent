@@ -1,0 +1,93 @@
+Plugin: Workflow Executor
+
+Description
+
+The Workflow Executor transform execute a Hop workflow from within a pipeline.
+
+
+Usage
+
+By default, the specified workflow will be executed once for each input row (this can be changed in the Row Grouping tab).
+Fields from the data row(s) can be used to set parameters and variables and it is passed to the workflow in the form of a result row. Remember that all parameters must be defined at least once in each pipeline or workflow (Edit pipeline/workflow properties). You are passing a parameter when you send a field/parameter/variable to a workflow executor from the Parameters tab.
+You can also allow a group of records to be passed based on the value in a field (when the value changes the workflow is executed) or on time. In these cases, the first row of the group or rows is used to set parameters or variables in the workflow.
+It is possible to launch multiple copies of this transform to facilitate parallel workflow processing.
+See also:
+TheWorkflow actionthat executes a sub-workflow from a workflow.
+ThePipeline actionthat executes a pipeline from a workflow.
+ThePipeline Executor transformthat executes a sub-pipeline from a pipeline.
+TheLoops in Apache Hophow-to guide.
+Samples (samples project)
+loops/workflow-executor.hpl
+
+
+Options
+
+
+Options -> General
+
+Option | Description
+Transform name | Name of the transform.
+Workflow | Use this option to specify a workflow stored in a file (.hwf file)
+Run configuration | Specify the Workflow Run Configuration to be used for execution.
+
+Options -> Parameters Tab
+
+In this tab you can specify which field to use to set a certain parameter or variable value. If you specify an input field to use, the static input value is not used. If multiple rows are passed to the workflow, the first row is taken to set the parameters or variables.
+There is a button in the lower right corner of the tab that will insert all the defined parameters of the specified workflow. For information the description of the parameter is inserted into the static input value field.
+ | If you leave the "Inherit all variables from pipeline" option checked (it is by default), all the variables defined in the current pipeline are passed to child workflow.
+TheGet Parametersbutton in the lower right corner of the tab that will insert all the defined parameters with their description for the specified workflow
+TheMap Parametersbutton in the lower right corner of the tab lets you map fields in the current pipeline to parameters in the child workflow.
+
+Options -> Row Grouping Tab
+
+On this tab you can specify the amount of input rows that are passed to the workflow in the form of result rows.
+Specify how to group the result rows by using one of the following methods:
+Specific number of rows.
+Specific field.
+Specified duration of time.
+You can use the result rows in a pipeline or workflow action, or you can retrieve the records directly by using theGet rows from resultaction in a pipeline.
+To access theField to group rows onorDuration time when collecting rowsoptions, remove the default value (1) in theNumber of rows to send to pipelineoption.
+Option | Description
+Number of rows to send to pipeline | Specify a number. After everynnumber of rows, the workflow will be executed, and thesenrows will be passed to the pipeline. Default value: 1
+Field to group rows on | Specify a field for grouping rows. Rows will be accumulated in a group as long as the field value stays the same. If the value changes the workflow will be executed and the accumulated rows will be passed to the workflow.
+Duration time when collecting rows | Specify a duration in milliseconds. This is time the transform will spend accumulating rows prior to the execution of the workflow.
+Please note that you can only specify one method of grouping.
+
+Options -> Execution Results Tab
+
+You can specify result fields and to which transform to send them. If you don’t need a certain result simply leave a blank input field.
+Option | Description | Default Value
+Target transform for the execution results | Use the drop-down menu to select a transform in the pipeline as the target transform to receive the results from the workflow. | N/A
+Execution time (ms) | Specify the field name for the workflow execution time. | ExecutionTime
+Execution result | Specify the field name for the workflow execution result. | ExecutionResult
+Number of errors | Specify the field name for the number of errors during the execution of the workflow. | ExecutionNrErrors
+Number of rows read | Specify the field name for the total number of rows read during the execution of the workflow. | ExecutionLinesRead
+Number of rows written | Specify the field name for the total number of rows written during the execution of the workflow. | ExecutionLinesWritten
+Number of rows input | Specify the field name for the total number of input rows during the execution of the workflow. | ExecutionLinesInput
+Number of rows output | Specify the field name for the total number of output rows during the execution of the workflow. | ExecutionLinesOutput
+Number of rows rejected | Specify the field name for the total number of rows rejected during the execution of the workflow. | ExecutionLinesRejected
+Number of rows updated | Specify the field name for the total number of rows updated during the execution of the workflow. | ExecutionLinesUpdated
+Number of rows deleted | Specify the field name for the total number of rows deleted during the execution of the workflow. | ExecutionLinesDeleted
+Number of files retrieved | Specify the field name for the total number of files retrieved during the execution of the workflow. | ExecutionFilesRetrieved
+Exit status | Specify the field name for the exit status of the execution of the workflow. | ExecutionExitStatus
+Execution logging text | Specify the field name for the logging text from the execution of the workflow. | ExecutionLogText
+Log channel ID | Specify the field name for the log channel ID used during the execution of the workflow. | ExecutionLogChannelID
+
+Options -> Result Rows Tab
+
+In the "Result rows" tab you can specify the layout of the expected result rows of this workflow and to which transform to send them after execution.
+The workflow executor performs a consistency check over the fields we declared in this tab as the fields that want to receive in output. The check will be performed by making sure the fields we require are really present in the results stream and that type of each fields is really the type we expected to be. If there are any differences an error will be thrown. The error will give you the complete picture about which fields are missing and/or which fields were declared by considering a wrong datatype.
+Option | Description
+Target transform for result rows | Use the drop-down menu to select a transform in the pipeline as the target transform.
+Field name | Specify the name of the field.
+Data type | Use the drop-down menu to specify the data type of the field, such as number, date, or string.
+Length | If applicable, specify the length of the field.
+Precision | If applicable, specify the precision to use.
+Note: remember that currently this transform always give you a result row back even if the pipelines started in the sub-workflow don’t return any result. In this case, the result row that you will get back will contain only the fields provided by the flow as input of this transform.
+
+Options -> Result Files Tab
+
+Here you can specify where to send the result files from the workflow execution.
+Option | Description
+Target transform for result files information | Use the drop-down menu to select a transform in the pipeline as the target transform.
+Result file name field | Specify the name of the field for the result files.

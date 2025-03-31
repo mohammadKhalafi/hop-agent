@@ -1,0 +1,30 @@
+Plugin: Parquet File Output
+
+Description
+
+The Parquet File Output transform writes data into the Apache Parquet file format.
+For more information on this see:Apache Parquet.
+
+
+Options
+
+Notes:
+The date optionally referenced in the output file name(s) will be the start of the pipeline execution.
+Hop Date types are serialized as EPOC: milliseconds since1970-01-01 00:00:00.000
+Strings are written as binary in UTF-8
+Compression of data into columnar format is being done in memory. This happens when all rows are written. To not run out of memory make sure to specify a split size.
+Option | Description
+Transform name | Name of the transform this name has to be unique in a single pipeline.
+Base file name | Specify the base filename. This is composed of where you want to write the Parquet file to as well as the start of the filename. Examples:Write to Amazon AWS S3 :s3://my-bucket-name/transactionsWrite to a local folder :/my/folder/customer-data
+Extension | This is the extension of the file. Usually this is simplysnappy
+Include date? | Check this box if you want to include the date in the filename with maskyyyMMdd
+Include time? | Check this box if you want to include the time in the filename with maskHHmmss
+Include date-time-format? | Check this box if you want to include a specific custom date-time format in the filename
+Include transform copy number? | Enable this option if you run this transform in multiple copies to not have multiple threads write to the same file. The copy number is formatted with mask00
+Split into parts and include number? | Enable this option if you want to split the output into multiple parts. Specify a split size larger than 0 and this is then the number of rows per file. The file part (split) number will be included in the filename to make sure that the same file is not being overwritten. The split number is formatted with mask0000
+Compression codec | Here you can indicate which compression codec you want to use. The default is SNAPPY for Apache Snappy compression.
+Version | Choose the protocol version of Parquet (1.0 or 2.0)
+Row group size | The amount of rows in a group
+Data page size | The data page size on a 1kB boundary (default is 1048576)
+Dictionary page size | The data dictionary page size on a 1kB boundary (default is 1048576)
+Fields | You can specify which fields to write and in which order. You can use the "Get Fields" button to populate the dialog.

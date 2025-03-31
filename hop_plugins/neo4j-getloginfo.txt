@@ -1,0 +1,16 @@
+Plugin: Neo4j Get Logging Info
+
+Description
+
+The Neo4j Get Logging Info transform queries the Neo4j logging graph and retrieves logging information.
+This transform uses theNEO4J_LOGGING_CONNECTION. Check theNeo4j perspectivefor more details.
+
+
+Options
+
+Option | Description
+Transform name | the name for this transform in your pipeline
+startOfPipelineDelta | Start of the date range for the given pipeline
+endOfPipelineDelta | End of the data range for the given pipeline
+startOfWorkflowDelta | Start of the date range for the given workflow
+endOfWorkflowDelta | End of the date range for the given workflow

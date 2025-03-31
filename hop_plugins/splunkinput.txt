@@ -1,0 +1,15 @@
+Plugin: Splunk input
+
+Description
+
+The Splunk Input transform runs a Splunk search query and returns the result as a set of Hop fields
+Check theSplunk Connection docsfor more information about creating a Splunk connection.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.
+Splunk Connection | The Splunk connection to use
+Query | The Splunk search query to run
+Returns | The list of fields returned by the Splunk query: Field name: the field name to store as an output field for this transform, Splunk name: the field name (key) returned by the Splunk search, Return type: search result field data type, Length: length of the result field, Format: format for the result field

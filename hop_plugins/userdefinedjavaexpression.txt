@@ -1,0 +1,87 @@
+Plugin: User Defined Java Expression
+
+Description
+
+This transform allows you to enter User Defined Java Expressions as a basis for the calculation of new values. Any custom jar libraries that your expressions depend on need to be placed in the folderplugins/transforms/janino/lib
+
+
+Usage
+
+If you have a Java expression like :
+C=A+B
+
+Then you can simply enter the right side of the expression in the dialog:
+A+B
+
+The values are exposed to the expressions as the Java objects they are :
+Data type | Java Class
+BigNumber | BigDecimal
+Binary | byte[]
+Date | java.util.Date
+Integer | java.lang.Long
+Number | java.lang.Double
+String | java.lang.String
+
+
+Options
+
+Option | Description
+New Field | The new field in the data stream. If you want to overwrite an existing field, you need to define the field here and in the "Replace value" option.
+Java Expression | The Java Expression, see examples below.
+Value Type | Type
+Length | Length
+Precision | Precision
+Replace value | Select this identical to the "New field" name when you want to replace
+
+
+Examples
+
+Add 2 integers, A and B
+A+B
+
+Concatenate 2 Strings : firstname and name and put a space in between
+firstname+" "+name
+
+or if you really care about performance, this might be faster:
+new StringBuffer(firstname).append(" ").append(name).toString()
+
+Use native Java and API functions
+System.getProperty("os.name")
+
+Business rules (If / Then / Else)
+a<c?true:false
+
+This can be more complicated
+a<c?(a==1?1:2):3
+
+even with OR and AND and other operators and functions
+Using Constants
+If you use a constant, you may need to define the right type in some expressions otherwise it could throw an error. Eg if you use "0" that is "int" but Apache Hop "Integer" is "java.lang.Long", so you’ll get an exception:
+Incompatible expression types "int" and "java.lang.Long"
+To solve this, use:
+test == null ? new Long(0) : test
+
+The above expression checks if "test" is null and replaces it with a zero Long. Otherwise, it return "test" unchanged.
+Cut a string from end and test for null and minimal length
+Imagine you have input strings "location" like
+and you want to separate the state and city. You could use the following expressions:
+For state (get the last 2 characters):
+location != null && location.length()>2 ? location.substring(location.length()-2, location.length()) : null
+
+For city (get the beginning without the last 2 characters and trim):
+location != null && location.length()>2 ? location.substring(0, location.length()-2).trim() : location
+
+Functionality of a LIKE operator (contains string)
+The following example returns 1 when abc is within the source string, otherwise 2. It returns also 2 when the source string is null. If you prefer the return values to be of value type Integer, use "new Long(1)" and "new Long(2)".
+samplestr != null && samplestr.indexOf("abc")>-1 ? 1 : 2
+
+
+
+Blocking specific code
+
+As a simple security measure you can block the execution of code containing specific strings. This can be done by adding exclusions to thecodeExclusions.xmlfile located at <Hop Installation>/plugins/transforms/janino
+Example:
+<exclusions>
+        <exclusion>System.</exclusion>
+        <exclusion>HopVfs.</exclusion>
+    </exclusions>

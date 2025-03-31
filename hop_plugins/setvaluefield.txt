@@ -1,0 +1,13 @@
+Plugin: Set field Value
+
+Description
+
+The Set Field Value transform replaces the value of a field with the value of another field.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform this name has to be unique in a single pipeline.
+Field name | Select the field you want to set (value to be replaced)
+Replace by value from field | Select the field to copy from

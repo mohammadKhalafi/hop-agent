@@ -1,0 +1,28 @@
+Plugin: Get SubFolder names
+
+Description
+
+The Get Subfolder Names transform gets subfolder names from a directory.
+
+
+Options
+
+
+Options -> Folder tab
+
+Option | Description
+Transform name | Name of this transform as it appears in the pipeline workspace
+Accept foldername from field? | Allows a foldername to be passed as a field.
+Foldername field | The field which contains the folder name.
+Selected directories | The directories from which to get the subfolders.
+Browse | Uses the local file browser to get a path.
+Add | Adds the path defined in the Directory field.
+Delete | Deletes the path
+Edit | Change the path
+
+Options -> Settings tab
+
+Option | Description
+Include rownum in output? | Allows the row number to be added to the output.
+Rownum fieldname | The field which contains the row number.
+Limit | Limits the output rows.

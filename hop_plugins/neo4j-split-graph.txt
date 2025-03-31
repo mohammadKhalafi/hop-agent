@@ -1,0 +1,15 @@
+Plugin: Neo4j Split Graph
+
+Description
+
+The Neo4j Split Graph transforms splits the nodes and relationships of a graph data type.
+
+
+Options
+
+Option | Default | Description
+Transform name | Neo4j Split Graph | the name to use for this transform in the pipeline
+Graph field | graph | the graph field in the pipeline
+Type output field (Node/Relationship) | type | the field that will contain the type of field (Node or Relationship)
+ID outputfield | id | the output field to write the ID to
+Property set output field | propertySet | the field name to write the property set for a node or relationship to

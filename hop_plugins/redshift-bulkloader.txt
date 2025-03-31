@@ -1,0 +1,36 @@
+Plugin: Redshift Bulk Loader
+
+Description
+
+The Redshift Bulk Loader transform loads data from Apache Hop to AWS Redshift using theCOPYcommand.
+ | make sure your target Redshift table has a layout that is compatible with Parquet data types, e.g. useint8instead ofint4data types.
+
+
+General Options
+
+Option | Description
+Transform name | Name of the transform.
+Connection | Name of the database connection on which the target table resides.
+Target schema | The name of the target schema to write data to.
+Target table | The name of the target table to write data to.
+AWS Authentication | choose which authentication method to use with theCOPYcommand. Supported options areAWS CredentialsandIAM Role. check theKey-based access controlfor more information on theCredentialsoption., check theIAM Roledocs for more information on theIAM Roleoption.
+Use AWS system variables | (Credentialsonly!) pick up theAWS_ACCESS_KEY_IDandAWS_SECRET_ACCESS_KEYvalues from your operating system’s environment variables.
+AWS_ACCESS_KEY_ID | (ifCredentialsis selected andUse AWS system variablesis unchecked) specify a value or variable for yourAWS_ACCESS_KEY_ID.
+AWS_SECRET_ACCESS_KEY | (ifCredentialsis selected andUse AWS system variablesis unchecked) specify a value or variable for yourAWS_SECRET_ACCESS_KEY.
+IAM Role | (ifIAM Roleis selected) specify the IAM Role to use, in the syntaxarn:aws:iam::<aws-account-id>:role/<role-name>
+Truncate table | Truncate the target table before loading data.
+Truncate on first row | Truncate the target table before loading data, but only when a first data row is received (will not truncate when a pipeline runs an empty stream (0 rows)).
+Specify database fields | Specify the database and stream fields mapping
+
+
+Main Options
+
+Option | Description
+Stream to S3 CSV | write the current pipeline stream to a CSV file in an S3 bucket before performing theCOPYload.
+Load from existing file | do not stream the contents of the current pipeline, but perform theCOPYload from a pre-existing file in S3. Suppoorted formats areCSV(comma delimited) andParquet.
+Copy into Redshift from existing file | path to the file in S3 toCOPYload the data from.
+
+
+Database fields
+
+Map the current stream fields to the Redshift table’s columns.

@@ -1,0 +1,74 @@
+Plugin: Table Input
+
+Description
+
+The Table Input transform is used to read information from a relational database using a connection and a SQL query.
+SQL queries can be parameterized through variables and can accept input from previous transform fields.
+
+
+Get all columns from a single table
+
+Basic SQL statements can be generated automatically by clickingGet SQL select statementbutton.
+The database explorer will open and let you select a table directly or from the list of available database schemas.
+Views can be shown and selected as views or as tables. Check your database and JDBC driver documentation for more details.
+After selecting a table, a new popup dialog will ask you to which SQL statemennt to generate:
+select all columns individually, e.g.select col_a, col_b, col_c from my_table;
+select all columns with a SQL wildcard, e.g.select * from my_table;
+
+
+Accept input from previous fields
+
+The Table Input transform can accept fields from a previous transform specified in theInsert data from transformoption.
+If a transform is selected, the SQL query in this transform will be specified as aJDBC Prepared Statement.
+Please note that in addition to allowing parameterization, the most important advantage of prepared statements is that they help prevent SQL injection attacks. As a side effect, not all elements in a SQL query can be parameterized through prepared statements.
+Use?to replace parameters in your SQL query with the values provided by your input transform. These values will be used in the order provided by the input transform. Use aSelect Valuestransform to modify your input stream to provide the correct fields in the correct order to yourTable Inputtransform.
+The?option can’t be used to specify values for a SQLINclause.
+The prepared statement?parameters can be used in combination with theUse variables in your SQL statementdescribed below.
+
+Accept input from previous fields -> Examples
+
+Example to use data row field(s) parameterized query:
+Select * from table1 where NameId = ? and AddressId = ?
+Replace variables in script: unchecked
+Insert data from transform: <point to the transform with the fields>
+Example using a date range:
+SELECT * FROM customers WHERE changed_date BETWEEN ? AND ?
+This SQL statement requests two calendar dates, to create a range, that are read from the Insert data from transform option. The target date range can be provided using the Get System Info transform. For example, if you want to read all customers that have had their data changed yesterday, you can get a target range for yesterday and read the customer data.
+
+
+Use variables in your SQL statement
+
+SQL queries in theTable Inputtransform can be parameterized through the use of variables.
+To enable variable replacement in your query, check theReplace variables in scriptcheckbox.
+This option will replace the variables in your SQL statement with the variables values before sending the query to the database. Make sure to apply the correct quotes for your query statement, e.g.select '${variable value}' as free_text_col, col_a, col_b from my_table.
+The query variable statement gives you full control over the SQL statement you send to the database, but does not prevent against SQL injection like theAccept input from previous fieldsoption described above does.
+TheUse variables in your SQL statementcan be used in combination with the prepared statement?parameters described above.
+
+Use variables in your SQL statement -> Examples
+
+Example to use a variable value parameterized query:
+This examples uses an integer. If you were using a string you most likely will have to use syntax${PRM_NAME}
+Select * from table1 where id = ${myId}
+Replace variables in script: checked
+Insert data from transform: <empty>
+
+
+Pro Tips
+
+ | The Table input transform does not pass input data to the output, only fields inside the query are returned to the pipeline so all other variables and data will be lost. You can solve this by adding the variable as a field in the query or put a Get variables transform behind the table input.
+ | If you are getting unexpected query results, use the clear database cache icon (broom), or you can use the Hop menu icon: Tools / Clear DB Cache. In addition, click OK, save the pipeline, close and re-open the pipeline.
+ | A cartesian join transform will combine a different number of fields from multiple table inputs without requiring key join fields.
+ | Using the "insert data from transform" drop down will block until the transform selected has completed.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.
+Connection | The database connection from which to read data
+SQL | The SQL statement used to read information from the database connection. You can also click Get SQL select statement…​ to browse tables and automatically generate a basic select statement.
+Enable lazy conversion | When enabled, lazy conversion avoids unnecessary data type conversions and can result in a significant performance improvements.
+Replace variables in script? | Enable to replace variables in the script; this feature was provided to allow you to test with or without performing variable substitutions.
+Insert data from transform | Specify the input transform name where Hop can expect information to come from. This information can then be inserted into the SQL statement. The locator where Hop inserts information is indicated with a question mark: ?.
+Execute for each row? | Enable to perform the data insert for each individual row.
+Limit size | Sets the number of lines that is read from the database; zero (0) means read all lines.

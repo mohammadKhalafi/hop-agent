@@ -1,0 +1,22 @@
+Plugin: Coalesce
+
+Description
+
+The Coalesce transform lets you list multiple fields and returns the first non-null value.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.Note: This name has to be unique in a single pipeline.
+Considered empty string as null | The transform can consider empty string as null.
+
+
+Fields
+
+Pick a list of fields to evaluate and specify a field name and type for the field output.
+Option | Description
+Name | The result field name, can overwrite an existing one.
+Type | The formats to convert the value into the chosen data type.
+Remove | Remove input fields from the stream.
+Input fields | The order of the input fields listed in the columns determines the order in which they are evaluated.

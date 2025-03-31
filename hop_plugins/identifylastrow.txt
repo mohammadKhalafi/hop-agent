@@ -1,0 +1,12 @@
+Plugin: Identify last row in a stream
+
+Description
+
+The Identify Last Row In A Stream pipeline transform generates a Boolean field filled with true for the last row, and false otherwise.
+
+
+Options
+
+Option | Description
+Transform name | Name of this transform as it appears in the pipeline workspace
+Result fieldname | Defines the field to use to mark the last row of a stream. It generates a Boolean field filled with true for the last row, and falseotherwise.

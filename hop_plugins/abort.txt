@@ -1,0 +1,23 @@
+Plugin: Abort
+
+Description
+
+The Abort tranform aborts a running pipeline as soon as it receives input data. The main use case for this transform is to throw an error when an unexpected or unwanted situation occurs.
+For example, you can use this transform so that a pipeline can be aborted after x number of rows flow to over an error hop.
+
+
+Options
+
+Option | Description
+Abort the running pipeline | Stops the pipeline when the Abort threshold is reached.
+Abort and log as an error | Logs an error report when the Abort transform stops the pipeline. Useful when a parent transform executes a sub-pipeline containing the Abort transform.
+Stop input processing | Stops input transforms when the Abort threshold is reached, but processes already retrieved records.
+Abort threshold | Specifies the number of rows at which to abort the pipeline after an error is detected. For example,0stops after the first row,5stops after the sixth row. Default:0.
+
+
+Logging
+
+The Abort transform features the following logging options:
+Option | Description
+Abort message | The message to put in the log upon aborting. If not filled in a default message will be used.
+Always log rows | Always log the rows processed by the Abort transform. This allows the rows to be logged although the log level of the pipeline would normally not do it. This way you can always see in the log which rows caused the pipeline to abort.

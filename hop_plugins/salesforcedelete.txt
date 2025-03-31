@@ -1,0 +1,43 @@
+Plugin: Salesforce Delete
+
+Description
+
+The Salesforce Delete transform deletes records directly from your Salesforce database using the Salesforce Web Service.
+
+
+Usage
+
+You can delete a batch of records by indicating a starting point (Fieldname id) and the amount of records (Batch Size) to delete.
+You can also use the following other transforms to modify your Salesforce database:
+Salesforce Input: Reads records directly from your Salesforce database.
+Salesforce Insert: Inserts records directly into your Salesforce database.
+Salesforce Update: Updates records directly into your Salesforce database.
+Salesforce Upsert: Updates existing records and inserts new records into your Salesforce database.
+
+
+General
+
+Enter the following information in the transform name field:
+Transform name: Specifies the unique name of the Salesforce Delete transform on the canvas. You can customize the name or leave it as the default.
+
+General -> Connection
+
+Enter the connection information in the following transform options:
+Option | Description
+Salesforce Webservice URL | Specify the URL to the Salesforce Webservice. Default:https://login.salesforce.com/services/Soap/u/50.0 You may need to update this if your company uses "My Domain" on salesforce. If so, check with your Salesforce Administrator for the URL. Generally of the formathttps://NAME.my.salesforce.com/services/Soap/u/50.0. You can access a sandbox by using its URL here as well. It is strongly recommended to utilizevariablesto populate these values. 
+Username | Specify the username for authenticating to Salesforce
+Password | Specify the password for authenticating to Salesforce. Enter your password followed by your security token. For example, if your password is PASSWORD and your security token is TOKEN, you would enter PASSWORDTOKEN in this field.
+Test Connection | Click to verify the connection can be made to the Salesforce Webservice URL you specified.
+
+General -> Settings
+
+Enter the insert process settings in the following transform options:
+Option | Description
+Time out | Specify the timeout interval in milliseconds before the transform times out.
+Use compression | Select to compress (.gzip) data when connecting between Hop and Salesforce.
+Rollback all changes on | Revert changes unless all records are processed successfully. When you select this option, records without errors are inserted, while records with errors are marked as failed in the insertion results. The default behavior is to allow partial success of insertion.
+Batch Size | Indicate the maximum number of records to collect before the insert is committed.
+Module | Select the module (table) in which you want to insert records.  |  | This list will be populated upon successfully authenticating to Salesforce using the Test Connection button.
+ | This list will be populated upon successfully authenticating to Salesforce using the Test Connection button.
+Fieldname id | Select the name of the field containing the Salesforce ID of the first record in the set of records (batch) you want to delete.  |  | This list is populated with field names received from the previous transform in a pipeline. For example, you can use the Salesforce Input transform to get field names.
+ | This list is populated with field names received from the previous transform in a pipeline. For example, you can use the Salesforce Input transform to get field names.

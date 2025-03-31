@@ -1,0 +1,58 @@
+Plugin: Row Denormaliser
+
+Description
+
+The De-normalizer transform allows you de-normalize data by looking up key-value pairs, with the option to convert data types in the process.
+Note: make sure to check the notes on this transform in theGetting started with Beamdocumentation.
+
+
+Options
+
+Transform name | Name of the transform. This name has to be unique in a single pipeline.
+Key field | The field that defined the key of the output row.
+Group fields | Specify the fields that make up the grouping here.
+Target fields | Select the fields to de-normalize by specifying the String value for the key field (see above). Options are provided to convert data types. Strings are most common as key-value pairs so you must often convert to Integer, Number or Date. If you get key-value pair collisions (key is not unique for the group specified) specify the aggregation method to use.
+
+
+Metadata Injection Support
+
+You can use the Metadata Injection supported fields with ETL Metadata Injection transform to pass metadata to your pipeline at runtime. All fields can be injected, the values used for the aggregation field are the following
+key | value
+TYPE_AGGR_NONE | No Aggregation is done
+TYPE_AGGR_SUM | Sum all values
+TYPE_AGGR_AVERAGE | Calculate the average
+TYPE_AGGR_MIN | Take the minimal value of the group
+TYPE_AGGR_MAX | Take the maximum value of the group
+TYPE_AGGR_COUNT_ALL | Count rows
+TYPE_AGGR_CONCAT_COMMA | Aggragate values separated by comma
+
+
+Example
+
+
+Example -> Input data
+
+The input data must be ordered by the grouping keys (RecordIDin this example), use aSort rowstransform if needed:
+RecordID | key | value
+345-12-0000 | FirstName | Mitchel
+345-12-0000 | LastName | Runolfsdottir
+345-12-0000 | City | Jerryside
+976-67-7113 | FirstName | Elden
+976-67-7113 | LastName | Welch
+976-67-7113 | City | Lake Jamaal
+824-21-0000 | FirstName | Rory
+824-21-0000 | LastName | Ledner
+824-21-0000 | City | Scottieview
+
+Example -> Denormalized data
+
+SetThe key field= "key" and addRecordIDinThe fields that make up the grouping. Compile theTarget fieldstable as follows:
+Target fieldname | Value fieldname | Key value | Type
+FirstName | value | FirstName | String
+LastName | value | LastName | String
+City | value | City | String
+The result is:
+RecordID | FirstName | LastName | City
+345-12-0000 | Mitchel | Runolfsdottir | Jerryside
+976-67-7113 | Elden | Welch | Lake Jamaal
+824-21-0000 | Rory | Ledner | Scottieview

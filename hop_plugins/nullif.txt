@@ -1,0 +1,6 @@
+Plugin: Null If
+
+Description
+
+The Null If transform sets the value of a certain field to null (empty) if the provided value equals a value specified in this transform.
+You can add all fields from the input stream(s) using Get Fields.

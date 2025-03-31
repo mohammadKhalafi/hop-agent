@@ -1,0 +1,15 @@
+Plugin: Avro File Input
+
+Description
+
+The Avro File Input transform simply reads Avro records from one or more files.
+Each record is encapsulated in an Avro field, each value has its own Schema and record.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform. Note: This name has to be unique in a single pipeline.
+Filename field | Select the field which contains the filename(s) of the Avro files to read
+Avro output field name | The name of the field which will contain the Avro records
+Maximum number of rows to read | Specify a positive number to limit the amount of rows read from all files.

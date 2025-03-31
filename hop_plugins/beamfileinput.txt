@@ -1,0 +1,32 @@
+Plugin: Beam File Input
+
+Description
+
+The Beam File Input transform reads files using a file definition with the Beam execution engine.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform, this name has to be unique in a single pipeline.
+Input location | The location from which to read a file.
+File definition to use | The file definition to use stored in a metastore.
+Edit | Edits an existing file definition.
+New | Creates a new file definition.
+Manage | Opens the MetaStore Explorer.
+
+
+File Definition
+
+A file definition can be used to define a file structure definition.
+Option | Description
+Name | The file definition name.
+Description | The file definition description.
+Field separator | The character separating the fields.
+Field enclosure | The character enclosing fields.
+Field definitions | A list of fields.
+Field name | The field name.
+Type | The field data type.
+Format | The field format.
+Length | The field length.
+Precision | The field precisiom.

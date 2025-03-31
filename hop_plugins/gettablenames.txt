@@ -1,0 +1,25 @@
+Plugin: Get table names
+
+Description
+
+The Get Table Names transform gets table names from a database connection.
+
+
+Options
+
+Option | Description
+Transform name | Name of this transform as it appears in the pipeline workspace
+Connection | The connection to use
+Schema name | The schema to use
+Get schema from field | Allows passing a field containing the schema name
+Schema name field | The field containing the schema name
+Include catalogs | Includes catalogs in the output
+Include schemas | Includes schemas in the output
+Include views | Includes views in the output
+Include procedures | Includes procedures in the output
+Include synonyms | Include synonyms in the output
+Add schema in object name | Adds the schema to the object name
+Tablename fieldname | Output field containing the table name
+Object type fieldname | Output field containing the object type (catalog, schema, table, …​)
+Is system object fieldname | Output field containing boolean: is object a system object
+Creation SQL fieldname | Output field containing create statement for object

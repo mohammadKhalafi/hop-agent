@@ -1,0 +1,29 @@
+Plugin: Google Sheets Output
+
+Description
+
+The Google Sheets Output transform writes data to a Google Sheets worksheets.
+This transform requires a Google service account (JSON file) and a Google Cloud project with the Google Drive and Google Sheets API enabled.
+
+
+Options
+
+
+Options -> Service account tab
+
+option | description
+JSON credential key file | Lets you specify or browse for spreadsheets existing in the service account drive or for the ones that are shared with the service account email.
+Application Name | Your application name for the service account in the Google Developer Console.
+Timeout | lets you specify an https timeout (in minutes, defaults to 5).
+Impersonation | lets you impersonate your service account. Check theGoogle docsfor more information.
+Click theTest Connectionbutton to verify your specified JSON credential key file for your service account can use the Google Drive and Spreadsheets APIs and has access to your Google Spreadsheets. On success, you will see aGoogle Drive API: Success!message.
+
+Options -> Spreadsheet tab
+
+option | description
+Spreadsheet key | Lets you specify or browse for spreadsheets existing in the service account drive or for the ones that are shared with the service account email. If you type in a sheet name (that does not exist in the drive) it will attempt to create a sheet it the "create" checkbox is ticked.
+Worksheet Id | Should be browsed form the selected spreadsheet key. If you want to create a new file, type in any key that will become the name of the worksheet in the created spreadsheet
+Append to sheet | Appends the lineswithout the headerto an existing spreadsheet. This is incompatible with the create option below.
+Create new sheet if it does not exist | If the checkbox is checked then if the Spreadsheet Key specified in the field Spreadsheet key does not exist it will create a new spreadsheet within the service account drive (note that this account has no UI)
+Share Full Rights (RW) with | the Share with user email field lets you specify the email of a user who will get full rights on the freshly created file.
+Domain Wide Permission | Enables to share with your whole domain (if configured in Google Drive).

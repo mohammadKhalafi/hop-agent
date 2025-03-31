@@ -1,0 +1,14 @@
+Plugin: Beam GCP Pub/Sub : Publish
+
+Description
+
+The Beam GCP Pub/Sub : Publish transform publishes messages to aGoogle Cloud Pub/Subtopic using the Beam execution engine.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform, this name has to be unique in a single pipeline.
+Topic to publish to | The Google Cloud Pub/Sub topic.
+The type of message to publish | String, PubsubMessage
+The field to use as message | The field which contains the message.

@@ -1,0 +1,24 @@
+Plugin: Files from result
+
+Description
+
+The Files From Result transform reads filenames and additional metadata that were added through the 'add filename to result' in other transforms.
+Every time a file gets processed, used or created in a pipeline or a workflow, the details of the file, the workflow action, the transform, etc. is captured and added to an internal result set when the option 'Add file names to result' is set, e.g. in a Text File Output transform.
+
+
+Options
+
+Option | Description
+Transform name | The unique transform name within the pipeline
+
+
+Output fields
+
+Field name | Type | Example
+type | String | Normal, Log, Error, Error-line, etc.
+filename | String | somefile.txt
+path | String | C:\Foo\Bar\somefile.txt
+parentorigin | String | Process files pipeline
+origin | String | Text File Input
+comment | String | Read by text file input
+timestamp | Date | 2006-06-23 12:34:56

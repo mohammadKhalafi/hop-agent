@@ -1,0 +1,12 @@
+Plugin: Add Constants
+
+Description
+
+The Add Constant Values transform is a simple and high performance way to add constant values to a pipeline stream.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.Note: This name has to be unique in a single pipeline.
+Fields | specify the name, type, and value in the form of a string. Then, specify the formats to convert the value into the chosen data type.

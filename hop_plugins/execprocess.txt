@@ -1,0 +1,18 @@
+Plugin: Execute a process
+
+Description
+
+The Execute A Process transform executes a shell script (on the host that runs the pipeline).
+The transform is similar to theShellworkflow action, but can be used in a pipeline to execute for every row.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform; this name has to be unique in a single pipeline
+Process field | The field name in the data stream that defines the process to start (shell script / batch file to start). Arguments can also be used.
+Fail if not success | Checking this option means if the exit status is different than zero the transform fails. You can use error handling to get these rows.
+Output line delimiter | Without defining a line delimiter, all returned lines are collapsed into a single string with no line delimiters. You can set to any line delimiter and special characters can be set with the format $[value], e.g. $[0D] for CR or $[0D,0A] for CR/LF.
+Result fieldname | Specify here the name of the result fieldname (STRING) added to the output stream of the pipeline. This field is populated by the output stream (stdout) of the process.
+Error fieldname | Specify here the name of the error fieldname (STRING) added to the output stream of the pipeline. This field is filled by the error stream (stderr) of the process.
+Exit value | Specify here the name of the exit fieldname (INTEGER) added to the output stream of the pipeline. This field is filled by the exit output of the process.

@@ -1,0 +1,14 @@
+Plugin: Clone row
+
+Description
+
+The Clone Row transform creates copies (clones) of a row and outputs them directly after the original row to the next transforms.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform. Note: This name has to be unique in a single pipeline.
+Nr clones | The number of clones you want to add after the original row.
+Add clone flag | Check this option if you want to add a boolean field in the output indicating if the row is a clone or not. N / false : this is not a cloned row, it’s the original row, Y / true : this is a cloned row, a copy of the original row
+Clone flag field | The name of the clone flag field

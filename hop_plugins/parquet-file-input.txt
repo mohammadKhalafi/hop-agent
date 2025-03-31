@@ -1,0 +1,21 @@
+Plugin: Parquet File Input
+
+Description
+
+The Parquet File Input transform reads (primitive) values from an Apache Parquet file.
+For more information on this see:Apache Parquet.
+
+
+Options
+
+Notes:
+To support reading from any location through Apache VFS each file is loaded into memory (one at a time). Make sure to allocate enough memory to allow this.
+Long values can be de-serialized to Dates if they are EPOC: milliseconds since1970-01-01 00:00:00.000
+Parquet Binary fields are considered to be Hop Strings but you can read them as Hop Binary.
+All input values are passed to the output
+INT96 is converted to the Hop Binary data type.
+Option | Description
+Transform name | Name of the transform this name has to be unique in a single pipeline.
+Filename field | Specify the input field. Use a transform like Get File Names to obtain file names. Any supported file location is fine.
+Fields | In this table you can specify all the fields you want to obtain from the parquet files as well as their desired Hop output type.
+Get fields button | With this button you can select a parquet file from which we’ll read the schema to populate the Fields grid.

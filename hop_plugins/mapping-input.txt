@@ -1,0 +1,11 @@
+Plugin: Mapping Input
+
+Description
+
+The Mapping Input transform represents and describes the input for a Mapping pipeline (referred to as a Mapping).
+The data of this input will be provided by the parent pipeline (the pipeline that calls the mapping).
+
+
+Options
+
+The fields described in this transform are those that you want to refer to in this pipeline. When you use the mapping you can map input to these field names to arrive at a re-usable part of a pipeline.

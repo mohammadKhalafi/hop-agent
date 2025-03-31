@@ -1,0 +1,15 @@
+Plugin: XSL Transformation
+
+Description
+
+The XSL Transformation transform performs XSL Transformations on XML.
+XSLT is short forExtensible Stylesheet Language Transformations.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.
+XML fieldname | The name of the field that will contain the XML
+Result fields : fieldname | The name of the output fieldname that will contain the XML after the transformations
+XSL file | XSL filename defined in a field?:Use this option if your XSLT is defined in a field. If enabled, you can specify the filename field below., XSL filename :You can specify the XSLT filename here., XSLT Factory :Specify the factory to use for the transformations: JAXP or SAXON

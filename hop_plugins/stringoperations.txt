@@ -1,0 +1,47 @@
+Plugin: String operations
+
+Description
+
+The String Operations transform can perform the following string operations on an incoming Hop field:
+Trim (remove leading and/or trailing spaces).
+Convert to upper or lowercase.
+Pad (add leading or trailing extra characters).
+Convert to initial capitalization.
+Ignore escape characters.
+Remove or return only numeric digits.
+Remove special characters..
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.
+In stream field | Designate the field to transform.
+Out stream field | Designate the name of the field to be created.
+Trim type | Designate the trim type: none, left, right, or both.
+Lower/Upper | Designate upper or lowercase.
+Padding | Designate left or right padding.
+Pad char | Designate the padding character.
+Pad Length | Designate how long the padding will be.
+InitCap | Transform to initial capitalization.
+Escape | Define to Escape or Unescape XML, HTML, use CDATA or Escape SQL.
+Digits | Designate whether to return remove, or do nothing to digits.
+Remove Special character | Designate a special character to remove.
+
+
+Metadata Injection Support
+
+All fields of this transform support metadata injection. You can use this transform with ETL Metadata Injection to pass metadata to your pipeline at runtime.
+Values for Metadata Injection
+Field | Values
+In stream fields | list of source fields
+Out stream fields | list of target fields
+Trim Type | 0 = none1 = left2 = right3 = both
+Lower/Upper | 0 = none1 = lower2 = upper
+Padding | 0 = none1 = left2= right
+Pad Char | Character used for padding
+Pad Length | Lenght to pad
+InitCap | 0 = no1 = yes
+Escape | 0 = none1 = escapexml2 = cdata3 = unescapexml4 = escapesql5 = escapehtml6 = unescapehtml
+Digits | 0 = none1 = digits_only2 = remove_digits
+Remove Special character | 0 = none1 = cr2 = lf3 = crlf4 = tab5 = espace

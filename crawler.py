@@ -119,6 +119,9 @@ plugin_names = [p.split("/")[1].split(".")[0] for p in plugin_links]
 
 
 for plugin_name in plugin_names:
+    plugin_file_path = f'c:/Users/mohammad/Desktop/hop/hop_plugins/{plugin_name}.txt'
+    if os.path.exists(plugin_file_path): continue
+    
     plugin_url = base_plugins_url + plugin_name + '.html'
     
     try:
@@ -133,7 +136,7 @@ for plugin_name in plugin_names:
         data = extract_sections(plugin_soup)
 
         # Save to file
-        with open(f'c:/Users/mohammad/Desktop/hop/hop_plugins/{plugin_name}.txt', 'w', encoding='utf-8') as f:
+        with open(plugin_file_path, 'w', encoding='utf-8') as f:
             f.write(f"Plugin: {plugin_name_in_doc}\n\n{data}")
             
         print(f"Saved {plugin_name}")

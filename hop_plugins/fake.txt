@@ -1,0 +1,116 @@
+Plugin: Fake data
+
+Description
+
+The Fake Data tranform allows you to generate fake data using the Java Faker library (documentation).
+It can be used to generate pretty data for development, testing or showcasing a project.
+For instance, we could generate some random PokÃ©mon data.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.
+Locale | A locale can be used to make the generated data more specific to a single location.
+Output field name | The name of the generated field.
+Type of fake data | The data category.
+Topic to generate | The topic within the data category to generate.
+
+
+Types of categories
+
+Type | Topics
+Address | streetName, streetAddressNumber, streetAddress, …​
+Ancient | god, primordial, titan, hero
+Animal | name
+App | name, version, author
+Aqua Teen Hunger Force | character
+Artist | name
+Avatar | image
+Back To The Future | character, date, quote
+Aviation | aircraft, airport, METAR
+Basketball | teams, coaches, positions, players
+Beer | name, style, hop, …​
+Bojack Horseman | characters, quotes, tongueTwisters
+Book | author, title, publisher, genre
+Bool | bool
+Business | creditCardNumber, creditCardType, creditCardExpiry
+ChuckNorris | fact
+Cat | name, breed, registry
+Code | isbnGs1, isbnGroup, isbnRegistrant, …​
+Coin | flip
+Color | name, hex
+Commerce | color, department, productName, …​
+Company | name, suffix, industry, …​
+Crypto | md5, sha1, sha256, sha512
+DateAndTime | future, between, past, birthday
+Demographic | race, educationalAttainment, denonym, sex, maritalStatus
+Disease | internalDisease, neurology, surgery, …​
+Dog | name, breed, sound, …​
+DragonBall | character
+Dune | character, title, planet, …​
+Educator | university, course, secondarySchool, campus
+Esports | player, team, event, …​
+File | extension, mimeType, fileName
+Finance | creditCard, bic, iban, calculateIbanChecksum, …​
+Food | ingredient, spice, dish, …​
+Friends | character, location, quote
+FunnyName | name
+GameOfThrones | character, house, city, …​
+Hacker | abbreviation, adjective, noun, …​
+HarryPotter | character, location, quote, …​
+Hipster | word
+HitchhikersGuideToTheGalaxy | character, location, marvinQuote, …​
+Hobbit | character, thorinsConpany, quote, location
+HowIMetYourMother | character, catchPhrase, highFive, quote
+IdNumber | valid, invalid, ssnValid, …​
+Internet | emailAddress, safeEmailAddress, domainName, …​
+Job | field, seniority, position, keySkills, title
+Kaamelott | character, quote
+LeagueOfLegends | champion, location, quote, …​
+Lebowski | actor, character, quote
+LordOfTheRings | character, location
+Lorem | character, characters, word, words, …​
+Matz | quote
+Music | instrument, key, chord, genre
+Name | name, nameWithMiddle, fullName, …​
+Nation | nationality, language, capitalCity, flag
+Number | randomDigit, randomDigitNotZero, numberBetween, …​
+Options | option, nextElement
+Overwatch | hero, location, quote
+PhoneNumber | cellPhone, phoneNumber, …​
+Pokemon | name, location
+Princess Bride | character, quote
+Relationship Terms | direct, extended, inLaw, …​
+RickAndMorty | character, location, quote
+Robin | quote
+RockBand | name
+Shakespeare | hamletQuote, asYouLikeItQuote, kingRichardIIIQuote, …​
+SlackEmoji | people, nature, foodAndDrink, …​
+Space | planet, moon, galaxy, …​
+StarCraft | unit, building, character, planet
+StarTrek | character, location, specie, …​
+Stock | nsdqSymbol, nyseSymbol
+Superhero | name, prefix, suffix, …​
+Team | name, creature, state, sport
+TwinPeaks | character, location, quote
+University | name, prefix, suffix
+Weather | description, temperatureCelsius, temperatureFahrenheit, temperature
+Witcher | character, witcher, school, …​
+Yoda | quote
+Zelda | game, character
+
+
+Locales
+
+bg
+ca
+ca-CAT
+da-DK
+de
+de-AT
+de-CH
+en
+en-US
+nl
+…​

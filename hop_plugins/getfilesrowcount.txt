@@ -1,0 +1,40 @@
+Plugin: Get files Row Count
+
+Description
+
+The Get Files Row Count transform counts the number of rows in a file or set of files.
+
+
+Options
+
+
+Options -> File tab
+
+Option | Description
+directory | 
+Expression | 
+File or | 
+Filename(s) | 
+Files | 
+Preview | 
+Regular | 
+Rows | 
+Selected | 
+Show | 
+Transform name | 
+
+Options -> Content tab
+
+Option | Description
+Rows Count | 
+fieldname | 
+Rows | 
+Separator | 
+type | 
+Row | 
+separator | 
+Include | 
+files count | 
+in output? | 
+Files Count | 
+fieldname | 

@@ -1,0 +1,14 @@
+Plugin: Avro Decode
+
+Description
+
+The Avro Decode transform allows you to decode an Avro field and convert it to Hop fields.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform. Note: This name has to be unique in a single pipeline.
+Source field | Select the name of the field (of type: Avro) to convert
+Source fields | You can specify the names of the Avro fields to select from the Avro records. You can also specify to which Hop data type you want to convert to. Please note that complex data types like Map and Record are converted into JSON which you can then parse further in subsequent transforms. Note: The "Avro type" column is informational only. It’s not used at runtime.
+Get fields button | You can use the "Get fields" button to retrieve the fields from the schema present in the metadata of the specified Avro Record source field. If there’s no metadata in this field, in case of sourcing from a Kafka consumer for example, you can opt to read from an Avro file.

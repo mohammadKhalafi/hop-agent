@@ -1,0 +1,27 @@
+Plugin: Teradata Bulk Loader
+
+Description
+
+The Teradata Bulkloader transform supports fastloading data into a Teradata database using the fastload command line tool.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform this name has to be unique in a single pipeline.
+Use control file | Work in control file mode.
+Control file | The path to the control file to be used.
+Variable Substitution in control file | Make use of POI Variables (eg: ${RUN_ID}) in the control file.
+Path to fastload | The path to the fastload command line utility.
+Error log | An optional Error log to be created by Fastload.
+Connection | A connection to the Teradata DB.
+Target table | The table to be loaded.
+Truncate table | Truncate the target table before loading.
+Data file | The name of the temporary data file.
+Sessions | Number of sessions to be used by Fastload.
+Error limit | The error limit for Fastload.
+Field mapping | Definition of POI <→ DB Field mapping.
+
+Options -> Fastload Control File
+
+Runs as a transform within a pipeline completely independent from other transforms.

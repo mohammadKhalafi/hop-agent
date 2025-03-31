@@ -1,0 +1,31 @@
+Plugin: Google Sheets Input
+
+Description
+
+The Google Sheets Input transform reads data from a Google Sheets worksheets.
+This transform requires a Google service account (JSON file) and a Google Cloud project with the Google Drive and Google Sheets API enabled.
+
+
+Options
+
+
+Options -> Service account tab
+
+option | description
+JSON credential key file | Lets you specify or browse for spreadsheets existing in the service account drive or for the ones that are shared with the service account email.
+Application Name | Your application name for the service account in the Google Developer Console.
+Timeout | lets you specify an https timeout (in minutes, defaults to 5).
+Impersonation | lets you impersonate your service account. Check theGoogle docsfor more information.
+Click theTest Connectionbutton to verify your specified JSON credential key file for your service account can use the Google Drive and Spreadsheets APIs and has access to your Google Spreadsheets. On success, you will see aGoogle Drive API: Success!message.
+
+Options -> Spreadsheet tab
+
+option | description
+Spreadsheet Key | specify the key for the Google Spreadsheet you want to read from. Click the "Browse" button to get a list of available spreadsheets.
+Worksheet Id | specify the worksheet id (title) for the sheet in your Google Spreadsheet you want to read from. Click the "Browse" button to get the list of available worksheets in the selected Google Spreadsheet.
+
+Options -> Fields tab
+
+Lets you select from the fields of the sheet.
+Fields name are always defined in the first line of the google spreadsheet.
+Get Fieldslets you get fields and guess their types, format, precision, decimal and group delimiter as well as trim type.

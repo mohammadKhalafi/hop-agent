@@ -1,0 +1,52 @@
+Plugin: Salesforce Upsert
+
+Description
+
+The Salesforce Upsert transform updates existing records and inserts new records into your Salesforce database using the Salesforce Web Service.
+You can also use the following other transforms to modify your Salesforce database:
+Salesforce Input: Reads records directly from your Salesforce database.
+Salesforce Insert: Inserts records directly into your Salesforce database.
+Salesforce Update: Updates records directly into your Salesforce database.
+Salesforce Delete: Deletes records directly from your Salesforce database.
+
+
+General
+
+Enter the following information in the transform name field:
+Transform name: Specifies the unique name of the Salesforce Upsert transform on the canvas. You can customize the name or leave it as the default.
+
+General -> Connection
+
+Enter the connection information in the following transform options:
+Option | Description
+Salesforce Webservice URL | Specify the URL to the Salesforce Webservice. Default:https://login.salesforce.com/services/Soap/u/50.0 You may need to update this if your company uses "My Domain" on salesforce. If so, check with your Salesforce Administrator for the URL. Generally of the formathttps://NAME.my.salesforce.com/services/Soap/u/50.0. You can access a sandbox by using its URL here as well. It is strongly recommended to utilizevariablesto populate these values. 
+Username | Specify the username for authenticating to Salesforce
+Password | Specify the password for authenticating to Salesforce. Enter your password followed by your security token. For example, if your password is PASSWORD and your security token is TOKEN, you would enter PASSWORDTOKEN in this field.
+Test Connection | Click to verify the connection can be made to the Salesforce Webservice URL you specified.
+
+General -> Settings
+
+Enter the insert process settings in the following transform options:
+Option | Description
+Time out | Specify the timeout interval in milliseconds before the transform times out.
+Use compression | Select to compress (.gzip) data when connecting between Hop and Salesforce.
+Rollback all changes on | Revert changes unless all records are processed successfully. When you select this option, records without errors are inserted, while records with errors are marked as failed in the insertion results. The default behavior is to allow partial success of insertion.
+Batch Size | Indicate the maximum number of records to collect before the insert is committed.
+Module | Select the module (table) in which you want to insert records.  |  | This list will be populated upon successfully authenticating to Salesforce using the Test Connection button.
+ | This list will be populated upon successfully authenticating to Salesforce using the Test Connection button.
+Upsert Comparison Field | Specify the Salesforce ID of the field to use as a basis of comparison to determine if you are updating an existing record or inserting a new record.
+
+General -> Output Fields
+
+Enter the output information in the following transform option:
+Salesforce ID fieldname: Specifies the field to contain the Salesforce ID of the first record in the set of records (batch) you updated and inserted.
+
+General -> Fields
+
+You can specify what fields to insert into your Salesforce database through the Fields table. Click Get fields to populate the table with input from the Hop data stream.
+The table contains the following columns:
+Option | Description
+Module field | The name of the field within the Module
+Stream field | The name of the field in the Hop data stream
+Use External id? | The flag indicating if the field links to an external ID. To resolve the ID, Salesforce needs the object type, column name, and relationship name in the following syntax: 
+Optionally, click Edit mapping to specify custom mapping. For example, you can map a single Hop field to multiple Salesforce fields.

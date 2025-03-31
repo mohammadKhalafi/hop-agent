@@ -1,0 +1,19 @@
+Plugin: Web services lookup
+
+Description
+
+The Web Services Lookup transform performs a Web Services lookup using the Web Services Description Language (WSDL).
+
+
+Options
+
+Option | Description
+Transform Name | Name of the transform this name has to be unique in a single pipeline.
+URL | The base URL pointing to the WSDL document that will be retrieved
+Load (button) | The load button loads the WSDL at the specified URL and tries to automatically populate the input and output tabs and fields. NOTE: If this doesn’t work, you can still try to manually specify the input and output fields using the "Add Input" and "Add Output" buttons.
+The number of rows per call | The number of rows to send with each WSDL call
+Pass input data to output | If you disable this, the input will be eaten and only the WSDL output will be passed along to the next transforms. v2.x/3.x compatibility mode We improved the parsing engine of the 3.x engine dramatically. For compatibility reasons, we kept the old engine around to make sure older transforms would still work OK.
+Repeating element name | Specify the name of the repeating element in the output XML (if any).
+HTTP authentication | Here you can put the username and password if these are required for the web service.
+Proxy to use | Here you can optionally put the proxy host and port information.
+Add Input / Add Output | These buttons will allow you to manually specify the input and output specifications of the WSDL service. Note: The data of the input fields can be escaped by the Calculator transform and the function "Mask XML content from string A"

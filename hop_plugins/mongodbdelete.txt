@@ -1,0 +1,57 @@
+Plugin: MongoDB Delete
+
+Description
+
+The MongoDB Delete transform enables you to deletedocumentsorrecordsfrom a collection within MongoDB.
+For additional information about MongoDB, see the MongoDBdocumentation.
+
+
+Options
+
+
+Options -> General
+
+Transform name : Specify the unique name of the MongoDB Input transform in the pipeline.
+
+Options -> Delete options tab
+
+Field | Description
+MongoDB connection | theMongoDB connectionto use for the MongoDB Delete transform.
+Collection | Name of the collection to delete data from. Click Get collections to populate the drop-down menu with a list of collections within the database.
+Number of retries for write operations | The number of retries for write operations
+Delay (in seconds) between retry attempts | Delay (in seconds) between retry attempts
+
+Options -> Delete query
+
+use JSON query:when disabled (default), the transform deletes documents based on key/value pair comparisons. The table requires the following fields:Mongo document path: the document path to deleteComparator:=,<>,,,<,⇐,>,>=,BETWEEN,IS NULL,IS NOT NULLIncoming field 1: a first comparison stream fieldIncoming fields 2: a second comparison stream field (for use withBETWEEN)when enabled:a delete query is passed to MongoDB for deletion.execute for each row: pass the delete query to the database for each incoming row
+when disabled (default), the transform deletes documents based on key/value pair comparisons. The table requires the following fields:Mongo document path: the document path to deleteComparator:=,<>,,,<,⇐,>,>=,BETWEEN,IS NULL,IS NOT NULLIncoming field 1: a first comparison stream fieldIncoming fields 2: a second comparison stream field (for use withBETWEEN)
+Mongo document path: the document path to delete
+Comparator:=,<>,,,<,⇐,>,>=,BETWEEN,IS NULL,IS NOT NULL
+Incoming field 1: a first comparison stream field
+Incoming fields 2: a second comparison stream field (for use withBETWEEN)
+when enabled:a delete query is passed to MongoDB for deletion.execute for each row: pass the delete query to the database for each incoming row
+a delete query is passed to MongoDB for deletion.
+execute for each row: pass the delete query to the database for each incoming row
+when disabled (default), the transform deletes documents based on key/value pair comparisons. The table requires the following fields:Mongo document path: the document path to deleteComparator:=,<>,,,<,⇐,>,>=,BETWEEN,IS NULL,IS NOT NULLIncoming field 1: a first comparison stream fieldIncoming fields 2: a second comparison stream field (for use withBETWEEN)
+Mongo document path: the document path to delete
+Comparator:=,<>,,,<,⇐,>,>=,BETWEEN,IS NULL,IS NOT NULL
+Incoming field 1: a first comparison stream field
+Incoming fields 2: a second comparison stream field (for use withBETWEEN)
+when enabled:a delete query is passed to MongoDB for deletion.execute for each row: pass the delete query to the database for each incoming row
+a delete query is passed to MongoDB for deletion.
+execute for each row: pass the delete query to the database for each incoming row
+Mongo document path: the document path to delete
+Comparator:=,<>,,,<,⇐,>,>=,BETWEEN,IS NULL,IS NOT NULL
+Incoming field 1: a first comparison stream field
+Incoming fields 2: a second comparison stream field (for use withBETWEEN)
+a delete query is passed to MongoDB for deletion.
+execute for each row: pass the delete query to the database for each incoming row
+
+Options -> Delete query examples:
+
+Delete based on document paths and stream fields (use JSON querydisabled):
+Mongo document path | Comparator | Incoming field 1 | Incoming field 2
+name | = | lastname | 
+firstname | = | firstname | 
+Delete based on JSON query (use JSON queryenabled):
+`{$or: [{"name": "${NAME1}"},{"name": "${NAME2}"}, {"name": "${NAME3}"} ]}`

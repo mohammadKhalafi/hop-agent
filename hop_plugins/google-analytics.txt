@@ -1,0 +1,42 @@
+Plugin: Google Analytics Input
+
+Description
+
+The Google Analytics Input transform reads data from a Google Analytics 4 account, using the Google Analytics Data API.
+TheGA4 Query Explorerprovides a dedicated website to developing and testing queries with the Google Analytics API (outside of Apache Hop).
+
+
+Configuration
+
+You need a Google Analytics account with access and sufficient permissions to a GA4 property.
+You need a Google Cloud project with a service account. The Google Analytics api needs to be enabled for this project.
+Check the Google Cloud docs for more information on how thecreate a service accountand toset up a projectfor use with the Google Analytics Data API.
+
+
+Options
+
+
+Options -> Google Analytics Connection Settings
+
+Option | Description
+Application name | Enter an application name such as "Apache Hop" or leave the default.
+OAuth service email | Your Google Developer Service Account’s Email Address (e.g. "<randomcharacters@developer.gserviceaccount.com>").
+Key file | The path to the P12 private key associated with your OAuth Service account.
+Property Id | the GA4 property to read from
+
+Options -> Query Definition
+
+Option | Description
+Start date (YYYY-MM-DD | Specifies the start date associated with the query. The date must be entered in the following format: YYYY-MM-DD.
+End date (YYYY-MM-DD | Specifies the end date associated with the query. The date must be entered in the following format: YYYY-MM-DD.
+Dimension | Specifies the dimension fields for which you want to query. The Google Analytics Data API documentation provides you with a list of valid inputs and metrics that can be combined.
+Metrics | Specifies the metrics fields you want returned. At least one metric must be provided.
+Sort | Specifies a dimension field on which to sort.
+
+Options -> Fields
+
+ClickGet Fieldsto retrieve a list of possible fields based on the query you defined. ClickPreviewto preview data based on the defined query.
+
+Options -> Limit Size
+
+Limit the number of rows to retrieve for the specified GA4 property to a number of rows. Set the limit size to 0 to fetch all available rows.

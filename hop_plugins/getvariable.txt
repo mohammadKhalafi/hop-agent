@@ -1,0 +1,52 @@
+Plugin: Get variables
+
+Description
+
+The Get Variables transform allows you to get the value of a variable and create field(s) from it. You only need to use this transform if you need the variable value in a field.
+ | If you need to refer to a previous pipelineâs data row(s) fields, then use a Get rows from result transform.
+
+
+Usage
+
+Note that workflow/environment variables are set only once. A pipeline needs to start to get any new variables. A running or sequential or nested (nested pipelines are technically the same pipeline) pipeline can’t fetch new variable values. A pipeline is considered started when a pipeline starts for every row in a pipeline executor.
+Refer to parameters/variables using the syntax: ${myVariable}, for example from a previous pipeline.
+Two ways to pass fields, parameters to variables downstream:
+Parameters must be unique per pipeline (case is not a differentiator). The pipeline executor parameter value takes precedence over the pipelineâs properties parameter value. The sending parameter value takes precedence over the default value of the receiving pipelineâs properties parameter.
+Use a pipeline executor transform or a Repeat action:Send: add fields on the Parameters tab (parameter name can be same as field name) to send.Receive: in the immediate downstream pipeline, use Get variables to set variables/fields from Parameters using format: ${myParam}
+Send: add fields on the Parameters tab (parameter name can be same as field name) to send.
+Receive: in the immediate downstream pipeline, use Get variables to set variables/fields from Parameters using format: ${myParam}
+Edit any upstream pipelineâs properties:Send: Add a parameter on the parameters tab of a pipelineâs properties (Edit pipeline icon), and optionally give it a default value. The parameter value can be set in a pipeline using various transforms.Receive: in the immediate downstream pipeline, use Get variables to set variables/fields from Parameters using format: ${myParam}
+Send: Add a parameter on the parameters tab of a pipelineâs properties (Edit pipeline icon), and optionally give it a default value. The parameter value can be set in a pipeline using various transforms.
+Receive: in the immediate downstream pipeline, use Get variables to set variables/fields from Parameters using format: ${myParam}
+Send: add fields on the Parameters tab (parameter name can be same as field name) to send.
+Receive: in the immediate downstream pipeline, use Get variables to set variables/fields from Parameters using format: ${myParam}
+Send: Add a parameter on the parameters tab of a pipelineâs properties (Edit pipeline icon), and optionally give it a default value. The parameter value can be set in a pipeline using various transforms.
+Receive: in the immediate downstream pipeline, use Get variables to set variables/fields from Parameters using format: ${myParam}
+Other:
+See also the Set Variables transform.
+To convert the Variable into a data type other than String use Select Values - Meta Data tab.
+To get system values, including command line arguments, use the Get System Info transform.
+For example, in the variable column, you can specify:${java.io.tmpdir}/hop/tempfile.txtand it will be evaluated as/tmp/hop/tempfile.txton Unix-like systems.
+
+
+Troubleshooting
+
+You must always specify the data type or you will have errors like the following:
+2023/07/21 09:30:23 - REST client.0 - ERROR: Because of an error, this transform can’t continue: 2023/07/21 09:30:23 - REST client.0 - TOKEN_URL None : Unknown type 0 specified. 2023/07/21 09:30:23 - REST client.0 - ERROR: org.apache.hop.core.exception.HopValueException:
+
+
+Options
+
+Option | Description
+Transform Name | The name of this transform as it appears in the pipeline workspace.
+Name | Name of the field.
+Variable | Allows you to enter variables as complete strings to return rows or add values to input rows. For example, you can specify: $${java.io.tmpdir}/hop/tempfile.txt and it will be expanded to /tmp/hop/tempfile.txt on Unix-like systems.  |  | You can see a list of defined variables by using CTRL-SPACE (CMD-SPACE on OSX) in the input field. This helper will insert a selected variable into the input field. Only environment variables and variables with the JVM scope are shown here. Variables that are created in pipeline or workflow with a parent, grant parent or root workflow job need to be entered manually
+ | You can see a list of defined variables by using CTRL-SPACE (CMD-SPACE on OSX) in the input field. This helper will insert a selected variable into the input field. Only environment variables and variables with the JVM scope are shown here. Variables that are created in pipeline or workflow with a parent, grant parent or root workflow job need to be entered manually
+Type | Specifies the field type: String, Date, Number, Boolean, Integer, BigNumber, Serializable, or Binary.
+Format | Allows you to specify the format of the field after the type has been determined.
+Length | For Number: Total number of significant figures in a number; For String: total length of string; For Date: length of printed output of the string (for example, entering 4 would only return the year).
+Precision | For Number: Number of floating point digits. Not used for String, Date, or Boolean.
+Currency | Used to interpret numbers with currency symbols. For example, $10,000.00 or E5.000,00.
+Decimal | Used to indicate whether to use a period (".") or comma (",") for number values.
+Group | Used to indicate whether to use a period (".") or comma (",") for number values.
+TrimType | Type trim this field before processing: select either none, left, right, or both (left and right).

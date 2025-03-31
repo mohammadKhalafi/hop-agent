@@ -1,0 +1,12 @@
+Plugin: Multiway Merge Join
+
+Description
+
+The Multiway Merge Join transform joins input data from multiple streams.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.
+Join Type | Type of join (INNER or FULL OUTER).

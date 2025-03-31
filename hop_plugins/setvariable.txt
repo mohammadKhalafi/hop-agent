@@ -1,0 +1,16 @@
+Plugin: Set Variables
+
+Description
+
+Set Variables allows you to set variables from fields. By clicking the Get Fields button it will automatically fill in all the fields from the data row and fill in variable names in all-caps. Verify the scope is correct.
+
+
+Options
+
+Option | Description
+Transform name | Name of the transform.
+Apply formatting | When this option is set, it formats the value (date, numbers etc.) according to the format options. Otherwise no formatting is done.
+Field Name | Name of the field that is used
+Variable Name | Name of the variable to set (without ${…​} or %%…​%% sigils)
+Variable scope type | Define the scope of the variable, possible options are: Valid in the Java Virtual Machine: the complete virtual machine will know about this variable., Valid in the parent workflow: the variable is only valid in the parent workflow., Valid in the grand-parent workflow: the variable is valid in the grand-parent workflow and all the child workflows and pipelines., Valid in the root workflow: the variable is valid in the root workflow and all the child workflows and pipelines.
+Default value | Value that will be set for empty rows
