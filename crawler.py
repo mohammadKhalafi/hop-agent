@@ -2,42 +2,72 @@ import os
 import requests
 from bs4 import BeautifulSoup
 
-def extract3(soup, name):
-    all_elements = soup.find_all(['div','table'])
+def get_list_content(soup, seperator_str):
+    lists = []
+    for ul in soup.find_all('ul'):
+        lists.extend([li.get_text(strip=True) for li in ul.find_all('li')])
+
+    return seperator_str.join(lists)
+    
+
+def get_cell_content(cell):
+    paragraphs = [div.get_text(strip=True) for div in cell.find_all('div', class_='paragraph')]
+    lists_cotent = get_list_content(cell, ', ')
+    paragraphs.append(lists_cotent)
+    cell_content = " ".join(paragraphs)
+    if cell_content != "" : return cell_content
+    return cell.get_text(strip=True)
+
+
+def extract_section(section, name):
+    all_elements = section.find_all(['div','table', 'code'])
     all_elements = list(all_elements)
     soup_content = [name + '\n']
 
     iterated_elements = []
     for element in all_elements:
-        iterated_elements.append(element)
         if any(iterated_element in element.parents for iterated_element in iterated_elements):
             continue
         if element.name == "div":
-            if 'sect2' in element.get("class", []):
+            classes = element.get("class", [])
+            if 'sect2' in classes:
+                iterated_elements.append(element)
                 sect2_title = element.find(['h2', 'h3'])
                 sect2_name = sect2_title.get_text(strip=True) if sect2_title else "Unnamed Subsection"
-                # soup_content.append('\n' + name + ' -> ' + sect2_name)
-                soup_content.extend(extract3(element, '\n' + name + ' -> ' + sect2_name))
-            elif 'paragraph' in element.get("class", []):
+                soup_content.extend(extract_section(element, '\n' + name + ' -> ' + sect2_name))
+            elif 'paragraph' in classes:
+                iterated_elements.append(element)
                 p = element.find('p')
                 p_text = p.get_text(strip=True)
                 soup_content.append(p_text)
+            elif 'ulist' in classes:
+                iterated_elements.append(element)
+                list_content = get_list_content(element, '\n')
+                soup_content.append(list_content)
+
         elif element.name == "table":
+            iterated_elements.append(element)
             table = element
             rows = []
             for row in table.find_all('tr'):
                 cells = [cell for cell in row.find_all(['th', 'td'])]
                 cell_texts = []
                 for cell in cells:
-                    cell_texts.append(cell.get_text(strip=True))
-                rows.append(" | ".join(cells))
+                    cell_texts.append(get_cell_content(cell))
+                rows.append(" | ".join(cell_texts))
             soup_content.extend(rows)
     
+        elif element.name == "code":
+            iterated_elements.append(element)
+            code_content = element.get_text(strip=True)
+            code_content+='\n'
+            soup_content.append(code_content)
+
+
     return soup_content
 
 
-
-def extract_sections2(soup):
+def extract_sections(soup):
     sect1_contents = []
     for sect1 in soup.find_all('div', class_='sect1'):
         sect1_title = sect1.find(['h2', 'h3'])
@@ -52,79 +82,12 @@ def extract_sections2(soup):
         if not sectionbody:
             continue  # Skip if no section body
         
-        extracteds = extract3(sectionbody, sect1_name)
+        extracteds = extract_section(sectionbody, sect1_name)
         extracteds_str = '\n'.join(extracteds)
         sect1_contents.append(extracteds_str)
     
     return '\n\n\n'.join(sect1_contents)
             
-
-def extract_sections(soup):
-    data = {}
-
-    # Find all sect1 sections
-    for sect1 in soup.find_all('div', class_='sect1'):
-        sect1_title = sect1.find(['h2', 'h3'])
-        if sect1_title:
-            sect1_name = sect1_title.get_text(strip=True)
-        else:
-            sect1_name = "Unknown Section"
-
-        sectionbody = sect1.find('div', class_='sectionbody')
-        if not sectionbody:
-            continue  # Skip if no section body
-
-        sect1_content = []
-
-        sect2_sections = sectionbody.find_all('div', class_='sect2')
-
-        if sect2_sections:
-            # Extract data from each sect2
-            for sect2 in sect2_sections:
-                sect2_title = sect2.find(['h2', 'h3'])
-                sect2_name = sect2_title.get_text(strip=True) if sect2_title else "Unnamed Subsection"
-                sect2_content = []
-
-                ts = []
-                for table in sect2.find_all('table'):
-                    ts.append(table)
-
-                # Extract paragraphs
-                for paragraph in sect2.find_all('p'):
-                    if not any(table in paragraph.parents for table in ts):  
-                        sect2_content.append(paragraph.get_text(strip=True))
-
-                # Extract tables
-                for table in ts:
-                    rows = []
-                    for row in table.find_all('tr'):
-                        cells = [cell.get_text(strip=True) for cell in row.find_all(['th', 'td'])]
-                        rows.append(" | ".join(cells))
-                    sect2_content.extend(rows)
-
-                # Store sect2 data
-                data[f"{sect1_name} -> {sect2_name}"] = "\n".join(sect2_content) if sect2_content else "No content found."
-
-        else:
-            # No sect2, extract data from sect1 sectionbody
-            for table in sectionbody.find_all('table'):
-                rows = []
-                for row in table.find_all('tr'):
-                    cells = [cell.get_text(strip=True) for cell in row.find_all(['th', 'td'])]
-                    rows.append(" | ".join(cells))
-                sect1_content.extend(rows)
-
-            for paragraph in sectionbody.find_all('p'):
-                if paragraph.parent.name != 'td':  
-                    sect1_content.append(paragraph.get_text(strip=True))
-
-            # Store sect1 data
-            data[sect1_name] = "\n".join(sect1_content) if sect1_content else "No content found."
-
-    return data
-
-
-
 # Create directory for plugin descriptions
 os.makedirs('hop_plugins', exist_ok=True)
 
@@ -152,10 +115,8 @@ plugin_links.sort()
 plugin_names = [p.split("/")[1].split(".")[0] for p in plugin_links]
 
 # plugin_names = ["kafkaconsumer"]# plugin_names[0:2] "metastructure", "monetdbbulkloader", 
-plugin_names = ["addchecksum"]
-# for l in plugin_names:
-#     print(l)
-# print(len(plugin_names))
+# plugin_names = plugin_names[0:10]
+
 
 for plugin_name in plugin_names:
     plugin_url = base_plugins_url + plugin_name + '.html'
@@ -169,68 +130,11 @@ for plugin_name in plugin_names:
         plugin_name_in_doc = plugin_soup.find('h1')
         plugin_name_in_doc = plugin_name_in_doc.get_text(strip=True) if plugin_name_in_doc else "UnknownPlugin"
 
-        # # Find plugin description
-        # description_section = plugin_soup.find('h2', id='_description').parent
-        # paragraphs = description_section.select('.sectionbody .paragraph')
-        # description = "\n".join(p.get_text(strip=True) for p in paragraphs)
-
-        # # Find plugin options
-        # options = []
-        # options_section = plugin_soup.find('h2', id='_options')
-        # table = options_section.find_next('table')
-        # for row in table.find('tbody').find_all('tr'):
-        #     cells = row.find_all('td')
-        #     if len(cells) >= 2:
-        #         option_name = cells[0].get_text(strip=True)
-        #         option_desc = cells[1].get_text(strip=True)
-        #         options.append(f"{option_name}: {option_desc}")
-        
-        # options = "\n".join(options) 
-
-
-        # # all data
-        # data = {}
-        # for section in plugin_soup.find_all(['h2', 'h3']):
-            # section_name = section.get_text(strip=True)
-            # section_content = []
-
-            # # Find the section body safely
-            # section_body = section.find_next_sibling('div', class_='sectionbody')
-            # if not section_body:
-            #     continue  # Skip if no content found
-
-            # # Extract paragraphs
-            # for paragraph in section_body.find_all('p'):
-            #     section_content.append(paragraph.get_text(strip=True))
-
-            # # Extract tables
-            # table = section_body.find('table')
-            # if table:
-            #     rows = []
-            #     for row in table.find_all('tr'):
-            #         cells = [cell.get_text(strip=True) for cell in row.find_all(['th', 'td'])]
-            #         rows.append(" | ".join(cells))
-            #     section_content.extend(rows)
-
-            # # Extract lists
-            # for ul in section_body.find_all('ul'):
-            #     for li in ul.find_all('li'):
-            #         section_content.append(f"- {li.get_text(strip=True)}")
-
-            # data[section_name] = "\n".join(section_content) if section_content else "No content found."            
-
-        data = extract_sections2(plugin_soup)
-
-        # data_to_write = ""
-        # for section, content in data.items():
-        #     data_to_write += (f"### {section} ###\n{content}\n\n")
-
-        data_to_write = data
+        data = extract_sections(plugin_soup)
 
         # Save to file
         with open(f'c:/Users/mohammad/Desktop/hop/hop_plugins/{plugin_name}.txt', 'w', encoding='utf-8') as f:
-            # f.write(f"Plugin: {plugin_name_in_doc}\n\nDescription:\n{description}\n\nOptions:\n{options}\n\nAllData:\n{data_to_write}")
-            f.write(f"Plugin: {plugin_name_in_doc}\n\n{data_to_write}")
+            f.write(f"Plugin: {plugin_name_in_doc}\n\n{data}")
             
         print(f"Saved {plugin_name}")
         
