@@ -1,0 +1,6 @@
+Plugin: Dynamic SQL row
+
+Description
+
+The Dynamic SQL Row transform allows you to execute a SQL statement that is defined in a database field.
+The lookup values returned by the transform are added as new fields onto the stream.

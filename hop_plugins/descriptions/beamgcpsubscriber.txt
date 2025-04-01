@@ -1,0 +1,5 @@
+Plugin: Beam GCP Pub/Sub : Subscribe
+
+Description
+
+The Beam GCP Pub/Sub : Subscribe transform gets messages from aGoogle Cloud Pub/Subtopic using a subscription with the Beam execution engine.

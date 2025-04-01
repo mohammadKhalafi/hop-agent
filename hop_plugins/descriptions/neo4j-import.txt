@@ -1,0 +1,6 @@
+Plugin: Neo4j Import
+
+Description
+
+The Neo4j Import transform runs an import command using the provided CSV files.
+Check theneo4j-admin-importdocs for full details.

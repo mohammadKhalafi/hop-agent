@@ -1,0 +1,6 @@
+Plugin: Standardize Phone Number
+
+Description
+
+The Standardize Phone Number transform normalizes phone numbers in a standardized and consistent manner.
+The transform usesGoogle libphonenumberlibrary.

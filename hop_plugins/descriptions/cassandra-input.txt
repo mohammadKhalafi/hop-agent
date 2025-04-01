@@ -1,0 +1,5 @@
+Plugin: Cassandra Input
+
+Description
+
+The Cassandra Input transform reads data from a Cassandra table of an Apache Cassandra cluster using CQL (Cassandra Query Language) version 3.x.

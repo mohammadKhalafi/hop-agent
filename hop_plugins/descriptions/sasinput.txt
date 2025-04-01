@@ -1,0 +1,6 @@
+Plugin: SAS Input
+
+Description
+
+The SAS Input transform reads files in sas7bdat format created by SAS software (SAS Institute, Inc.).
+The functionality is backed by theParso java library.

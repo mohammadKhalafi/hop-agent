@@ -1,0 +1,5 @@
+Plugin: YAML Input
+
+Description
+
+The YAML Input transform reads data from YAML structures, files or incoming fields.

@@ -1,0 +1,5 @@
+Plugin: Process files
+
+Description
+
+The Process Files transform copies, moves or deletes files by giving the source and target file names in the data stream.

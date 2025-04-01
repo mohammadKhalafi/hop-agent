@@ -1,0 +1,6 @@
+Plugin: Rules accumulator
+
+Description
+
+The Rules Accumulator collects incoming rows and executes them against a rule set. This may be useful to determine the answer to a question or otherwise analyze a dataset.
+Droolsis the present rule engine implementation and itsrule languagecan be referenced for use by this transform.Drools documentation

@@ -1,0 +1,5 @@
+Plugin: Split fields to rows
+
+Description
+
+The Split Fields To Rows transform splits a row containing a delimited field into multiple new rows, one per split value.

@@ -1,0 +1,9 @@
+Plugin: Select Values
+
+Description
+
+The Select Values transform is useful for selecting, removing, renaming, changing data types and configuring the length and precision of the fields on the stream.
+These operations are organized into different categories:
+Select and Alterâ Specify the exact order and name in which the fields have to be placed in the output rows
+Removeâ Specify the fields that have to be removed from the output rows
+Meta-data- Change the name, type, length and precision (the metadata) of one or more fields

@@ -1,0 +1,5 @@
+Plugin: AWS SNS Notify
+
+Description
+
+The AWS SNS Notify transform enables you to send notifications from an Apache Hop pipeline via Amazon Web Services Simple Notification Service to subscribed users.

@@ -1,0 +1,6 @@
+Plugin: Apache Tika
+
+Description
+
+The Apache Tika transform parses files in all sorts of formats and extracts the text content as well as available metadata it can extract. This transform uses theApache Tikalibraries to do the parsing.
+The extracted metadata is given in JSON format. If you need specific pieces of information from this metadata, you can extract those with aJSON Inputtransform.

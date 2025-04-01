@@ -1,0 +1,11 @@
+Plugin: XSD Validator
+
+Description
+
+The XSD Validator transform performs an XSD validation against data in a file or in an input field.
+XSD is short forXML Schema Definition.
+As such, there are 2 entities at work here:
+The XML you want to validate the layout for
+The XSD (Schema) file that describes what the XML file should look like.
+To make matters more complex, it’s possible to store the XSD inside the XML itself.
+See also theXSD Validator workflow action.

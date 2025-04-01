@@ -1,0 +1,5 @@
+Plugin: Add a checksum
+
+Description
+
+The Add a Checksum transform calculates checksums for one or more fields in the input stream and adds this to the output as a new field.

@@ -1,0 +1,8 @@
+Plugin: Snowflake Bulk Loader
+
+Description
+
+The Snowflake Bulk Loader transform utilizes the Snowflake Copy command to load data as opposed to sending individual insert statements through the Table Output transform. It performs this bulk load as a 3 step process:
+Write the data to local temp files.
+Run a put statement to copy the local files to a Snowflake stage.
+Run a copy command to bulk load the data from the Snowflake stage to a table.

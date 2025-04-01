@@ -1,0 +1,6 @@
+Plugin: Neo4j Get Logging Info
+
+Description
+
+The Neo4j Get Logging Info transform queries the Neo4j logging graph and retrieves logging information.
+This transform uses theNEO4J_LOGGING_CONNECTION. Check theNeo4j perspectivefor more details.

@@ -1,0 +1,5 @@
+Plugin: Email Messages Input
+
+Description
+
+The Email Messages Input transform allows you to retrieve messages and their attachments from a mail server using the POP3, IMAP or MBOX standard protocols.

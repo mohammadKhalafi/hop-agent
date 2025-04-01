@@ -1,0 +1,5 @@
+Plugin: Sorted Merge
+
+Description
+
+The Sorted Merge transform merges rows coming from multiple input transforms providing these rows are sorted themselves on the given key fields.

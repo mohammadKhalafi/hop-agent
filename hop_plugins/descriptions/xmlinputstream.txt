@@ -1,0 +1,5 @@
+Plugin: XML Input Stream (StAX)
+
+Description
+
+The XML Input Stream (StAX) transform reads data from XML files using the Streaming API for the XML (StAX) parser.

@@ -1,0 +1,5 @@
+Plugin: Add XML
+
+Description
+
+The Add XML transform allows you to encode the content of a number of fields in a row in XML. This XML is added to the row in the form of a String field.

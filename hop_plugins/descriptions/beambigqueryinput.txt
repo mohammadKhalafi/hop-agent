@@ -1,0 +1,5 @@
+Plugin: Beam BigQuery Input
+
+Description
+
+The Beam BigQuery Input transform can be used to input data fromGoogle Cloud BigQueryusing the Beam execution engine.

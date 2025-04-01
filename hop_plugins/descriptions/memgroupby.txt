@@ -1,0 +1,7 @@
+Plugin: Memory Group By
+
+Description
+
+The Memory Group By transform builds aggregates in a group by fashion.
+This transform processes all rows within memory and therefore does not require a sorted input. However, itdoesrequire all data to fit into memory.
+ | When the number of rows is too large to fit into memory, use a combination ofSort RowsandGroup Bytransforms.

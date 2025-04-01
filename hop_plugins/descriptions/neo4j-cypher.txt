@@ -1,0 +1,6 @@
+Plugin: Neo4j Cypher
+
+Description
+
+The Neo4j Cypher transform allows you to execute any Cypher through the Neo4j Bolt protocol using the Java driver.
+Both reading, writing or both are supported. You can also call procedures and get the output.

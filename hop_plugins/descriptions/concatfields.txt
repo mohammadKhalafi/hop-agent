@@ -1,0 +1,5 @@
+Plugin: Concat Fields
+
+Description
+
+The Concat Fields transform concatenates multiple fields into one target field. Type in a target field name which always creates a new field. You can optionally use a Separator field or Enclosure between fields and add the fields or free text you would like to concatenate in order.

@@ -1,0 +1,5 @@
+Plugin: Database Lookup
+
+Description
+
+The Database lookup transform allows you to look up values in a database table. Lookup values are added as new fields onto the stream.

@@ -1,0 +1,6 @@
+Plugin: Delete
+
+Description
+
+The Delete transform deletes rows of data from a database.
+This transform is similar to the update family of transforms in that it takes one or more key fields to determine the rows to delete.

@@ -1,0 +1,6 @@
+Plugin: Parquet File Output
+
+Description
+
+The Parquet File Output transform writes data into the Apache Parquet file format.
+For more information on this see:Apache Parquet.

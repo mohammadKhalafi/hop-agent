@@ -1,0 +1,5 @@
+Plugin: Table Exists
+
+Description
+
+The Table Exists transform verifies if a certain table exists in a database. The result of this transform is a boolean flag field.

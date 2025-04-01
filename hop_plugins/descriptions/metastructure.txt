@@ -1,0 +1,6 @@
+Plugin: Metadata structure of stream
+
+Description
+
+The Metadata Structure Of Stream transform produces the metadata structure of the input fields of this transform as output.
+Before producing this output the transform reads and discards (or eats) all input rows.

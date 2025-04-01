@@ -1,0 +1,5 @@
+Plugin: Salesforce Delete
+
+Description
+
+The Salesforce Delete transform deletes records directly from your Salesforce database using the Salesforce Web Service.

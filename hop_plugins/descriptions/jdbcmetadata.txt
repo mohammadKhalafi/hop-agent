@@ -1,0 +1,5 @@
+Plugin: JDBC Metadata
+
+Description
+
+The JDBC Metadata transform allows you to fetch metadata from a database connection, this includes schemas, tables and other objects.

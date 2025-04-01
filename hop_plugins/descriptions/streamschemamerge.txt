@@ -1,0 +1,6 @@
+Plugin: Stream Schema Merge
+
+Description
+
+The Stream Schema Merge transform merges multiple inputs with different structures and creates a combination of fields.
+ | If the streams to merge contain fields with the same name but different types, these fields with be combined into a single field of typeString.If you want to make sure fields keep their original data type, make sure to convert them to identical types. e.g. through theMetadatatab in theSelect Valuestransform.

@@ -1,0 +1,6 @@
+Plugin: Rules executor
+
+Description
+
+The Rules Executor allows fields of incoming rows to be executed against a rule set. This may be useful to determine additional information or route rows onto another transform.
+Droolsis the present rule engine implementation and itsrule languagecan be referenced for use by this transform.Drools documentation

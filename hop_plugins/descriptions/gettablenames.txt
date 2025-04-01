@@ -1,0 +1,5 @@
+Plugin: Get table names
+
+Description
+
+The Get Table Names transform gets table names from a database connection.

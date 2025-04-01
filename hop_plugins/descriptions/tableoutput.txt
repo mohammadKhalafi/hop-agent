@@ -1,0 +1,5 @@
+Plugin: Table Output
+
+Description
+
+The Table Output transform inserts data into a relational database table.

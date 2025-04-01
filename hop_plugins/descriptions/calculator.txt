@@ -1,0 +1,8 @@
+Plugin: Calculator
+
+Description
+
+The Calculator transform provides you with predefined functions that can be executed on input field values.
+In addition to the arguments (Field A, Field B and Field C) you must also specify the return type of the function.
+You can choose to remove fields (with theRemoveoption) from the result (output) after all values are calculated. This is useful in cases where you use temporary values that don’t need to end up in your pipeline fields.
+ | The execution speed of the Calculator is far better than the speed provided by custom scripts (JavaScript).

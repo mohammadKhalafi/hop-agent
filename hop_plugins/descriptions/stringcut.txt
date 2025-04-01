@@ -1,0 +1,5 @@
+Plugin: Strings cut
+
+Description
+
+The Strings Cut transform cuts a portion of a (sub)string. If the designated field is out of range, it returns blank.

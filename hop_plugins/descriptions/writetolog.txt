@@ -1,0 +1,6 @@
+Plugin: Write to log
+
+Description
+
+The Write To Log transform writes information to the Hop logging system.
+Typical use cases are logging specific values or custom logging messages to the Hop logs.

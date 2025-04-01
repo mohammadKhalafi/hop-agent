@@ -1,0 +1,7 @@
+Plugin: Replace in String
+
+Description
+
+The Replace In String transform performs simple search and replace operations on String fields.
+It also supports regular expressions and group references. group references are picked up in the replace by string as $n where n is the number of the group.
+You can also usehexadecimal replacementsfor special characters

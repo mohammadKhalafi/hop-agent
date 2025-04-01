@@ -1,0 +1,6 @@
+Plugin: Injector
+
+Description
+
+The Injector transform is used for special purpose pipelines where you want to 'inject' rows into the pipeline using the Hop API and Java, or from streaming input transforms like theKafka Consumertransform.
+Among other things you can build 'headless' pipelines with it: pipelines that have no input at design time: do not read from file or database.

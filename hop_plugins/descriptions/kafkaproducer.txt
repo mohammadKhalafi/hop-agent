@@ -1,0 +1,6 @@
+Plugin: Kafka Producer
+
+Description
+
+The Kafka Producer transform allows you to publish messages in near-real-time across worker nodes where multiple, subscribed members have access.
+A Kafka Producer transform publishes a stream of records to one Kafka topic.

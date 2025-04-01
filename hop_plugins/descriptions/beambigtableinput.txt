@@ -1,0 +1,5 @@
+Plugin: Beam Bigtable Input
+
+Description
+
+The Beam Bigtable Input transform can be used to input data fromGoogle Cloud Bigtableusing the Beam execution engine.

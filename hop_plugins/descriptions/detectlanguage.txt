@@ -1,0 +1,6 @@
+Plugin: Detect Language
+
+Description
+
+The Detect Language transform examine text to identify the language.
+list of supported languages

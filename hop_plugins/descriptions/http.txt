@@ -1,0 +1,7 @@
+Plugin: HTTP client
+
+Description
+
+The HTTP Client transform performs a simple call to a base URL with additional options.
+http://<URL>?param1=value1&param2=value2&param3..
+The result is stored in a String field with the specified name.

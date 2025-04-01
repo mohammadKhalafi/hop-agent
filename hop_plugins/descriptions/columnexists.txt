@@ -1,0 +1,5 @@
+Plugin: Column exists
+
+Description
+
+The Column Exists transforms allows you to verify the existence of a specific column in a database table.

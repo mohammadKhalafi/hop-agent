@@ -1,0 +1,5 @@
+Plugin: Number range
+
+Description
+
+The Number Range transform creates groups numerical values into a number of predefined ranges.

@@ -1,0 +1,6 @@
+Plugin: Mapping Output
+
+Description
+
+The Mapping Output transform describes the output of the mapping pipeline to the parent pipeline (the pipeline calling the mapping).
+The data entering this transform will be streamed to the parent pipeline.

@@ -1,0 +1,6 @@
+Plugin: Delay row
+
+Description
+
+The Delay Row transform will wait the indicated timeout period before passing an input row to the next transform.
+Use this transform if you deliberately want to slow down your pipeline.

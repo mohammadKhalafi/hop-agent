@@ -1,0 +1,5 @@
+Plugin: HTML 2 Text Transform
+
+Description
+
+The HTML 2 Text Transform allows you to parse an HTML page and convert the content to text

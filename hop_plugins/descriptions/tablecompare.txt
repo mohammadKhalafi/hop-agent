@@ -1,0 +1,5 @@
+Plugin: Table Compare
+
+Description
+
+The Table Compare transform compares the data from two tables (provided they have the same lay-out), finds differences between the data in the two tables and logs it.

@@ -1,0 +1,5 @@
+Plugin: User Defined Java Expression
+
+Description
+
+This transform allows you to enter User Defined Java Expressions as a basis for the calculation of new values. Any custom jar libraries that your expressions depend on need to be placed in the folderplugins/transforms/janino/lib

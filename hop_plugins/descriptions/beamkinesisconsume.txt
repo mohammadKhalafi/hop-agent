@@ -1,0 +1,5 @@
+Plugin: Beam Kinesis Consume
+
+Description
+
+The BeamKinesisConsume transform consumes (reads) messages from an Amazon Kinesis stream using the Beam pipeline execution engine.

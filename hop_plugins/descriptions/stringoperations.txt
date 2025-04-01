@@ -1,0 +1,12 @@
+Plugin: String operations
+
+Description
+
+The String Operations transform can perform the following string operations on an incoming Hop field:
+Trim (remove leading and/or trailing spaces).
+Convert to upper or lowercase.
+Pad (add leading or trailing extra characters).
+Convert to initial capitalization.
+Ignore escape characters.
+Remove or return only numeric digits.
+Remove special characters..

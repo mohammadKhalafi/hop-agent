@@ -1,0 +1,5 @@
+Plugin: Beam Kafka Produce
+
+Description
+
+The Beam Kafka Produce transformpublishesrecords to a Kafka cluster using the Beam execution engine.

@@ -1,0 +1,6 @@
+Plugin: Execute a process
+
+Description
+
+The Execute A Process transform executes a shell script (on the host that runs the pipeline).
+The transform is similar to theShellworkflow action, but can be used in a pipeline to execute for every row.

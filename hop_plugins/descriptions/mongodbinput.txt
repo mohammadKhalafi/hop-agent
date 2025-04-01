@@ -1,0 +1,6 @@
+Plugin: MongoDB Input
+
+Description
+
+The MongoDB Input transform enables you to retrievedocumentsorrecordsfrom a collection within MongoDB.
+For additional information about MongoDB, see the MongoDBdocumentation.

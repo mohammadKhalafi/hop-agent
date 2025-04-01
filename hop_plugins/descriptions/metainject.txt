@@ -1,0 +1,5 @@
+Plugin: Metadata Injection
+
+Description
+
+Metadata injection allows Apache Hop users to provide the required metadata for a pipeline at runtime. This can significantly reduce the need to develop slightly different versions of what is basically the same pipeline.

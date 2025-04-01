@@ -1,0 +1,5 @@
+Plugin: Filter Rows
+
+Description
+
+The Filter Rows transform allows you to filter rows based on conditions and comparisons. It affects workflow if connecting the True or False outcome/hop to another transform. There are 3 path available as outputs (True/False/Main output). The main output follows the True path only.

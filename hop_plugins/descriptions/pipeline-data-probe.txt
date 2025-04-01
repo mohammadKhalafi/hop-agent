@@ -1,0 +1,6 @@
+Plugin: Pipeline Data Probe
+
+Description
+
+The Pipeline Data Probe transform receives data probe data configured by aPipeline Probemetadata type.
+Check thePipeline Probemetadata type for more information.

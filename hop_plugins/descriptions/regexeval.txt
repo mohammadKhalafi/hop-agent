@@ -1,0 +1,8 @@
+Plugin: Regex Evaluation
+
+Description
+
+The Regex Evaluation transform matches the strings of an input field against a text pattern you define with a regular expression (regex).
+This transform uses the java.util.regex package.
+The syntax for creating the regular expressions used by this transform is defined in the java.util.regex.Pattern javadoc.
+You can use this transform to parse a complex string of text and create new fields out of the input field with capture groups (defined by parentheses).

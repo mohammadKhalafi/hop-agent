@@ -1,0 +1,10 @@
+Plugin: Token Replacement
+
+Description
+
+The Token Replacement transform replaces tokens in an input string or file.
+The transform can then output this data either to a file or a field on the stream.
+A token contains a start string, a name, and an end string.
+For example ${my_token} could be a token.
+The start string, and end string are configurable and can be any series of characters.
+When replacing tokens in a file, this transform reads the entire file. It does not operate on a single line at a time. When replacing tokens in a file it is a best practice to output to a file also to prevent Hop from having to read the entire file into memory.

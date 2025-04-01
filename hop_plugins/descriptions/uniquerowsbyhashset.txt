@@ -1,0 +1,6 @@
+Plugin: Unique Rows (HashSet)
+
+Description
+
+The Unique Rows (HashSet) transform removes duplicate rows and filters only the unique rows as input data for the transform.
+This transform differs from theUnique Rowspipeline transform by keeping track of the duplicate rows in memory and does not require a sorted input to process duplicate rows.

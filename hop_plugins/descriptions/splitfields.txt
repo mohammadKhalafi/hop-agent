@@ -1,0 +1,5 @@
+Plugin: Split Fields
+
+Description
+
+The Split Fields transform splits a field into multiple fields based on a specified delimiter.

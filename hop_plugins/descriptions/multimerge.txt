@@ -1,0 +1,5 @@
+Plugin: Multiway Merge Join
+
+Description
+
+The Multiway Merge Join transform joins input data from multiple streams.

@@ -1,0 +1,7 @@
+Plugin: REST Client
+
+Description
+
+The REST Client transform enables you to consume RESTfull services. Representational State Transfer (REST) is a key design idiom that embraces a stateless client-server architecture in which the web services are viewed as resources and can be identified by their URLs.
+The REST client transform can use a pre-definedREST connectionor use full URLs directly.When using a REST connection, the URL (hard-coded or accepted from a field) will be considered a path relative to the base URL defined in the REST connection. Header values that are specified in theHeaderstab of the transform will overwrite any headers with the same name that were defined in the REST connection.
+When used without a REST connection, the full URL needs to be specified.

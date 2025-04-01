@@ -1,0 +1,5 @@
+Plugin: Simple Mapping
+
+Description
+
+The Simple Mapping transform allows you to re-use a series of transforms in the form of a "re-usable pipeline" also known as a "Mapping".

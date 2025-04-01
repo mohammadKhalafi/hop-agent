@@ -1,0 +1,6 @@
+Plugin: Google Sheets Output
+
+Description
+
+The Google Sheets Output transform writes data to a Google Sheets worksheets.
+This transform requires a Google service account (JSON file) and a Google Cloud project with the Google Drive and Google Sheets API enabled.

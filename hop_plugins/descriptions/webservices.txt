@@ -1,0 +1,5 @@
+Plugin: Web services lookup
+
+Description
+
+The Web Services Lookup transform performs a Web Services lookup using the Web Services Description Language (WSDL).

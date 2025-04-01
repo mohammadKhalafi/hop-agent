@@ -1,0 +1,5 @@
+Plugin: Join Rows
+
+Description
+
+The Join Rows (cartesian product) transform allows you to combine/join multiple input streams (Cartesian product) without joining on keys. It works best with one row from each stream. You can add a condition to only join when a condition is met.

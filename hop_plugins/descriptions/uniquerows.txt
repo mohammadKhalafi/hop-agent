@@ -1,0 +1,6 @@
+Plugin: Unique Rows
+
+Description
+
+The Unique Rows transform removes duplicate rows from the (sorted) input stream(s).
+For unsorted input streams, check theUnique Rows By Hashsettransform.

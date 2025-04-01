@@ -1,0 +1,5 @@
+Plugin: Change file encoding
+
+Description
+
+The Change File Encoding transform changes a text file from one encoding to another.

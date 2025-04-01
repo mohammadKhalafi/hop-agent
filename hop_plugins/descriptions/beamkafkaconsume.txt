@@ -1,0 +1,5 @@
+Plugin: Beam Kafka Consume
+
+Description
+
+The Beam Kafka Consume transformconsumesrecords from a Kafka cluster using the Beam execution engine.

@@ -1,0 +1,5 @@
+Plugin: Neo4j Generate CSVs
+
+Description
+
+The Neo4j Generate CSV transform writes files for nodes and relationships to the import folder for use with Neo4j’s neo4j-import tool.

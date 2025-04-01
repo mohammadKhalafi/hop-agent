@@ -1,0 +1,8 @@
+Plugin: Text File Output
+
+Description
+
+The Text File Output transform is used to export data to text file format.
+This is commonly used to generate Comma Separated Values (CSV files) that can be read by spreadsheet applications.
+It is also possible to generate fixed width files by setting lengths on the fields in the fields tab.
+You can choose to use aSchema Definitionor to define the required fields' layout manually. If you decide to define the fields layout by using aSchema Definition, use theSchema Mappingtransform to adjust the incoming stream according to the choosenSchema Definition

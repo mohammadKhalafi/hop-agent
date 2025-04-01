@@ -1,0 +1,5 @@
+Plugin: Coalesce
+
+Description
+
+The Coalesce transform lets you list multiple fields and returns the first non-null value.

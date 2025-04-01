@@ -1,0 +1,6 @@
+Plugin: MongoDB Output
+
+Description
+
+The MongoDB Output transform can output data to a MongoDB databasecollection.
+For additional information about MongoDB, see the MongoDBdocumentation.

@@ -1,0 +1,5 @@
+Plugin: Azure Event Hubs Writer
+
+Description
+
+The Azure Event Hubs Writer transform allows you to write messages (events) to a streaming service bus called Event Hubs on the Microsoft Azure cloud platform.

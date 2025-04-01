@@ -1,0 +1,5 @@
+Plugin: Call DB procedure
+
+Description
+
+The Call DB Procedure transform allows you to execute a database procedure (or function) and get the result(s) back. With MySQL and JDBC, it is not possible to retrieve the result set of a stored procedure. Stored procedures and functions can only return values through their function arguments and those arguments must be defined in the Parameters section of the DB Procedure Call configuration.

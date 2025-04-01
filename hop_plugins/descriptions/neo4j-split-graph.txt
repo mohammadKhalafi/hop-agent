@@ -1,0 +1,5 @@
+Plugin: Neo4j Split Graph
+
+Description
+
+The Neo4j Split Graph transforms splits the nodes and relationships of a graph data type.

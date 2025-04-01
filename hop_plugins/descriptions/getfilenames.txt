@@ -1,0 +1,6 @@
+Plugin: Get filenames
+
+Description
+
+The Get File Names transform allows you to get information associated with file names on the file system.
+The information about the retrieved files is added as rows onto the stream.

@@ -1,0 +1,5 @@
+Plugin: Set Variables
+
+Description
+
+Set Variables allows you to set variables from fields. By clicking the Get Fields button it will automatically fill in all the fields from the data row and fill in variable names in all-caps. Verify the scope is correct.

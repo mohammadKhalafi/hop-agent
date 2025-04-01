@@ -1,0 +1,5 @@
+Plugin: Pipeline Executor
+
+Description
+
+The Pipeline Executor transform allows you to execute a Hop pipeline from within a pipeline. It is similar to the Workflow Executor transform, but works with pipelines.

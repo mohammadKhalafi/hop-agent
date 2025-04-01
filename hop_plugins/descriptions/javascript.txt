@@ -1,0 +1,6 @@
+Plugin: JavaScript
+
+Description
+
+The JavaScript transform provides a user interface for building JavaScript expressions that you can use to modify your data. The code you type in the script area is executed once for each input row.
+ | Variables wonât be usable or testable until you create fields. Click the âGet variablesâ button to convert script variables into fields.

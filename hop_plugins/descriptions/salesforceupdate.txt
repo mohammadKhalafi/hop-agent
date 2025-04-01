@@ -1,0 +1,10 @@
+Plugin: Salesforce Update
+
+Description
+
+The Salesforce Update transform updates records directly in your Salesforce database using the Salesforce Web Service.
+You can also use the following other transforms to modify your Salesforce database:
+Salesforce Input: Reads records directly from your Salesforce database.
+Salesforce Insert: Inserts records directly into your Salesforce database.
+Salesforce Upsert: Updates existing records and inserts new records into your Salesforce database.
+Salesforce Delete: Deletes records directly from your Salesforce database.

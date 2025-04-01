@@ -1,0 +1,5 @@
+Plugin: Beam BigQuery Output
+
+Description
+
+The Beam BigQuery Output transform can be used to write data to aBigQuerytable using the Beam execution engine.

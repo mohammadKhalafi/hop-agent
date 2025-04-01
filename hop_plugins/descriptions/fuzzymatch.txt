@@ -1,0 +1,6 @@
+Plugin: Fuzzy match
+
+Description
+
+The Fuzzy Match transform finds strings that potentially match using duplicate-detecting algorithms that calculate the similarity of two streams of data.
+This transform returns matching values as a separated list as specified by user-defined minimal or maximal values.

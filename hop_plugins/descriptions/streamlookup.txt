@@ -1,0 +1,7 @@
+Plugin: Stream Lookup
+
+Description
+
+The Stream Lookup transform type allows you to look up data using information coming from other transforms in the pipeline.
+The data coming from the Source transform is first read into memory and is then used to look up data from the main stream.
+ | Since this transform loads the lookup data into memory, it can be an extremely fast way to look up data. However, the entire lookup data set needs to fit in your available memory.

@@ -1,0 +1,6 @@
+Plugin: Google Sheets Input
+
+Description
+
+The Google Sheets Input transform reads data from a Google Sheets worksheets.
+This transform requires a Google service account (JSON file) and a Google Cloud project with the Google Drive and Google Sheets API enabled.

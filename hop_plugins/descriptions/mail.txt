@@ -1,0 +1,5 @@
+Plugin: Mail
+
+Description
+
+The Mail transform uses an SMTP server to send an email using data from the pipeline fields.

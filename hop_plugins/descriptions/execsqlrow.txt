@@ -1,0 +1,6 @@
+Plugin: Execute row SQL script
+
+Description
+
+The Execute Row SQL Script transform executes an SQL script for every input row the transform receives.
+The SQL to execute can be passed as pipeline fields or read from a file.

@@ -1,0 +1,5 @@
+Plugin: PGP encrypt stream
+
+Description
+
+The PGP Encrypt Stream transform encrypts text using PGP.

@@ -1,0 +1,6 @@
+Plugin: File exists
+
+Description
+
+The File Exists transforms verifies the existence of a file. The filenames to check are read from pipeline fields.
+The transform outputs a boolean flag field, indicating whether a file exists or doesn’t.

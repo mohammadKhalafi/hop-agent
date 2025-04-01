@@ -1,0 +1,5 @@
+Plugin: Merge rows (diff)
+
+Description
+
+The Merge Rows (Diff) transform compares and merges rows between two data streams calledReference(previous data) andCompare(new data), adding a flag to each row.

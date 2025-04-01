@@ -1,0 +1,5 @@
+Plugin: If Null
+
+Description
+
+The If Null transform replaces nulls by a given value either by:

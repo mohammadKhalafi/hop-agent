@@ -1,0 +1,5 @@
+Plugin: Beam File Input
+
+Description
+
+The Beam File Input transform reads files using a file definition with the Beam execution engine.

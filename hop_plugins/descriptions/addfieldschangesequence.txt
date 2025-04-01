@@ -1,0 +1,5 @@
+Plugin: Add value fields changing sequence
+
+Description
+
+The Add Fields Changing Sequence transform simply adds a sequence value which resets each time a value changes in the list of specified fields.

@@ -1,0 +1,6 @@
+Plugin: JSON Output
+
+Description
+
+The JSON Output transform allows you to generate JSON blocks based on input transform values.
+Output JSON will be available as a javascript array or a javascript object depending on the transform settings.

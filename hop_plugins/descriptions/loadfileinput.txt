@@ -1,0 +1,5 @@
+Plugin: Load file content in memory
+
+Description
+
+The Load File Content In Memory transform loads the content of a file in memory.

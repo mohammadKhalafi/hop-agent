@@ -1,0 +1,6 @@
+Plugin: Data Validator
+
+Description
+
+The Data Validator transform allows you to add data validations which can each validate the input data for the various fields in the input rows. The validator will throw an error (exception) if an input row is detected which fails one or more of the defined validations in this transform.
+To get a list of all the validation errors you can define anerror handlinghop from this transform.

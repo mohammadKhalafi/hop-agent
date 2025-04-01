@@ -1,0 +1,5 @@
+Plugin: Cassandra Output
+
+Description
+
+The Cassandra Output transform writes data to a Cassandra table of an Apache Cassandra cluster using CQL (Cassandra Query Language) version 3.x.

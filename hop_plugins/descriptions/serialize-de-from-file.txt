@@ -1,0 +1,5 @@
+Plugin: De-Serialized From File
+
+Description
+
+The De-serialize From File transform reads rows of data from a binary Hop file containing rows and metadata.

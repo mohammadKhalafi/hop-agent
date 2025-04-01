@@ -1,0 +1,6 @@
+Plugin: Neo4j Graph Output
+
+Description
+
+The Graph Output transform lets you map input fields automatically to a graph model.
+The algorithm used to update your graph takes null values for fields mapped to primary properties of nodes into account. These will not merge on these nodes, nor will it create or update relationships to these nodes.

@@ -1,0 +1,5 @@
+Plugin: Oracle Bulk Loader
+
+Description
+
+This transform allows you to bulk load data to an Oracle database. It will write the data it receives to a proper load format and will then invoke Oracle SQL*Loader to transfer it to the specified table.

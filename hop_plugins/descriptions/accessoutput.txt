@@ -1,0 +1,5 @@
+Plugin: Microsoft Access Output
+
+Description
+
+The Microsoft Access Output allows you to create a new Access database file as an output in a pipeline.

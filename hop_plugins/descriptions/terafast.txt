@@ -1,0 +1,5 @@
+Plugin: Teradata Bulk Loader
+
+Description
+
+The Teradata Bulkloader transform supports fastloading data into a Teradata database using the fastload command line tool.

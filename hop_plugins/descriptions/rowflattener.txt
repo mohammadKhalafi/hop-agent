@@ -1,0 +1,5 @@
+Plugin: Row Flattener
+
+Description
+
+The Row Flattener transform allows you to flatten data sequentially.

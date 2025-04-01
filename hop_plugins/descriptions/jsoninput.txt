@@ -1,0 +1,5 @@
+Plugin: JSON Input
+
+Description
+
+The JSON input transform reads data from JSON structures, files, or incoming fields using a JSONPath expression to extract data and output rows.

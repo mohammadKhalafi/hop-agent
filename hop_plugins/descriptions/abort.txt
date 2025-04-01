@@ -1,0 +1,6 @@
+Plugin: Abort
+
+Description
+
+The Abort tranform aborts a running pipeline as soon as it receives input data. The main use case for this transform is to throw an error when an unexpected or unwanted situation occurs.
+For example, you can use this transform so that a pipeline can be aborted after x number of rows flow to over an error hop.

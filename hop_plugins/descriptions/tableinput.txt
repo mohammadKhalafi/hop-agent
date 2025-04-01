@@ -1,0 +1,6 @@
+Plugin: Table Input
+
+Description
+
+The Table Input transform is used to read information from a relational database using a connection and a SQL query.
+SQL queries can be parameterized through variables and can accept input from previous transform fields.

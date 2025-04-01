@@ -1,0 +1,6 @@
+Plugin: Google Analytics Input
+
+Description
+
+The Google Analytics Input transform reads data from a Google Analytics 4 account, using the Google Analytics Data API.
+TheGA4 Query Explorerprovides a dedicated website to developing and testing queries with the Google Analytics API (outside of Apache Hop).

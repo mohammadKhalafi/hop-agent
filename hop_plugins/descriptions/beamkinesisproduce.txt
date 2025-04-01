@@ -1,0 +1,5 @@
+Plugin: Beam Kinesis Produce
+
+Description
+
+The BeamKinesisProduce transform sends data (messages) to an Amazon Kinesis stream using a Beam pipeline execution engine.

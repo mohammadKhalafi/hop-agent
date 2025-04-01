@@ -1,0 +1,6 @@
+Plugin: Metadata Input
+
+Description
+
+The Metadata Input transform gives you access to the Hop Metadata items in the current project.
+It outputs all the metadata objects of all types unless one or more types are filtered.

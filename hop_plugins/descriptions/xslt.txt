@@ -1,0 +1,6 @@
+Plugin: XSL Transformation
+
+Description
+
+The XSL Transformation transform performs XSL Transformations on XML.
+XSLT is short forExtensible Stylesheet Language Transformations.

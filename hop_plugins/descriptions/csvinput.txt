@@ -1,0 +1,11 @@
+Plugin: CSV File Input
+
+Description
+
+The CSV File Input transform reads data from a delimited file. You can choose to use aSchema Definitionor to define the required fields' layout manually.
+The CSV label for this transform is a misnomer because you can define whatever separator you want to use, such as pipes, tabs, and semicolons; you are not constrained to using commas. Internal processing allows this transform to process data quickly. Options for this transform are a subset of the Text File Input transform.
+This transform has fewer overall options than the general Text File Input transform, but it has a few advantages over it:
+NIO — Native system calls for reading the file means faster performance, but it is limited to only local files currently. No VFS support.
+Parallel running — If you configure this transform to run in multiple copies or in clustered mode, and you enable parallel running, each copy will read a separate block of a single file allowing you to distribute the file reading to several threads or even several slave nodes in a clustered pipeline.
+Lazy conversion — If you will be reading many fields from the file and many of those fields will not be manipulate, but merely passed through the pipeline to land in some other text file or a database, lazy conversion can prevent Hop from performing unnecessary work on those fields such as converting them into objects such as strings, dates, or numbers.
+For information on valid date and numeric formats used in this transform, view the Date Formatting Table and Number Formatting Table.

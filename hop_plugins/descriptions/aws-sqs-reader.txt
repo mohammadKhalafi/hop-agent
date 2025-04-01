@@ -1,0 +1,5 @@
+Plugin: AWS SQS Reader
+
+Description
+
+The AWS SQS Reader transform enables you to receive messages from Amazon Web Services Simple Queue Service within an Apache Hop pipeline.

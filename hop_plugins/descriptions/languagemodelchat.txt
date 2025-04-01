@@ -1,0 +1,6 @@
+Plugin: Language Model Chat
+
+Description
+
+The Language Model Chat transform, using LangChain4j, enables seamless interaction with a variety of language models endpoints, including OpenAI, Anthropic, Hugging Face, Mistral, and Ollama. This transform provides a unified interface, allowing to integrate and configure different models effortlessly within the same pipeline.
+Additionally, the transform supports the application of some prompt engineering techniques to refine model interactions and achieve more contextually relevant responses. SeeBasic Prompt Engineering Techniquesbelow for some examples.

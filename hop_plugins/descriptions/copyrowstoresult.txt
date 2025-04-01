@@ -1,0 +1,5 @@
+Plugin: Copy rows to result
+
+Description
+
+The Copy Rows To Result transform allows you to transfer rows of data (in memory) to the next pipeline (or workflow action) in a workflow via an internal result row set.

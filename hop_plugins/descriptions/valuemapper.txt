@@ -1,0 +1,11 @@
+Plugin: Value Mapper
+
+Description
+
+The Value Mapper transform maps string values from one value to another.
+Mapping is usually solved by storing the conversion table in a database.
+The Value Mapper provides you with a simple alternative.
+For example, if you want to replace language codes:
+Fieldname to use: LanguageCode
+Target fieldname: LanguageDesc
+Source/Target: EN/English, FR/French, NL/Dutch, ES/Spanish, DE/German, ...

@@ -1,0 +1,5 @@
+Plugin: Avro File Output
+
+Description
+
+The Avro File Output transform can write Apache Avro messages to a file or field

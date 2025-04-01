@@ -1,0 +1,5 @@
+Plugin: XML Output
+
+Description
+
+The XML Output transform allows you to write rows from any source to one or more XML files.

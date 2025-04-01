@@ -1,0 +1,5 @@
+Plugin: Beam GCP Pub/Sub : Publish
+
+Description
+
+The Beam GCP Pub/Sub : Publish transform publishes messages to aGoogle Cloud Pub/Subtopic using the Beam execution engine.

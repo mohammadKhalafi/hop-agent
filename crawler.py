@@ -87,7 +87,30 @@ def extract_sections(soup):
         sect1_contents.append(extracteds_str)
     
     return '\n\n\n'.join(sect1_contents)
-            
+
+
+def extract_description(soup):
+    sect1_contents = []
+    for sect1 in soup.find_all('div', class_='sect1'):
+        sect1_title = sect1.find(['h2', 'h3'])
+        if sect1_title:
+            sect1_name = sect1_title.get_text(strip=True)
+        else:
+            sect1_name = "Unknown Section"
+
+        if sect1_name != "Description": continue
+
+        sectionbody = sect1.find('div', class_='sectionbody')
+        if not sectionbody:
+            continue  # Skip if no section body
+        
+        extracteds = extract_section(sectionbody, sect1_name)
+        extracteds_str = '\n'.join(extracteds)
+        sect1_contents.append(extracteds_str)
+    
+    return '\n\n\n'.join(sect1_contents)
+
+
 # Create directory for plugin descriptions
 os.makedirs('hop_plugins', exist_ok=True)
 
@@ -119,9 +142,9 @@ plugin_names = [p.split("/")[1].split(".")[0] for p in plugin_links]
 
 
 for plugin_name in plugin_names:
-    plugin_file_path = f'c:/Users/mohammad/Desktop/hop/hop_plugins/{plugin_name}.txt'
+    plugin_file_path = f'c:/Users/mohammad/Desktop/hop/hop_plugins/descriptions/{plugin_name}.txt'
     if os.path.exists(plugin_file_path): continue
-    
+
     plugin_url = base_plugins_url + plugin_name + '.html'
     
     try:
@@ -133,7 +156,8 @@ for plugin_name in plugin_names:
         plugin_name_in_doc = plugin_soup.find('h1')
         plugin_name_in_doc = plugin_name_in_doc.get_text(strip=True) if plugin_name_in_doc else "UnknownPlugin"
 
-        data = extract_sections(plugin_soup)
+        # data = extract_sections(plugin_soup)
+        data = extract_description(plugin_soup)
 
         # Save to file
         with open(plugin_file_path, 'w', encoding='utf-8') as f:

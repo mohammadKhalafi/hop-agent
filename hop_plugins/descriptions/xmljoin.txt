@@ -1,0 +1,7 @@
+Plugin: XML Join
+
+Description
+
+The XML Join transform adds xml tags from one stream into a leading XML structure from a second stream.
+The target stream must have only one row, since it represents a XML document. The other stream can consist of many rows and the tags from all rows will be added to the target document.
+Only one row will be produced after the join. This single row contains the fields of the target transform plus the result field of the join.

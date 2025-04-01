@@ -1,0 +1,6 @@
+Plugin: LDAP Output
+
+Description
+
+The LDAP Output transform allows you to write information like users, roles and other data to an LDAP server.
+The following sections describe the available options for the LDAP Output transform.

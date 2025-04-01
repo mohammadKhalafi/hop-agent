@@ -1,0 +1,6 @@
+Plugin: Edi to XML
+
+Description
+
+The Edi To XML transform converts EDI message text (conforming to the ISO 9735 standard,read more) to generic XML.
+The XML text is more accessible and allows for selective data extraction using XPath and theGet Data From XMLtransform.

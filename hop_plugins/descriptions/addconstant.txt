@@ -1,0 +1,5 @@
+Plugin: Add Constants
+
+Description
+
+The Add Constant Values transform is a simple and high performance way to add constant values to a pipeline stream.

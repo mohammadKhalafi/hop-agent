@@ -1,0 +1,7 @@
+Plugin: Write data to properties file
+
+Description
+
+The Properties Output transform outputs a set of rows of data to a Java properties files.
+The data needs to be structured in a key/value format to be usable for a properties file.
+ | More information on this file format is available onWikipedia

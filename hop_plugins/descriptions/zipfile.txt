@@ -1,0 +1,5 @@
+Plugin: Zip file
+
+Description
+
+The Zip File transform creates a standard ZIP archive using the options you specify in the dialog.

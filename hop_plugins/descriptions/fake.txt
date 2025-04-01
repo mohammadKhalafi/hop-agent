@@ -1,0 +1,7 @@
+Plugin: Fake data
+
+Description
+
+The Fake Data tranform allows you to generate fake data using the Java Faker library (documentation).
+It can be used to generate pretty data for development, testing or showcasing a project.
+For instance, we could generate some random PokÃ©mon data.

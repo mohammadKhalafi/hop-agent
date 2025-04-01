@@ -1,0 +1,6 @@
+Plugin: Get Server Status
+
+Description
+
+The Get Server Status transform contacts the Hop servers for which the names are read from an input field.
+It returns high level information about the server. Every output field for which you specify a name will be added to the list of output fields.

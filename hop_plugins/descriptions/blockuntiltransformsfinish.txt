@@ -1,0 +1,6 @@
+Plugin: Blocking until transforms finish
+
+Description
+
+This transform simply waits until all the transform copies that are specified in the dialog have finished.
+You can use it to avoid the natural concurrency (parallelism) that exists between pipeline transform copies.

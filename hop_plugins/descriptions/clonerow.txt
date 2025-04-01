@@ -1,0 +1,5 @@
+Plugin: Clone row
+
+Description
+
+The Clone Row transform creates copies (clones) of a row and outputs them directly after the original row to the next transforms.

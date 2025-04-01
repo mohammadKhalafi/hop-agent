@@ -1,0 +1,5 @@
+Plugin: Schema Mapping
+
+Description
+
+The Schema Mapping transform maps fields from and incoming stream over a specified Schema Definition. The result of this transform is an output stream that conforms to the mapped Schema Definition

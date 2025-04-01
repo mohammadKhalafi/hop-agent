@@ -1,0 +1,5 @@
+Plugin: Avro Decode
+
+Description
+
+The Avro Decode transform allows you to decode an Avro field and convert it to Hop fields.

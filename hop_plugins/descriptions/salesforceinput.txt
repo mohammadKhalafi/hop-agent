@@ -1,0 +1,10 @@
+Plugin: Salesforce Input
+
+Description
+
+The Salesforce Input transform reads data directly from Salesforce using the Salesforce Web Service.
+You can also use the following transforms for various ways to modify your Salesforce database:
+Salesforce Insert: Inserts records directly into your Salesforce database
+Salesforce Update: Updates records directly into your Salesforce database.
+Salesforce Upsert: Updates existing records and inserts new records into your Salesforce database.
+Salesforce Delete: Deletes records directly from your Salesforce database.

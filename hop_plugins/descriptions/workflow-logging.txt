@@ -1,0 +1,6 @@
+Plugin: Workflow logging
+
+Description
+
+The Workflow Logging transform receives its input from aWorkflow Logmetadata item.
+The transform requires very little configuration, but provides a lot of information.

@@ -1,0 +1,6 @@
+Plugin: Read data (key, value) from properties files
+
+Description
+
+The Property Input transform reads key/values pairs from a Java properties files.
+ | More information on this file format is available onWikipedia

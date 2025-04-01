@@ -1,0 +1,6 @@
+Plugin: Parquet File Input
+
+Description
+
+The Parquet File Input transform reads (primitive) values from an Apache Parquet file.
+For more information on this see:Apache Parquet.

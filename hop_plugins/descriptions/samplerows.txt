@@ -1,0 +1,5 @@
+Plugin: Sample Rows
+
+Description
+
+The Sample Rows transform retains a sample set of rows.

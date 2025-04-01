@@ -1,0 +1,5 @@
+Plugin: Workflow Executor
+
+Description
+
+The Workflow Executor transform execute a Hop workflow from within a pipeline.

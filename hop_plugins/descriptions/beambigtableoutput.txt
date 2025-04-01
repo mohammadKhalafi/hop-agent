@@ -1,0 +1,5 @@
+Plugin: Beam Bigtable Output
+
+Description
+
+The Beam Bigtable Output transform can be used to write data to aGoogle Cloud Bigtabletable using the Beam execution engine.

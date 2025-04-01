@@ -1,0 +1,6 @@
+Plugin: Splunk input
+
+Description
+
+The Splunk Input transform runs a Splunk search query and returns the result as a set of Hop fields
+Check theSplunk Connection docsfor more information about creating a Splunk connection.

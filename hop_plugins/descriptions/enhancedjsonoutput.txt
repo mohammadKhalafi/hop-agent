@@ -1,0 +1,7 @@
+Plugin: Enhanced JSON Output
+
+Description
+
+The Enhanced JSON Output transform allows you to generate JSON blocks based on input transform values.
+Output JSON will be available as a Javascript array or Javascript object depending on transform settings.
+ | Because this transform loops over the fields defined as Group Key and serializes JSON output accordingly, it is extremely important to sort the input data by the group key. Failing to do so may return incorrect or unexpected data.

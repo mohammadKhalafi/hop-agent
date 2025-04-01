@@ -1,0 +1,5 @@
+Plugin: Check if file is locked
+
+Description
+
+The Check If A File Is Locked transform tries to determine if a file is locked by another process by trying to move the file to itself.

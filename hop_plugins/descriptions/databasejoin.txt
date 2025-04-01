@@ -1,0 +1,5 @@
+Plugin: Database Join
+
+Description
+
+The Database Join transform allows you to run a query against a database using data obtained from previous transforms.

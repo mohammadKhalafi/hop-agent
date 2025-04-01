@@ -1,0 +1,5 @@
+Plugin: PGP decrypt stream
+
+Description
+
+The PGP Decrypt Stream transform decrypts PGP encrypted text.

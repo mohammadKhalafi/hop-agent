@@ -1,0 +1,6 @@
+Plugin: Switch / Case
+
+Description
+
+The Switch Case transform implements theSwitch/Case statementfound in popular programming languages like Java.
+In our case we route rows of data to one or more target transforms based on the value encountered in a certain field.

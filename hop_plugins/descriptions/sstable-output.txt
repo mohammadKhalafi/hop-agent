@@ -1,0 +1,5 @@
+Plugin: Cassandra SSTable Output
+
+Description
+
+The Cassandra SSTable Output transform writes to a file system directory as a Cassandra SSTable.

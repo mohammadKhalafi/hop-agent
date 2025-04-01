@@ -1,0 +1,8 @@
+Plugin: Analytic Query
+
+Description
+
+The Analytic Query transform allows you to peek forward and backwards across rows in a pipeline.
+Examples of common use cases are:
+Calculate the "time between orders" by ordering rows by order date, and LAGing 1 row back to get previous order time.
+Calculate the "duration" of a web page view by LEADing 1 row ahead and determining how many seconds the user was on this page.
