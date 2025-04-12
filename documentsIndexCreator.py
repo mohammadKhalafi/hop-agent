@@ -4,16 +4,12 @@ import numpy as np
 from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 from langchain.text_splitter import RecursiveCharacterTextSplitter
+from consts import *
 
 def create_minilm_from_descriptions():
     
     # Load embedding model
     model = SentenceTransformer("all-MiniLM-L6-v2")
-
-    # Directory where plugin files are stored
-    PLUGIN_DIR = "C:/Users/mohammad/Desktop/hop/hop_plugins/descriptions"
-
-    INDEX_DIR = "C:/Users/mohammad/Desktop/hop/index/minilm/descriptions"
 
     # Load and embed plugin files
     docs = []
@@ -36,8 +32,8 @@ def create_minilm_from_descriptions():
     index.add(embeddings)
 
     # Save the index for future use
-    faiss.write_index(index, f"{INDEX_DIR}/plugins_faiss.index")
-    np.save(f"{INDEX_DIR}/plugin_filenames.npy", np.array(file_names))
+    faiss.write_index(index, f"{MINILM_INDEX_DIR}/plugins_faiss.index")
+    np.save(f"{MINILM_INDEX_DIR}/plugin_filenames.npy", np.array(file_names))
 
     print("FAISS index saved successfully!")
 
@@ -45,11 +41,6 @@ def create_all_mpnet_base_from_descriptions():
 
     # Load embedding model
     model = SentenceTransformer("sentence-transformers/all-mpnet-base-v2")
-
-    # Directory where plugin files are stored
-    PLUGIN_DIR = "C:/Users/mohammad/Desktop/hop/hop_plugins/descriptions"
-
-    INDEX_DIR = "C:/Users/mohammad/Desktop/hop/index/mpnet_base/descriptions"
 
     # Load and embed plugin files
     docs = []
@@ -77,9 +68,9 @@ def create_all_mpnet_base_from_descriptions():
     index.add(embeddings)
 
     # Save the FAISS index and filenames
-    faiss.write_index(index, f"{INDEX_DIR}/plugins_faiss.index")
-    np.save(f"{INDEX_DIR}/plugin_filenames.npy", np.array(file_names))
-    np.save(f"{INDEX_DIR}/plugin_chunks.npy", np.array(docs))
+    faiss.write_index(index, f"{MPNET_INDEX_DIR}/plugins_faiss.index")
+    np.save(f"{MPNET_INDEX_DIR}/plugin_filenames.npy", np.array(file_names))
+    np.save(f"{MPNET_INDEX_DIR}/plugin_chunks.npy", np.array(docs))
 
     print("FAISS index saved successfully!")
 
