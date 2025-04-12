@@ -1,6 +1,7 @@
 import os
 import requests
 from bs4 import BeautifulSoup
+from consts import *
 
 def get_list_content(soup, seperator_str):
     lists = []
@@ -142,7 +143,7 @@ plugin_names = [p.split("/")[1].split(".")[0] for p in plugin_links]
 
 
 for plugin_name in plugin_names:
-    plugin_file_path = f'c:/Users/mohammad/Desktop/hop/hop_plugins/descriptions/{plugin_name}.txt'
+    plugin_file_path = f'{PLUGIN_DIR}/{plugin_name}.txt'
     if os.path.exists(plugin_file_path): continue
 
     plugin_url = base_plugins_url + plugin_name + '.html'

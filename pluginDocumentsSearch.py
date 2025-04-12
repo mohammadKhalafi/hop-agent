@@ -5,6 +5,8 @@ from rank_bm25 import BM25Okapi
 from sentence_transformers import SentenceTransformer
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from consts import *
+from requestRunner import run_request
+from systemPrompts import query_expand_prompt
 
 
 def minilm_search(query, top_k):
@@ -41,12 +43,25 @@ def mpnet_search(query, top_k=5):
     return results
 
 
+def enrich_query(query):
+    # hohos = " relational database are like postgres, oracledb, sqlserver, ..."
+    request = query_expand_prompt.replace("{{Query}}", query)
+    messages = [
+        {"role": "user", "content": request}
+        ]
+    response = run_request(messages)
+    return response
 
-# Example Query
-query = "i want to read 100 rows of a topic from kafka then insert rows into postgres database witch is a relational database. with url 192.168.10.11"
-hohos = " relational database are like postgres, oracledb, sqlserver, ..."
-final_query = query + hohos
-results = minilm_search(final_query, 20)
-for file, score in results:
-    print(f"Match: {file} (Score: {score})")
+def search(query):
+    print(query)
+    final_query = enrich_query(query) 
+    print(final_query)
+    results = minilm_search(final_query, 20)
+    for file, score in results:
+        print(f"Match: {file} (Score: {score})")
+    return [file for file, score in results]
 
+
+
+query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
+plugins = search(query)
