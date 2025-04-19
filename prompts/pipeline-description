@@ -8,9 +8,12 @@ Consider the following when creating your description:
 - Provide an overview of how these plugins work together at a high level, without getting into the specifics of each plugin's configuration or parameters.
 - Avoid technical jargon and detailed configuration options. Focus on the **big picture**: how the data moves through the pipeline and what high-level tasks each plugin performs.
 
+**Important**: Do **not** include additional sections like "### Notes", "### Instructions", or any follow-up statements like "Let me know if you'd like to expand on any part of this pipeline". The focus should solely be on the pipeline description with essential information, like the components and data flow.
+
 Your goal is to provide the user with a clear, high-level roadmap that outlines the flow of data from input to output, leveraging the **available plugins** provided in the JSON keys below. Please **only use the plugins provided**, and ensure their documentation is referenced accurately.
 
 The plugins available for your design are as follows (note that only relevant plugins will have filled documentation):
+
 
 {plugin_docs}
 
