@@ -44,7 +44,7 @@ def mpnet_search(query, top_k=5):
 
 
 def enrich_query(query):
-    # hohos = " relational database are like postgres, oracledb, sqlserver, ..."
+    # more_info = " relational database are like postgres, oracledb, sqlserver, ..."
     request = query_expand_prompt.replace("{{Query}}", query)
     messages = [
         {"role": "user", "content": request}
@@ -57,11 +57,12 @@ def search(query):
     final_query = enrich_query(query) 
     print(final_query)
     results = minilm_search(final_query, 20)
-    for file, score in results:
-        print(f"Match: {file} (Score: {score})")
-    return [file for file, score in results]
+    # for file, score in results:
+    #     print(f"Match: {file} (Score: {score})")
+    return [str(file)[:-4] for file, score in results]
 
 
 
-query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
-plugins = search(query)
+# query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
+# plugins = search(query)
+# print(plugins)

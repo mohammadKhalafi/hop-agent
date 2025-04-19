@@ -17,3 +17,9 @@ with open("./prompts/query-expand-prompt", "r", encoding="utf-8") as file:
     content = file.read()
 
 query_expand_prompt = content
+
+
+with open("./prompts/pipeline-description", "r", encoding="utf-8") as file:
+    content = file.read()
+
+pipeline_description_prompt = content
