@@ -22,4 +22,5 @@ def create_pipeline_description(query):
 
 query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
 design = create_pipeline_description(query)
+print("answer")
 print(design)
