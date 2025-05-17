@@ -19,8 +19,34 @@ def create_pipeline_description(query):
     pipeline_design = run_request(messages)
     return pipeline_design
 
+def strip_code_fences(text):
+    text = text.strip()
+    if text.startswith("```json"):
+        text = text[len("```json"):].strip()
+    elif text.startswith("```"):
+        text = text[len("```"):].strip()
+    if text.endswith("```"):
+        text = text[:-len("```")].strip()
+    return text
+
+def get_design(query):
+    design = create_pipeline_description(query)
+    print("answer")
+    design = strip_code_fences(design)
+    # print(design)
+    data = json.loads(design)
+    description = data['description']
+    print(description)
+    used_plugins = data['used_plugins']
+    print(used_plugins)
+    print(len(used_plugins))
+    plugin_documents = get_plugin_full_docs(used_plugins)
+
+    return {
+        "description": description,
+        "used_plugins": used_plugins,
+        "plugin_documents": plugin_documents
+    }
 
 query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
-design = create_pipeline_description(query)
-print("answer")
-print(design)
+get_design(query)
