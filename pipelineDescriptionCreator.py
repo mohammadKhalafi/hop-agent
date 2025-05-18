@@ -48,5 +48,7 @@ def get_design(query):
         "plugin_documents": plugin_documents
     }
 
-query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
-get_design(query)
+# query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
+# query = "i want to generate 5 rows of random data have one text column then insert rows into postgres with url 192.168.10.11"
+# query = "i want to generate 5 rows of random data have one text column then insert rows as csv into local file"
+# get_design(query)
