@@ -17,3 +17,20 @@ def get_plugin_full_docs(plugins, add_all_plugin_names=False):
             docs[plugin] = f.read()
             
     return docs
+
+def get_plugin_xmls(plugins, add_all_plugin_xmls=False):
+    xmls = {}
+
+    if add_all_plugin_xmls:
+        xmls = {
+            os.path.splitext(f)[0]: None
+            for f in os.listdir(PLUGIN_XML_DIR) 
+            if f.endswith('.xml')
+        }
+    
+    for plugin in plugins:
+        file_path = os.path.join(PLUGIN_XML_DIR, plugin + ".xml")
+        with open(file_path, 'r', encoding='utf-8') as f:
+            xmls[plugin] = f.read()
+
+    return xmls

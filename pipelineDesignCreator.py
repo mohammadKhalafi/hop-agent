@@ -6,6 +6,7 @@ from pipelineXmlCreator import create_pipeline_xml
 
 def CreateDesign(query, scenario_name):
     design = get_design(query)
+
     now = datetime.now()
     created_date = now.strftime('%Y/%m/%d %H:%M:%S.') + f'{now.microsecond // 1000:03}'
 

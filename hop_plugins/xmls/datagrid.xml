@@ -1,0 +1,90 @@
+<transform>
+<name>Data grid</name>
+<type>DataGrid</type>
+<description/>
+<distribute>Y</distribute>
+<custom_distribution/>
+<copies>1</copies>
+<partitioning>
+    <method>none</method>
+    <schema_name/>
+</partitioning>
+<data>
+    <line>
+    <item>value1</item>
+    <item>123</item>
+    <item>1.55</item>
+    <item>Y</item>
+    <item>11/11/2000</item>
+    </line>
+    <line>
+    <item>value2</item>
+    <item>124</item>
+    <item>0.444</item>
+    <item>N</item>
+    <item>10/10/2020</item>
+    </line>
+</data>
+<fields>
+    <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <set_empty_string>N</set_empty_string>
+        <name>field1</name>
+        <format/>
+        <group/>
+        <decimal/>
+        <type>String</type>
+    </field>
+    <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <set_empty_string>N</set_empty_string>
+        <name>field2</name>
+        <format>#</format>
+        <group/>
+        <decimal/>
+        <type>Integer</type>
+    </field>
+    <field>
+        <length>10</length>
+        <precision>5</precision>
+        <currency/>
+        <set_empty_string>N</set_empty_string>
+        <name>field3</name>
+        <format/>
+        <group/>
+        <decimal/>
+        <type>Number</type>
+    </field>
+    <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <set_empty_string>N</set_empty_string>
+        <name>field4</name>
+        <format/>
+        <group/>
+        <decimal/>
+        <type>Boolean</type>
+    </field>
+    <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <set_empty_string>N</set_empty_string>
+        <name>field5</name>
+        <format>MM/dd/yyyy</format>
+        <group/>
+        <decimal/>
+        <type>Date</type>
+    </field>
+</fields>
+<attributes/>
+<GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+</GUI>
+</transform>
