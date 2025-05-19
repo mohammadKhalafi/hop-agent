@@ -1,7 +1,7 @@
 import json
 
 from pluginDocumentsSearch import search
-from documentsProvider import get_plugin_full_docs
+from documentsProvider import get_plugin_full_docs, get_plugin_xmls
 from systemPrompts import pipeline_description_prompt
 from requestRunner import run_request
 
@@ -41,11 +41,13 @@ def get_design(query):
     print(used_plugins)
     print(len(used_plugins))
     plugin_documents = get_plugin_full_docs(used_plugins)
+    plugin_xmls = get_plugin_xmls(used_plugins)
 
     return {
         "description": description,
         "used_plugins": used_plugins,
-        "plugin_documents": plugin_documents
+        "plugin_documents": plugin_documents,
+        "plugin_xmls": plugin_xmls
     }
 
 # query = "i want to read 100 rows of a topic from kafka then insert rows into postgres with url 192.168.10.11"
