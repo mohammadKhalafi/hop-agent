@@ -1,0 +1,8 @@
+### USER REQUEST
+{query}
+
+### PIPELINE DESIGN DESCRIPTION
+{description}
+
+Please follow every RULE in the system prompt and output ONE fenced code
+block containing the finished Apache Hop pipeline XML.
