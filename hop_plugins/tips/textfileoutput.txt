@@ -1,3 +1,0 @@
-<file>
-    <name>this filed is full address of the file. not just the filename. Make sure to fill in this value.</name>
-</file>
