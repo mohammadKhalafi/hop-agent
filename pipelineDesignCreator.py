@@ -29,11 +29,10 @@ def CreateDesign(query, scenario_name):
     now = datetime.now()
     created_date = now.strftime('%Y/%m/%d %H:%M:%S.') + f'{now.microsecond // 1000:03}'
 
-    transforms = CreateTransforms(design, query)
-    hops = ''
+    (transforms, hops) = CreateTransforms(design, query)
 
     pipeline_xml = create_pipeline_xml(scenario_name, created_date, hops, transforms)
-    filepath = BASE_PLUGINS_STORAGE+'/'+scenario_name+'.hpl'
+    filepath = BASE_PLUGINS_STORAGE + '/' + scenario_name + '.hpl'
 
     with open(filepath, "w") as file:
         file.write(pipeline_xml)
@@ -55,15 +54,17 @@ def CreateTransforms(design, query):
     used_plugins = design["used_plugins"]
     plugin_documents = design["plugin_documents"]
     plugin_xmls = design["plugin_xmls"]
+    plugin_tips = design["plugin_tips"]
 
-    plugin_infos = list(zip(used_plugins, plugin_documents, plugin_xmls))
+    plugin_infos = list(zip(used_plugins, plugin_documents, plugin_xmls, plugin_tips))
     plugin_infos = [
         {
             "plugin": plugin,
             "document": document,
-            "xml": xml
+            "xml": xml,
+            "tips": tips
         }
-        for plugin, document, xml in plugin_infos
+        for plugin, document, xml, tips in plugin_infos
     ]
     plugin_infos = json.dumps(plugin_infos, indent=4)
 
@@ -86,11 +87,21 @@ def CreateTransforms(design, query):
     for transform in root.findall('transform'):
         transform_str = ET.tostring(transform, encoding='unicode')
         transform_strings.append(transform_str)
-      
-    return '\n'.join(transform_strings)
 
+    order_element = root.find('order')
+    orders = ET.tostring(order_element, encoding='unicode')
+        
+    return ('\n'.join(transform_strings), orders)
+    
 
+query ="""
+i want to generate 3 rows of two columns c1, c2. where c1 is int and c2 is string.
+i want to have three rows : (12, 'abc'),(32, 'acd'),(122, 'mii') with data grid. then i
+want to write the data into local file with address 
+'C:\\Users\\mohammad\\Desktop\\hop\\outputs\\files\\sampledata.csv' with text output.
 
-query = "i want to generate 3 rows of string data with values : 'm1', 'n4', 'ji'. just use data grid plugin. nothing more"
-scenario_name = "data_grid_test1"
+tips : text file output have no tag <filename> in its xml
+"""
+
+scenario_name = "data_grid_test2"
 CreateDesign(query, scenario_name)

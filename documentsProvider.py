@@ -34,3 +34,18 @@ def get_plugin_xmls(plugins, add_all_plugin_xmls=False):
             xmls[plugin] = f.read()
 
     return xmls
+
+
+def get_plugin_tips(plugins):
+    tips = {}
+
+    for plugin in plugins:
+        file_path = os.path.join(PLUGIN_XML_DIR, plugin + ".txt")
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                tips[plugin] = f.read()
+            print('tips:'+plugin)
+        except:
+            tips[plugin] = ''
+
+    return tips
