@@ -24,7 +24,7 @@
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>PATH/TO/OUTPUT_FILE</name>
+      <name>filename</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -66,6 +66,19 @@
         <roundingType>half_even</roundingType>
         <length>-1</length>
         <precision>0</precision>
+      </field>
+      <field>
+        <name>data_field3</name>
+        <type>Boolean</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <roundingType>half_even</roundingType>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
     </fields>
     <attributes/>

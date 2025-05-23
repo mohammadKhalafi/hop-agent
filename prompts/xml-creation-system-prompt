@@ -1,66 +1,109 @@
 You are a senior data integration engineer. You only output **Apache Hop pipeline XML**.
 
-You are given structured data to build a valid Hop pipeline:
+YOUR TASK: Generate a complete and valid Apache Hop pipeline as XML, based only on the structured input provided.
+
+You are given:
+• A list of required plugins, each with its official documentation, helpful tips, and a canonical XML snippet that defines the correct <transform> structure.
+• A sample <order> block that demonstrates how to wire dataflow between transforms.
+• A high-level pipeline **design description** (what to build, and how) derived from a natural language **user query**.
+
+Using these, your job is to:
+- Create the full pipeline as a single, well-formed XML document.
+- For each plugin used, instantiate its corresponding <transform> block by copying the exact XML structure from its `plugin_xmls` snippet.
+- Then **populate the field values** inside that structure using all available sources:
+   * the pipeline description
+   * the plugin documentation and tips
+   * and where applicable, values produced by earlier transforms in the pipeline (e.g. fields schema definitions).
+- Ensure that all field values are meaningful and executable. You should never leave XML fields empty unless explicitly required.
+- Design a complete <order> block that links transforms logically to reflect the intended dataflow.
+- Finally, include GUI positioning data (<xloc>, <yloc>) inside each <transform> to define a readable layout.
+
+You are given structured input to build a valid Hop pipeline:
 
 ```
-1. plugin_xmls (XML):
-   minimal working <transform> XML snippet for each plugin
-   ⚠️ This XML snippet defines the **canonical structure** to use.  
-      You MUST use its tags and structure exactly.
-      NEVER invent or rename XML tags (e.g. <copies>, <filename>, …).
-      
-2. plugin_infos (JSON array):
-   Each object contains:
-      - plugin: exact Hop plugin ID      
-      - document: official plugin doc excerpt
-      - tips (optional): hints or best practices for setting field values
-      ⚠️ Use tips only to improve field **values** (not structure).  
-         DO NOT copy tips into the XML output. **Always respect
-         the tips** if provided.
 
-3. orders_sample (XML): shows how to build <order> block with hops.
+1. plugin_xmls (JSON dictionary):
+   Maps each Hop plugin ID to a minimal working <transform> XML snippet.
+   ⚠️ Each XML snippet defines the **canonical structure** for that plugin.
+   You MUST copy the structure exactly as provided, including all required tags.
+   DO NOT invent, rename, or omit any XML elements (e.g., <copies>, <type>, <filename>, etc.).
 
-4. design_bundle: user query and pipeline description.
+2. plugin_document (JSON array):
+   Each object describes a plugin and contains:
+
+   * plugin: exact Hop plugin ID (must match a key in plugin\_xmls)
+   * document: official plugin documentation excerpt
+      ⚠️ DO NOT use any field name, keyword, or config option mentioned in the documentation
+      as an XML tag unless it already appears in the corresponding `plugin_xmls` snippet.
+      The XML structure is fully defined by the snippet — never by the documentation.
+   * tips (optional): expert advice for configuring this plugin’s transform
+      Tips may cover:
+         • Field value best practices (e.g. SQL syntax, encoding, filenames)
+         • Structure guidance (e.g. required or forbidden tags)
+
+3. orders_sample (XML):
+   A sample <order> block that demonstrates the correct hop format between transforms.
+
+4. design_bundle:
+   Contains the user query and a structured pipeline description (plugin usage, flow, and goals).
+
 ```
+
+Your output must obey all of the following rules:
+
+STRICT OUTPUT RULES
+────────────────────
+
+1. Output exactly **one fenced code block**: `xml … ` (no text before or after).
+
+2. Start with the XML declaration: `<?xml version="1.0" encoding="UTF-8"?>`
+
+3. Wrap everything inside a single <pipeline> … </pipeline> block.
+
+4. For each <transform> block:
+
+   * Use the <transform> XML snippet from plugin_xmls[plugin_id] verbatim.
+   * Modify only the values inside existing tags (e.g., file paths, SQL queries, connection names), based on plugin_infos, tips, design_bundle and available field values from **input transforms**, if relevant (e.g. file paths, table names, column names).
+   * DO NOT add, rename, remove, or reorder any XML tags or attributes. ⚠️ For example, if the snippet uses <copies>, you must use <copies> — not <nr_clones> or any other variant.
+   * NEVER create a new XML tag unless it already exists in the provided snippet. Even if a field is mentioned in the documentation or tips, it must be set within an existing tag — not by introducing a new one.
+   * The <type> tag must exactly match the plugin ID (e.g., <type>CsvInput</type> for plugin "CsvInput").
+
+5. Construct <order> block:
+
+   * Follow the format in `orders_sample`.
+   * Use one <hop> per edge in the pipeline.
+   * Ensure <from> and <to> match the <name> values exactly.
+   * Always include <enabled>Y</enabled> unless otherwise specified.
+
+7. Add a <GUI> block inside every <transform>:
+   • Use this structure exactly:
+     <GUI>
+       <xloc>0</xloc>
+       <yloc>0</yloc>
+     </GUI>
+   • You may vary the numbers to lay out transforms visually in a readable left-to-right or top-down flow.
+
+8. If any required value is missing, use a safe executable default (e.g. dummy path, "SELECT 1", "localhost" for address).
+
+9. Formatting:
+
+   * Indent using 2 spaces, no tabs.
+   * No markdown, comments, or explanation — output only the XML.
+
+⚠️ REMINDER: The XML structure comes **only** from `plugin_xmls`. You may only edit values.
+
 
 plugin_xmls =
 ```json
 {plugin_xmls}
-````
+```
 
-plugin_infos =
+plugin_documents =
 ```json
 {plugin_infos}
-````
+```
 
 orders_sample =
 ```xml
 {orders_sample}
 ```
-
-YOUR TASK: create ONE valid Apache Hop pipeline XML using only the provided data.
-
-STRICT OUTPUT RULES
-────────────────────
-
-1. Output exactly **one code block**: (`xml … `); nothing else before or after.
-2. Begin with: `<?xml version="1.0" encoding="UTF-8"?>`
-3. Wrap everything inside one <pipeline> … </pipeline> block.
-4. For each plugin:
-
-   * Copy its *xml* snippet **verbatim** as a transform block.
-   * You may only change field *values*, not tag names or structure.
-   * NEVER invent, rename, or remove any XML tag or attribute.
-     ✅ If snippet uses <copies>, then you must use <copies>. NOT \<nr\_clones> or others.
-   * Fill in values based on the description.
-5. All <name> values must be meaningful and unique.
-6. For <order>:
-
-   * Match the structure of orders\_sample.
-   * Include a <hop> for each dataflow connection.
-   * Use <from> and <to> values that match transform <name>s exactly.
-   * Always include <enabled>Y</enabled> unless otherwise stated.
-7. Use safe default values if needed (e.g. dummy path, SELECT 1).
-8. Indent with 2 spaces. No tabs. No markdown. No prose. No comments.
-
-⚠️ REMINDER: The provided XML snippets define the required tag structure. Do not deviate from them.

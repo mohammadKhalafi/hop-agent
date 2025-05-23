@@ -1,8 +1,15 @@
-### USER REQUEST
+### USER QUERY
 {query}
 
 ### PIPELINE DESIGN DESCRIPTION
 {description}
 
-Please follow every RULE in the system prompt and output ONE fenced code
-block containing the finished Apache Hop pipeline XML.
+
+✅ Please now generate a **single valid Apache Hop pipeline XML** that:
+
+* Obeys all rules defined in the system prompt
+* Uses ONLY the tags shown in `plugin_xmls`
+* Adheres to the `<order>` format from `orders_sample`
+* Fills in field values based on `description`, `plugin_infos`, and `tips`
+
+⛔ Output exactly one fenced code block (` ```xml `) and nothing else.

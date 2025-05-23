@@ -56,19 +56,28 @@ def CreateTransforms(design, query):
     plugin_xmls = design["plugin_xmls"]
     plugin_tips = design["plugin_tips"]
 
-    plugin_infos = list(zip(used_plugins, plugin_documents, plugin_xmls, plugin_tips))
+    plugins_allData = list(zip(used_plugins, plugin_documents, plugin_xmls, plugin_tips))
     plugin_infos = [
         {
             "plugin": plugin,
             "document": document,
-            "xml": xml,
             "tips": tips
         }
-        for plugin, document, xml, tips in plugin_infos
+        for plugin, document, xml, tips in plugins_allData
     ]
     plugin_infos = json.dumps(plugin_infos, indent=4)
 
-    system_prompt = xml_creation_system_prompt.format(plugin_infos=plugin_infos, orders_sample=orders_sample)
+    plugin_xmls = [
+        {
+            "plugin": plugin,
+            "xml": xml
+        }
+        for plugin, document, xml, tips in plugins_allData
+    ]
+    plugin_xmls = json.dumps(plugin_xmls, indent=4)
+
+    system_prompt = xml_creation_system_prompt.format(plugin_infos=plugin_infos,
+                                    plugin_xmls=plugin_xmls, orders_sample=orders_sample)
     user_prompt =  xml_creation_user_prompt.format(query=query, description=description)
     
     messages = [
@@ -96,11 +105,8 @@ def CreateTransforms(design, query):
 
 query ="""
 i want to generate 3 rows of two columns c1, c2. where c1 is int and c2 is string.
-i want to have three rows : (12, 'abc'),(32, 'acd'),(122, 'mii') with data grid. then i
-want to write the data into local file with address 
-'C:\\Users\\mohammad\\Desktop\\hop\\outputs\\files\\sampledata.csv' with text output.
-
-tips : text file output have no tag <filename> in its xml
+i want to have three rows : (12, 'abc'),(32, 'acd'),(122, 'mii') with data grid. then
+i want to write data into local file with name sampledata.csv using text file output.
 """
 
 scenario_name = "data_grid_test2"
