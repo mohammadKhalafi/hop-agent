@@ -1,7 +1,7 @@
 import json
 
 from consts import BASE_PLUGINS_STORAGE
-from pipelineDescriptionCreator import get_design
+from pipelineDescriptionCreator import get_design, get_design2
 from datetime import datetime
 from systemPrompts import xml_creation_system_prompt, xml_creation_user_prompt
 from pipelineXmlCreator import create_pipeline_xml
@@ -36,7 +36,20 @@ def CreateDesign(query, scenario_name):
 
     with open(filepath, "w") as file:
         file.write(pipeline_xml)
-        # file.write(transforms)
+    
+def create_design2(query, outputPath, description, used_plugins, scenario_name):
+    design = get_design2(description, used_plugins)
+
+    now = datetime.now()
+    created_date = now.strftime('%Y/%m/%d %H:%M:%S.') + f'{now.microsecond // 1000:03}'
+
+    (transforms, hops) = CreateTransforms(design, query)
+
+    pipeline_xml = create_pipeline_xml(scenario_name, created_date, hops, transforms)
+    filepath = outputPath + '/' + scenario_name + '.hpl'
+
+    with open(filepath, "w") as file:
+        file.write(pipeline_xml)
 
 
 def strip_code_fences(text):
@@ -103,11 +116,11 @@ def CreateTransforms(design, query):
     return ('\n'.join(transform_strings), orders)
     
 
-query ="""
-i want to generate 3 rows of two columns c1, c2. where c1 is int and c2 is string.
-i want to have three rows : (12, 'abc'),(32, 'acd'),(122, 'mii') with data grid. then
-i want to write data into local file with name sampledata.csv using text file output.
-"""
+# query ="""
+# i want to generate 3 rows of two columns c1, c2. where c1 is int and c2 is string.
+# i want to have three rows : (12, 'abc'),(32, 'acd'),(122, 'mii') with data grid. then
+# i want to write data into local file with name sampledata.csv using text file output.
+# """
 
-scenario_name = "data_grid_test2"
-CreateDesign(query, scenario_name)
+# scenario_name = "data_grid_test2"
+# CreateDesign(query, scenario_name)

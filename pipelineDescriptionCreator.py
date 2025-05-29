@@ -33,7 +33,6 @@ def get_design(query):
     design = create_pipeline_description(query)
     print("answer")
     design = strip_code_fences(design)
-    # print(design)
     data = json.loads(design)
     description = data['description']
     print(description)
@@ -41,6 +40,19 @@ def get_design(query):
     print(used_plugins)
     print(len(used_plugins))
     
+    plugin_documents = get_plugin_full_docs(used_plugins)
+    plugin_xmls = get_plugin_xmls(used_plugins)
+    plugin_tips = get_plugin_tips(used_plugins)
+
+    return {
+        "description": description,
+        "used_plugins": used_plugins,
+        "plugin_documents": plugin_documents,
+        "plugin_xmls": plugin_xmls,
+        "plugin_tips" : plugin_tips
+    }
+
+def get_design2(description, used_plugins):
     plugin_documents = get_plugin_full_docs(used_plugins)
     plugin_xmls = get_plugin_xmls(used_plugins)
     plugin_tips = get_plugin_tips(used_plugins)
