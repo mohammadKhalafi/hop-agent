@@ -1,0 +1,40 @@
+<transform>
+  <name>Concat Fields</name>
+  <type>ConcatFields</type>
+  <description/>
+  <distribute>Y</distribute>
+  <custom_distribution/>
+  <copies>1</copies>
+  <partitioning>
+    <method>none</method>
+    <schema_name/>
+  </partitioning>
+  <ConcatFields>
+  <removeSelectedFields>N</removeSelectedFields>
+  <targetFieldLength>0</targetFieldLength>
+  <targetFieldName>concatinatedField</targetFieldName>
+  </ConcatFields>
+  <enclosure>&#34;</enclosure>
+  <fields>
+  <field>
+  <length>-1</length>
+  <name>inputField1</name>
+  <precision>-1</precision>
+  <trim_type>none</trim_type>
+  <type>String</type>
+  </field>
+  <field>
+  <length>-1</length>
+  <name>inputField2</name>
+  <precision>-1</precision>
+  <trim_type>none</trim_type>
+  <type>String</type>
+  </field>
+  </fields>
+  <separator>,</separator>
+  <attributes></attributes>
+  <GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+  </GUI>
+</transform>
