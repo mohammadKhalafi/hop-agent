@@ -1,0 +1,47 @@
+<transform>
+    <name>Avro File Output</name>
+    <type>AvroOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <SpecifyFormat>N</SpecifyFormat>
+    <add_date>N</add_date>
+    <add_time>N</add_time>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <compressiontype>none</compressiontype>
+    <create_parent_folder>Y</create_parent_folder>
+    <create_schema_file>Y</create_schema_file>
+    <fields>
+        <field>
+            <avroname>avroField1</avroname>
+            <avrotype>6</avrotype>
+            <name>field1</name>
+            <nullable>Y</nullable>
+        </field>
+        <field>
+            <avroname>avroField2</avroname>
+            <avrotype>4</avrotype>
+            <name>field2</name>
+            <nullable>Y</nullable>
+        </field>
+    </fields>
+    <filename>arvoFilePath\file.avro</filename>
+    <haspartno>N</haspartno>
+    <namespace>namespace</namespace>
+    <output_field_name>avro_record</output_field_name>
+    <output_type>JsonField</output_type>
+    <recordname>recordname</recordname>
+    <schemafilename>schema.avsc</schemafilename>
+    <split>N</split>
+    <write_schema_file>Y</write_schema_file>
+    <attributes></attributes>
+    <GUI>
+      <xloc>0</xloc>
+      <yloc>0</yloc>
+    </GUI>
+</transform>

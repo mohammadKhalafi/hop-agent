@@ -1,0 +1,34 @@
+<transform>
+    <name>Avro Decode</name>
+    <type>AvroDecode</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+    <field>
+    <source_avro_type>Union</source_avro_type>
+    <source_field>avroField1</source_field>
+    <target_field_name>avroField1</target_field_name>
+    <target_type>String</target_type>
+    </field>
+    <field>
+    <source_avro_type>Union</source_avro_type>
+    <source_field>avroField2</source_field>
+    <target_field_name>avroField2</target_field_name>
+    <target_type>Integer</target_type>
+    </field>
+    </fields>
+    <ignore_missing>Y</ignore_missing>
+    <remove_source_field>Y</remove_source_field>
+    <source_field>avro</source_field>
+    <attributes></attributes>
+    <GUI>
+        <xloc>0</xloc>
+        <yloc>0</yloc>
+    </GUI>
+</transform>

@@ -1,0 +1,21 @@
+
+<transform>
+  <name>Check if file is locked</name>
+  <type>FileLocked</type>
+  <description/>
+  <distribute>Y</distribute>
+  <custom_distribution/>
+  <copies>1</copies>
+  <partitioning>
+    <method>none</method>
+    <schema_name/>
+  </partitioning>
+  <addresultfilenames>Y</addresultfilenames>
+  <filenamefield>input_filed_name_from_input_transform</filenamefield>
+  <resultfieldname>result_field_name</resultfieldname>
+  <attributes></attributes>
+  <GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+  </GUI>
+</transform>
