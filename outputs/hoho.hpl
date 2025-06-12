@@ -299,6 +299,31 @@
       <to>HTML to Text</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 11</from>
+      <to>Identify last row in a stream</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 11</from>
+      <to>If Null</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 11 2</from>
+      <to>Insert / update</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 11 3</from>
+      <to>Insert / update 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 11 3</from>
+      <to>JavaScript</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
     <name>Add XML</name>
@@ -1975,6 +2000,86 @@ insert into khalafi values ('abdee');</sql>
     </GUI>
   </transform>
   <transform>
+    <name>HTTP client</name>
+    <type>Http</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <url>http://localhost:58081/api/health</url>
+    <urlInField>N</urlInField>
+    <ignoreSsl>Y</ignoreSsl>
+    <urlField/>
+    <encoding>UTF-8</encoding>
+    <httpLogin/>
+    <httpPassword>Encrypted </httpPassword>
+    <proxyHost/>
+    <proxyPort/>
+    <socketTimeout>10000</socketTimeout>
+    <connectionTimeout>10000</connectionTimeout>
+    <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
+    <lookup>
+    </lookup>
+    <result>
+      <name>result</name>
+      <code/>
+      <response_time/>
+      <response_header/>
+    </result>
+    <attributes/>
+    <GUI>
+      <xloc>5440</xloc>
+      <yloc>9488</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Identify last row in a stream</name>
+    <type>DetectLastRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <resultfieldname>result</resultfieldname>
+    <attributes/>
+    <GUI>
+      <xloc>5360</xloc>
+      <yloc>9616</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>If Null</name>
+    <type>IfNull</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+</fields>
+    <replaceAllByValue>7</replaceAllByValue>
+    <selectFields>N</selectFields>
+    <selectValuesType>N</selectValuesType>
+    <setEmptyStringAll>N</setEmptyStringAll>
+    <valuetypes>
+</valuetypes>
+    <attributes/>
+    <GUI>
+      <xloc>5136</xloc>
+      <yloc>9840</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>InputTransform1</name>
     <type>DataGrid</type>
     <description/>
@@ -2202,6 +2307,207 @@ insert into khalafi values ('abdee');</sql>
     <GUI>
       <xloc>4784</xloc>
       <yloc>8960</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 11</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>m</item>
+        <item>1</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>m</item>
+        <item>2</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>n</item>
+        <item>3</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>n</item>
+        <item/>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>pp</item>
+        <item/>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>4656</xloc>
+      <yloc>9664</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 11 2</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>1</item>
+        <item>asdf</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>2</item>
+        <item>fdsa</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>3</item>
+        <item>asdf</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>4</item>
+        <item>fdsa</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>5</item>
+        <item>asdf</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>5408</xloc>
+      <yloc>9936</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 11 3</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>1</item>
+        <item>asdf</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>2</item>
+        <item>fdsa</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>3</item>
+        <item>asdf</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>4</item>
+        <item>fdsa</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>5</item>
+        <item>asdf</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>5472</xloc>
+      <yloc>10320</yloc>
     </GUI>
   </transform>
   <transform>
@@ -3223,6 +3529,120 @@ insert into khalafi values ('abdee');</sql>
     </GUI>
   </transform>
   <transform>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <commit>100</commit>
+    <connection>postgres database</connection>
+    <lookup>
+      <key>
+        <condition>=</condition>
+        <field>field1</field>
+        <name>inputField1</name>
+      </key>
+      <schema>public</schema>
+      <table>khalafi2</table>
+      <value>
+        <name>field2</name>
+        <rename>inputField2</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <update_bypassed>N</update_bypassed>
+    <attributes/>
+    <GUI>
+      <xloc>6016</xloc>
+      <yloc>10000</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Insert / update 2</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <commit>100</commit>
+    <connection>postgres database</connection>
+    <lookup>
+      <key>
+        <condition>=</condition>
+        <field>field1</field>
+        <name>inputField1</name>
+      </key>
+      <schema>public</schema>
+      <table>khalafi2</table>
+      <value>
+        <name>field2</name>
+        <rename>inputField2</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <update_bypassed>N</update_bypassed>
+    <attributes/>
+    <GUI>
+      <xloc>6080</xloc>
+      <yloc>10384</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>JavaScript</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+var a  = inputField1 + 3
+var b = 2134;
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>a</name>
+        <rename>a</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+      <field>
+        <name>b</name>
+        <rename>b</rename>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>5968</xloc>
+      <yloc>10544</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Microsoft Excel writer</name>
     <type>TypeExitExcelWriterTransform</type>
     <description/>
@@ -3290,8 +3710,8 @@ insert into khalafi values ('abdee');</sql>
     </GUI>
   </transform>
   <transform>
-    <name>HTTP client</name>
-    <type>Http</type>
+    <name>Get JDBC Metadata</name>
+    <type>JdbcMetadata</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -3300,30 +3720,23 @@ insert into khalafi values ('abdee');</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <url>http://localhost:58081/api/health</url>
-    <urlInField>N</urlInField>
-    <ignoreSsl>Y</ignoreSsl>
-    <urlField/>
-    <encoding>UTF-8</encoding>
-    <httpLogin/>
-    <httpPassword>Encrypted </httpPassword>
-    <proxyHost/>
-    <proxyPort/>
-    <socketTimeout>10000</socketTimeout>
-    <connectionTimeout>10000</connectionTimeout>
-    <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
-    <lookup>
-    </lookup>
-    <result>
-      <name>result</name>
-      <code/>
-      <response_time/>
-      <response_header/>
-    </result>
+    <alwaysPassInputRow>N</alwaysPassInputRow>
+    <argumentSourceFields>N</argumentSourceFields>
+    <arguments>
+</arguments>
+    <connection>postgres database</connection>
+    <methodName>getCatalogs</methodName>
+    <outputFields>
+      <outputField>
+        <name>TABLE_CAT</name>
+        <rename>TABLE_CAT</rename>
+      </outputField>
+    </outputFields>
+    <removeArgumentFields>N</removeArgumentFields>
     <attributes/>
     <GUI>
-      <xloc>5440</xloc>
-      <yloc>9488</yloc>
+      <xloc>6352</xloc>
+      <yloc>10640</yloc>
     </GUI>
   </transform>
   <transform_error_handling>

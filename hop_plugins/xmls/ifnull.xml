@@ -1,0 +1,25 @@
+<transform>
+  <name>If Null</name>
+  <type>IfNull</type>
+  <description/>
+  <distribute>Y</distribute>
+  <custom_distribution/>
+  <copies>1</copies>
+  <partitioning>
+    <method>none</method>
+    <schema_name/>
+  </partitioning>
+  <fields>
+  </fields>
+  <replaceAllByValue>value to replace instead of null</replaceAllByValue>
+  <selectFields>N</selectFields>
+  <selectValuesType>N</selectValuesType>
+  <setEmptyStringAll>N</setEmptyStringAll>
+  <valuetypes>
+  </valuetypes>
+  <attributes></attributes>
+  <GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+  </GUI>
+</transform>

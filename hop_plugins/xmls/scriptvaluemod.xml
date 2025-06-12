@@ -1,0 +1,45 @@
+<transform>
+  <name>JavaScript</name>
+  <type>ScriptValueMod</type>
+  <description/>
+  <distribute>Y</distribute>
+  <custom_distribution/>
+  <copies>1</copies>
+  <partitioning>
+    <method>none</method>
+    <schema_name/>
+  </partitioning>
+  <optimizationLevel>9</optimizationLevel>
+  <jsScripts>      
+    <jsScript>
+      <jsScript_type>0</jsScript_type>
+      <jsScript_name>Script 1</jsScript_name>
+      <jsScript_script>//Script here
+var a = inputField1 + 3;
+var b = 123;
+      </jsScript_script>
+    </jsScript>    </jsScripts>
+  <fields>      
+    <field>
+      <name>a</name>
+      <rename>a</rename>
+      <type>Integer</type>
+      <length>-1</length>
+      <precision>-1</precision>
+      <replace>N</replace>
+    </field>
+    <field>        
+      <name>b</name>
+      <rename>b</rename>
+      <type>Integer</type>
+      <length>-1</length>
+      <precision>-1</precision>
+      <replace>N</replace>
+    </field>
+  </fields>
+  <attributes></attributes>
+  <GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+  </GUI>
+</transform>
