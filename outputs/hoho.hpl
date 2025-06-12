@@ -259,6 +259,46 @@
       <to>File exists</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 7</from>
+      <to>Filter rows</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 8</from>
+      <to>Formula</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Fuzzy match</from>
+      <to>Dummy (do nothing) 10</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Fuzzy match</from>
+      <to>Dummy (do nothing) 2 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 9</from>
+      <to>Fuzzy match</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 2 2</from>
+      <to>Fuzzy match</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 10</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 2 3</from>
+      <to>HTML to Text</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
     <name>Add XML</name>
@@ -1046,6 +1086,23 @@
     </GUI>
   </transform>
   <transform>
+    <name>Dummy (do nothing) 10</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>4720</xloc>
+      <yloc>7280</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Dummy (do nothing) 2</name>
     <type>Dummy</type>
     <description/>
@@ -1094,6 +1151,23 @@
     <GUI>
       <xloc>3440</xloc>
       <yloc>3504</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing) 2 4</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>4672</xloc>
+      <yloc>7392</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1446,6 +1520,42 @@ insert into khalafi values ('abdee');</sql>
     </GUI>
   </transform>
   <transform>
+    <name>File Metadata 2</name>
+    <type>FileMetadataPlugin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <defaultCharset>ISO-8859-1</defaultCharset>
+    <delimiterCandidate>
+      <candidate>	</candidate>
+    </delimiterCandidate>
+    <delimiterCandidate>
+      <candidate>;</candidate>
+    </delimiterCandidate>
+    <delimiterCandidate>
+      <candidate>,</candidate>
+    </delimiterCandidate>
+    <enclosureCandidate>
+      <candidate>"</candidate>
+    </enclosureCandidate>
+    <enclosureCandidate>
+      <candidate>'</candidate>
+    </enclosureCandidate>
+    <fileName>C:\Users\m.khalafi\Downloads\Untitled discover search.csv</fileName>
+    <filenameInField>N</filenameInField>
+    <limitRows>10000</limitRows>
+    <attributes/>
+    <GUI>
+      <xloc>3120</xloc>
+      <yloc>6000</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>File exists</name>
     <type>FileExists</type>
     <description/>
@@ -1464,6 +1574,404 @@ insert into khalafi values ('abdee');</sql>
     <GUI>
       <xloc>3600</xloc>
       <yloc>5728</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compare>
+      <condition>
+        <conditions>
+</conditions>
+        <function>=</function>
+        <leftvalue>inputField1</leftvalue>
+        <negated>N</negated>
+        <operator>-</operator>
+        <rightvalue>inputField2</rightvalue>
+      </condition>
+    </compare>
+    <attributes/>
+    <GUI>
+      <xloc>3792</xloc>
+      <yloc>6320</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Formula</name>
+    <type>Formula</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <formulas>
+      <formula>
+        <field_name>outpufField1</field_name>
+        <formula>ABS([inputField1])</formula>
+        <set_na>N</set_na>
+        <value_length>-1</value_length>
+        <value_precision>-1</value_precision>
+        <value_type>5</value_type>
+      </formula>
+    </formulas>
+    <attributes/>
+    <GUI>
+      <xloc>3936</xloc>
+      <yloc>6816</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Fuzzy match</name>
+    <type>FuzzyMatch</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <algorithm>jarowinkler</algorithm>
+    <caseSensitive>N</caseSensitive>
+    <closervalue>Y</closervalue>
+    <from>InputTransform1 2 2 10</from>
+    <lookup>
+      <value>
+        <name>inputField1</name>
+        <rename>df</rename>
+      </value>
+      <value>
+        <name>inputField2</name>
+        <rename>asdf</rename>
+      </value>
+      <value>
+        <name>filename</name>
+        <rename>asdf</rename>
+      </value>
+    </lookup>
+    <lookupfield>inputField1</lookupfield>
+    <mainstreamfield>fdsa</mainstreamfield>
+    <maximalValue>1</maximalValue>
+    <minimalValue>0</minimalValue>
+    <outputmatchfield>match</outputmatchfield>
+    <outputvaluefield>measure value</outputvaluefield>
+    <separator>,</separator>
+    <attributes/>
+    <GUI>
+      <xloc>4272</xloc>
+      <yloc>7264</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Generate random value</name>
+    <type>RandomValue</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>randomNumber</name>
+        <type>random number</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>4304</xloc>
+      <yloc>7856</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Get data from XML</name>
+    <type>getXMLData</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <namespaceaware>N</namespaceaware>
+    <ignorecomments>N</ignorecomments>
+    <readurl>N</readurl>
+    <validating>N</validating>
+    <usetoken>N</usetoken>
+    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <rownum_field/>
+    <encoding>UTF-8</encoding>
+    <file>
+      <name>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\x.xml</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>field1</name>
+        <xpath>field1</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>field2</name>
+        <xpath>field2</xpath>
+        <element_type>node</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <loopxpath>/fields</loopxpath>
+    <IsInFields>N</IsInFields>
+    <IsAFile>N</IsAFile>
+    <XmlField/>
+    <prunePath/>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <attributes/>
+    <GUI>
+      <xloc>4800</xloc>
+      <yloc>7968</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Get file names</name>
+    <type>GetFileNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <doNotFailIfNoFile>N</doNotFailIfNoFile>
+    <dynamic_include_subfolders>N</dynamic_include_subfolders>
+    <file>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs</name>
+    </file>
+    <filefield>N</filefield>
+    <filter>
+      <filterfiletype>all_files</filterfiletype>
+    </filter>
+    <isaddresult>Y</isaddresult>
+    <limit>0</limit>
+    <raiseAnExceptionIfNoFile>N</raiseAnExceptionIfNoFile>
+    <rownum>N</rownum>
+    <attributes/>
+    <GUI>
+      <xloc>4560</xloc>
+      <yloc>8208</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Get files rows count</name>
+    <type>GetFilesRowsCount</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <file>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\x.xml</name>
+    </file>
+    <filefield>N</filefield>
+    <files_count>N</files_count>
+    <isaddresult>Y</isaddresult>
+    <rows_count_fieldname>rowsCount</rows_count_fieldname>
+    <rowseparator_format>CARRIAGERETURN</rowseparator_format>
+    <smartCount>N</smartCount>
+    <attributes/>
+    <GUI>
+      <xloc>4752</xloc>
+      <yloc>8352</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Get subfolder names</name>
+    <type>GetSubFolders</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <file>
+      <file_required>N</file_required>
+      <name>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs</name>
+    </file>
+    <foldername_dynamic>N</foldername_dynamic>
+    <limit>0</limit>
+    <rownum>N</rownum>
+    <attributes/>
+    <GUI>
+      <xloc>5088</xloc>
+      <yloc>8368</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Get system info</name>
+    <type>SystemInfo</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>system date</name>
+        <type>system date (fixed)</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>4912</xloc>
+      <yloc>8512</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Get table names</name>
+    <type>GetTableNames</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <addSchemaInOutput>N</addSchemaInOutput>
+    <connection>postgres database</connection>
+    <dynamicSchema>N</dynamicSchema>
+    <includeCatalog>N</includeCatalog>
+    <includeProcedure>Y</includeProcedure>
+    <includeSchema>N</includeSchema>
+    <includeSynonym>Y</includeSynonym>
+    <includeTable>Y</includeTable>
+    <includeView>Y</includeView>
+    <issystemobjectfieldname>isSystem</issystemobjectfieldname>
+    <objecttypefieldname>type</objecttypefieldname>
+    <schemaname>public</schemaname>
+    <tablenamefieldname>tableName</tablenamefieldname>
+    <attributes/>
+    <GUI>
+      <xloc>5120</xloc>
+      <yloc>8688</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <add_linenr>N</add_linenr>
+    <all_rows>N</all_rows>
+    <directory>${java.io.tmpdir}</directory>
+    <fields>
+      <field>
+        <aggregate>sum</aggregate>
+        <subject>inputField2</subject>
+        <type>SUM</type>
+      </field>
+    </fields>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>inputField1</name>
+      </field>
+    </group>
+    <ignore_aggregate>N</ignore_aggregate>
+    <prefix>grp</prefix>
+    <attributes/>
+    <GUI>
+      <xloc>5264</xloc>
+      <yloc>8928</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>HTML to Text</name>
+    <type>Html2Text</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <htmlField>inputField1</htmlField>
+    <outputField>html2text_output</outputField>
+    <safelistType>basic</safelistType>
+    <cleanOnly>N</cleanOnly>
+    <normalisedText>N</normalisedText>
+    <parallelism>N</parallelism>
+    <attributes/>
+    <GUI>
+      <xloc>5488</xloc>
+      <yloc>9152</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1630,6 +2138,73 @@ insert into khalafi values ('abdee');</sql>
     </GUI>
   </transform>
   <transform>
+    <name>InputTransform1 2 2 10 10</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>m</item>
+        <item>1</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>m</item>
+        <item>2</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>n</item>
+        <item>3</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>n</item>
+        <item>4</item>
+        <item/>
+      </line>
+      <line>
+        <item/>
+        <item/>
+        <item/>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>4784</xloc>
+      <yloc>8960</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>InputTransform1 2 2 10 2</name>
     <type>DataGrid</type>
     <description/>
@@ -1674,6 +2249,120 @@ insert into khalafi values ('abdee');</sql>
     <GUI>
       <xloc>2256</xloc>
       <yloc>4304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 2 2</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>mohammad</item>
+        <item>muhammad</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>alireza</item>
+        <item>aliireza</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>asghar</item>
+        <item>akbar</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>v1</item>
+        <item>v1</item>
+        <item/>
+      </line>
+      <line>
+        <item/>
+        <item/>
+        <item/>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>asdf</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>fdsa</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>asdf</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>3840</xloc>
+      <yloc>7408</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 2 3</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>&lt;p>dasf&lt;/p></item>
+        <item/>
+        <item/>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>5184</xloc>
+      <yloc>9312</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1843,6 +2532,197 @@ insert into khalafi values ('abdee');</sql>
     <GUI>
       <xloc>2992</xloc>
       <yloc>5616</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 7</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>insert into khalafi values ('abcde')</item>
+        <item>echo 2</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>a</item>
+        <item>a</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>c</item>
+        <item>c</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>3200</xloc>
+      <yloc>6208</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 8</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>1</item>
+        <item>echo 2</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>2</item>
+        <item>a</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>3</item>
+        <item>c</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item/>
+        <item/>
+        <item/>
+      </line>
+      <line>
+        <item/>
+        <item/>
+        <item/>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>3472</xloc>
+      <yloc>6544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 9</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>mohammad</item>
+        <item>muhammad</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item>alireza</item>
+        <item>aliireza</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>asghar</item>
+        <item>akbar</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+      <line>
+        <item>v1</item>
+        <item>v1</item>
+        <item/>
+      </line>
+      <line>
+        <item/>
+        <item/>
+        <item/>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>3728</xloc>
+      <yloc>7120</yloc>
     </GUI>
   </transform>
   <transform>
@@ -2410,8 +3290,8 @@ insert into khalafi values ('abdee');</sql>
     </GUI>
   </transform>
   <transform>
-    <name>File Metadata 2</name>
-    <type>FileMetadataPlugin</type>
+    <name>HTTP client</name>
+    <type>Http</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -2420,29 +3300,30 @@ insert into khalafi values ('abdee');</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <defaultCharset>ISO-8859-1</defaultCharset>
-    <delimiterCandidate>
-      <candidate>	</candidate>
-    </delimiterCandidate>
-    <delimiterCandidate>
-      <candidate>;</candidate>
-    </delimiterCandidate>
-    <delimiterCandidate>
-      <candidate>,</candidate>
-    </delimiterCandidate>
-    <enclosureCandidate>
-      <candidate>"</candidate>
-    </enclosureCandidate>
-    <enclosureCandidate>
-      <candidate>'</candidate>
-    </enclosureCandidate>
-    <fileName>C:\Users\m.khalafi\Downloads\Untitled discover search.csv</fileName>
-    <filenameInField>N</filenameInField>
-    <limitRows>10000</limitRows>
+    <url>http://localhost:58081/api/health</url>
+    <urlInField>N</urlInField>
+    <ignoreSsl>Y</ignoreSsl>
+    <urlField/>
+    <encoding>UTF-8</encoding>
+    <httpLogin/>
+    <httpPassword>Encrypted </httpPassword>
+    <proxyHost/>
+    <proxyPort/>
+    <socketTimeout>10000</socketTimeout>
+    <connectionTimeout>10000</connectionTimeout>
+    <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
+    <lookup>
+    </lookup>
+    <result>
+      <name>result</name>
+      <code/>
+      <response_time/>
+      <response_header/>
+    </result>
     <attributes/>
     <GUI>
-      <xloc>3120</xloc>
-      <yloc>6000</yloc>
+      <xloc>5440</xloc>
+      <yloc>9488</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
@@ -2461,6 +3342,18 @@ insert into khalafi values ('abdee');</sql>
     <error>
       <source_transform>Detect Language</source_transform>
       <target_transform>Dummy (do nothing) 3 2</target_transform>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
+    <error>
+      <source_transform>Fuzzy match</source_transform>
+      <target_transform>Dummy (do nothing) 2 4</target_transform>
       <is_enabled>Y</is_enabled>
       <nr_valuename/>
       <descriptions_valuename/>

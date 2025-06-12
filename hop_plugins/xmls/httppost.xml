@@ -1,0 +1,32 @@
+<transform>
+  <name>HTTP post</name>
+  <type>HttpPost</type>
+  <description/>
+  <distribute>Y</distribute>
+  <custom_distribution/>
+  <copies>1</copies>
+  <partitioning>
+    <method>none</method>
+    <schema_name/>
+  </partitioning>
+  <closeIdleConnectionsTime>-1</closeIdleConnectionsTime>
+  <connectionTimeout>10000</connectionTimeout>
+  <encoding>UTF-8</encoding>
+  <httpPassword>Encrypted </httpPassword>
+  <ignoreSsl>N</ignoreSsl>
+  <lookup>
+  </lookup>
+  <multipartupload>N</multipartupload>
+  <postafile>N</postafile>
+  <result>
+  <code>result</code>
+  </result>
+  <socketTimeout>10000</socketTimeout>
+  <url>http://url/to/call</url>
+  <urlInField>N</urlInField>
+  <attributes></attributes>
+  <GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+  </GUI>
+</transform>

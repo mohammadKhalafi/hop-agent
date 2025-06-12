@@ -1,0 +1,33 @@
+<transform>
+    <name>Get files rows count</name>
+    <type>GetFilesRowsCount</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <file>
+    <exclude_filemask/>
+    <file_required>N</file_required>
+    <filemask/>
+    <include_subfolders>N</include_subfolders>
+    <name>file address to count rows</name>
+    </file>
+    <filefield>N</filefield>
+    <filename_Field/>
+    <files_count>N</files_count>
+    <files_count_fieldname/>
+    <isaddresult>Y</isaddresult>
+    <row_separator/>
+    <rows_count_fieldname>rowsCount</rows_count_fieldname>
+    <rowseparator_format>CARRIAGERETURN</rowseparator_format>
+    <smartCount>N</smartCount>
+    <attributes></attributes>
+    <GUI>
+      <xloc>0</xloc>
+      <yloc>0</yloc>
+    </GUI>
+</transform>

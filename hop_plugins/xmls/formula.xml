@@ -1,0 +1,27 @@
+<transform>
+    <name>Formula</name>
+    <type>Formula</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+        <method>none</method>
+        <schema_name/>
+    </partitioning>
+    <formulas>
+    <formula>
+    <field_name>outpufField1</field_name>
+    <formula>ABS([inputField1])</formula>
+    <set_na>N</set_na>
+    <value_length>-1</value_length>
+    <value_precision>-1</value_precision>
+    <value_type>5</value_type>
+    </formula>
+    </formulas>
+    <attributes></attributes>
+    <GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+    </GUI>
+</transform>
