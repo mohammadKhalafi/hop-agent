@@ -1,0 +1,17 @@
+<transform>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes></attributes>
+    <GUI>
+        <xloc>0</xloc>
+        <yloc>0</yloc>
+    </GUI>
+</transform>

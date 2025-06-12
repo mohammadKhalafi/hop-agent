@@ -1,0 +1,59 @@
+<transform>
+<name>Enhanced JSON Output</name>
+<type>EnhancedJsonOutput</type>
+<description/>
+<distribute>Y</distribute>
+<custom_distribution/>
+<copies>1</copies>
+<partitioning>
+  <method>none</method>
+  <schema_name/>
+</partitioning>
+<outputValue>outputValue</outputValue>
+<jsonBloc>result</jsonBloc>
+<operation_type>writetofile</operation_type>
+<use_arrays_with_single_instance>N</use_arrays_with_single_instance>
+<use_single_item_per_group>N</use_single_item_per_group>
+<json_prittified>N</json_prittified>
+<encoding>UTF-8</encoding>
+<addtoresult>N</addtoresult>
+<file>
+  <name>path to json file</name>
+  <split_output_after>0</split_output_after>
+  <extention>json</extention>
+  <append>N</append>
+  <split>N</split>
+  <haspartno>N</haspartno>
+  <add_date>N</add_date>
+  <add_time>N</add_time>
+  <create_parent_folder>N</create_parent_folder>
+  <doNotOpenNewFileInit>N</doNotOpenNewFileInit>
+</file>
+<additional_fields>
+<json_size_field/>
+</additional_fields>
+<key_fields>
+</key_fields>
+<fields>
+  <field>
+    <name>inputField1</name>
+    <element>inputField1</element>
+    <json_fragment>N</json_fragment>
+    <is_without_enclosing>N</is_without_enclosing>
+    <remove_if_blank>N</remove_if_blank>
+  </field>
+  <field>
+    <name>inputField2</name>
+    <element>inputField2</element>
+    <json_fragment>N</json_fragment>
+    <is_without_enclosing>N</is_without_enclosing>
+    <remove_if_blank>N</remove_if_blank>
+</field>
+</fields>
+<attributes></attributes>
+<GUI>
+  <xloc>0</xloc>
+  <yloc>0</yloc>
+</GUI>
+</transform>
+

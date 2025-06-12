@@ -1,0 +1,19 @@
+<transform>
+    <name>EDI to XML</name>
+    <type>TypeExitEdi2XmlTransform</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+        <method>none</method>
+        <schema_name/>
+    </partitioning>
+    <inputfield>input_field_contains_EDI_input</inputfield>
+    <outputfield>edi_xml</outputfield>
+    <attributes></attributes>
+    <GUI>
+        <xloc>0</xloc>
+        <yloc>0</yloc>
+    </GUI>
+</transform>

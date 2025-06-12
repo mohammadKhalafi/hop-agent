@@ -3,3 +3,4 @@ CassandraOutput
 CassandraInput
 Column exists
 DBJoin
+MailInput

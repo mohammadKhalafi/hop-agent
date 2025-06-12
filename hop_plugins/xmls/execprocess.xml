@@ -1,0 +1,26 @@
+<transform>
+    <name>Execute a process</name>
+    <type>ExecProcess</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <argumentFields>
+    </argumentFields>
+    <argumentsInFields>N</argumentsInFields>
+    <errorfieldname>Error output</errorfieldname>
+    <exitvaluefieldname>Exit value</exitvaluefieldname>
+    <failwhennotsuccess>N</failwhennotsuccess>
+    <outputlinedelimiter/>
+    <processfield>inputField1</processfield>
+    <resultfieldname>Result output</resultfieldname>
+    <attributes></attributes>
+    <GUI>
+      <xloc>0</xloc>
+      <yloc>0</yloc>
+    </GUI>
+</transform>

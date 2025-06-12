@@ -199,6 +199,66 @@
       <to>Dummy (do nothing) 6</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Dummy (do nothing) 7</from>
+      <to>Dynamic SQL row</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dynamic SQL row</from>
+      <to>Dummy (do nothing) 4 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 12</from>
+      <to>Dummy (do nothing) 7</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy (do nothing) 8</from>
+      <to>EDI to XML</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 13</from>
+      <to>Dummy (do nothing) 8</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Dummy (do nothing) 9</from>
+      <to>Email messages input</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 14</from>
+      <to>Dummy (do nothing) 9</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 2</from>
+      <to>Microsoft Excel writer</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 3</from>
+      <to>Execute a process</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 4</from>
+      <to>Execute row SQL script</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 5</from>
+      <to>Fake data</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>InputTransform1 2 2 10 6</from>
+      <to>File exists</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
     <name>Add XML</name>
@@ -933,6 +993,25 @@
     </GUI>
   </transform>
   <transform>
+    <name>Detect Language</name>
+    <type>DetectLanguage</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <corpusField>s1</corpusField>
+    <parallelism>N</parallelism>
+    <attributes/>
+    <GUI>
+      <xloc>3104</xloc>
+      <yloc>3488</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Detect empty stream</name>
     <type>DetectEmptyStream</type>
     <description/>
@@ -1001,6 +1080,23 @@
     </GUI>
   </transform>
   <transform>
+    <name>Dummy (do nothing) 2 3</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>3440</xloc>
+      <yloc>3504</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Dummy (do nothing) 3</name>
     <type>Dummy</type>
     <description/>
@@ -1015,6 +1111,23 @@
     <GUI>
       <xloc>304</xloc>
       <yloc>224</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing) 3 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>3344</xloc>
+      <yloc>3632</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1035,6 +1148,23 @@
     </GUI>
   </transform>
   <transform>
+    <name>Dummy (do nothing) 4 2</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>1952</xloc>
+      <yloc>1104</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>Dummy (do nothing) 5</name>
     <type>Dummy</type>
     <description/>
@@ -1049,6 +1179,291 @@
     <GUI>
       <xloc>2320</xloc>
       <yloc>2896</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing) 6</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>2832</xloc>
+      <yloc>3488</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing) 7</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>1424</xloc>
+      <yloc>944</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing) 8</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>1376</xloc>
+      <yloc>1440</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dummy (do nothing) 9</name>
+    <type>Dummy</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <attributes/>
+    <GUI>
+      <xloc>2112</xloc>
+      <yloc>4000</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Dynamic SQL row</name>
+    <type>DynamicSqlRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>postgres database</connection>
+    <outer_join>N</outer_join>
+    <query_only_on_change>N</query_only_on_change>
+    <replace_vars>N</replace_vars>
+    <rowlimit>0</rowlimit>
+    <sql>select * from khalafi</sql>
+    <sql_fieldname>s1</sql_fieldname>
+    <attributes/>
+    <GUI>
+      <xloc>1600</xloc>
+      <yloc>1104</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>EDI to XML</name>
+    <type>TypeExitEdi2XmlTransform</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <inputfield>s1</inputfield>
+    <outputfield>edi_xml</outputfield>
+    <attributes/>
+    <GUI>
+      <xloc>1840</xloc>
+      <yloc>1248</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Email messages input</name>
+    <type>MailInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <servername>localhost</servername>
+    <username>user</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce10ce93bcc9</password>
+    <usessl>N</usessl>
+    <usexoauth2>N</usexoauth2>
+    <sslport>8888</sslport>
+    <retrievemails>0</retrievemails>
+    <firstmails/>
+    <delete>N</delete>
+    <protocol>POP3</protocol>
+    <valueimaplist>imaplistall</valueimaplist>
+    <imapfirstmails>0</imapfirstmails>
+    <imapfolder/>
+    <sendersearch/>
+    <nottermsendersearch>N</nottermsendersearch>
+    <recipientsearch/>
+    <notTermRecipientSearch>N</notTermRecipientSearch>
+    <subjectsearch/>
+    <nottermsubjectsearch>N</nottermsubjectsearch>
+    <conditionreceiveddate>ignore</conditionreceiveddate>
+    <nottermreceiveddatesearch>N</nottermreceiveddatesearch>
+    <receiveddate1/>
+    <receiveddate2/>
+    <includesubfolders>N</includesubfolders>
+    <useproxy>N</useproxy>
+    <proxyusername/>
+    <usedynamicfolder>N</usedynamicfolder>
+    <folderfield/>
+    <rowlimit>0</rowlimit>
+    <useBatch>N</useBatch>
+    <batchSize>500</batchSize>
+    <startMsg/>
+    <endMsg/>
+    <stopOnError>Y</stopOnError>
+    <fields>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2592</xloc>
+      <yloc>4096</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Execute SQL script</name>
+    <type>ExecSql</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <arguments>
+</arguments>
+    <connection>postgres database</connection>
+    <execute_each_row>N</execute_each_row>
+    <quoteString>N</quoteString>
+    <replace_variables>N</replace_variables>
+    <set_params>N</set_params>
+    <single_statement>N</single_statement>
+    <sql>insert into khalafi values ('abcde');
+insert into khalafi values ('abdee');</sql>
+    <attributes/>
+    <GUI>
+      <xloc>2960</xloc>
+      <yloc>5104</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Execute a process</name>
+    <type>ExecProcess</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <argumentFields>
+</argumentFields>
+    <argumentsInFields>N</argumentsInFields>
+    <errorfieldname>Error output</errorfieldname>
+    <exitvaluefieldname>Exit value</exitvaluefieldname>
+    <failwhennotsuccess>N</failwhennotsuccess>
+    <outputlinedelimiter/>
+    <processfield>inputField1</processfield>
+    <resultfieldname>Result output</resultfieldname>
+    <attributes/>
+    <GUI>
+      <xloc>2864</xloc>
+      <yloc>4624</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Execute row SQL script</name>
+    <type>ExecSqlRow</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <commit>1</commit>
+    <connection>postgres database</connection>
+    <sendOneStatement>Y</sendOneStatement>
+    <sqlFromfile>N</sqlFromfile>
+    <sql_field>inputField1</sql_field>
+    <attributes/>
+    <GUI>
+      <xloc>3376</xloc>
+      <yloc>4864</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Fake data</name>
+    <type>Fake</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>outpufField1</name>
+        <topic>name</topic>
+        <type>Name</type>
+      </field>
+    </fields>
+    <locale>en</locale>
+    <attributes/>
+    <GUI>
+      <xloc>3360</xloc>
+      <yloc>5376</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>File exists</name>
+    <type>FileExists</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <addresultfilenames>N</addresultfilenames>
+    <filenamefield>filename</filenamefield>
+    <includefiletype>N</includefiletype>
+    <resultfieldname>result</resultfieldname>
+    <attributes/>
+    <GUI>
+      <xloc>3600</xloc>
+      <yloc>5728</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1212,6 +1627,346 @@
     <GUI>
       <xloc>2176</xloc>
       <yloc>3536</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 2</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>v1</item>
+        <item>v2</item>
+      </line>
+      <line>
+        <item>v11</item>
+        <item>v22</item>
+      </line>
+      <line>
+        <item>v111</item>
+        <item>v222</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2256</xloc>
+      <yloc>4304</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 3</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+        <item>echo 2</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2496</xloc>
+      <yloc>4544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 4</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>insert into khalafi values ('abcde')</item>
+        <item>echo 2</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2560</xloc>
+      <yloc>4864</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 5</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>insert into khalafi values ('abcde')</item>
+        <item>echo 2</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2816</xloc>
+      <yloc>5328</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 10 6</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>insert into khalafi values ('abcde')</item>
+        <item>echo 2</item>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.bat</item>
+      </line>
+      <line>
+        <item/>
+        <item/>
+        <item>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\a.ba</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>filename</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2992</xloc>
+      <yloc>5616</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 11</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>i am you. so fuck</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>s1</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>2640</xloc>
+      <yloc>3440</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 12</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>select * from khalafi where field1 = 'abcde'</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>s1</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>1024</xloc>
+      <yloc>1008</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 13</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>select * from khalafi where field1 = 'abcde'</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>s1</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>1168</xloc>
+      <yloc>1280</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>InputTransform1 2 2 14</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>select * from khalafi where field1 = 'abcde'</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>s1</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>1904</xloc>
+      <yloc>3840</yloc>
     </GUI>
   </transform>
   <transform>
@@ -1588,27 +2343,8 @@
     </GUI>
   </transform>
   <transform>
-    <name>Detect Language</name>
-    <type>DetectLanguage</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <corpusField>s1</corpusField>
-    <parallelism>N</parallelism>
-    <attributes/>
-    <GUI>
-      <xloc>3104</xloc>
-      <yloc>3488</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Dummy (do nothing) 6</name>
-    <type>Dummy</type>
+    <name>Microsoft Excel writer</name>
+    <type>TypeExitExcelWriterTransform</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1617,75 +2353,96 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <attributes/>
-    <GUI>
-      <xloc>2832</xloc>
-      <yloc>3488</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Dummy (do nothing) 2 3</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <GUI>
-      <xloc>3440</xloc>
-      <yloc>3504</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>Dummy (do nothing) 3 2</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <attributes/>
-    <GUI>
-      <xloc>3344</xloc>
-      <yloc>3632</yloc>
-    </GUI>
-  </transform>
-  <transform>
-    <name>InputTransform1 2 2 11</name>
-    <type>DataGrid</type>
-    <description/>
-    <distribute>N</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <data>
-      <line>
-        <item>i am you. so fuck</item>
-      </line>
-    </data>
+    <add_to_result_filenames>Y</add_to_result_filenames>
+    <appendEmpty>0</appendEmpty>
+    <appendLines>N</appendLines>
+    <appendOffset>0</appendOffset>
+    <appendOmitHeader>N</appendOmitHeader>
     <fields>
       <field>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-        <name>s1</name>
+        <formula>N</formula>
+        <name>inputField1</name>
+        <title>inputField1</title>
+        <type>String</type>
+      </field>
+      <field>
+        <formula>N</formula>
+        <name>inputField2</name>
+        <title>inputField2</title>
         <type>String</type>
       </field>
     </fields>
+    <file>
+      <SpecifyFormat>N</SpecifyFormat>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <autosizecolums>N</autosizecolums>
+      <createParentFolder>Y</createParentFolder>
+      <do_not_open_newfile_init>Y</do_not_open_newfile_init>
+      <extension>xls</extension>
+      <filename_in_field>N</filename_in_field>
+      <if_file_exists>new</if_file_exists>
+      <if_sheet_exists>new</if_sheet_exists>
+      <name>C:\Users\m.khalafi\Desktop\os\hop-agent\outputs\outpufExcel</name>
+      <protect_sheet>N</protect_sheet>
+      <sheetname>Sheet1</sheetname>
+      <split>N</split>
+      <splitevery>0</splitevery>
+      <stream_data>N</stream_data>
+    </file>
+    <footer>N</footer>
+    <forceFormulaRecalculation>N</forceFormulaRecalculation>
+    <header>Y</header>
+    <leaveExistingStylesUnchanged>N</leaveExistingStylesUnchanged>
+    <makeSheetActive>Y</makeSheetActive>
+    <rowWritingMethod>overwrite</rowWritingMethod>
+    <startingCell>A1</startingCell>
+    <template>
+      <enabled>N</enabled>
+      <filename>template.xls</filename>
+      <hidden>N</hidden>
+      <sheet_enabled>N</sheet_enabled>
+    </template>
     <attributes/>
     <GUI>
-      <xloc>2640</xloc>
-      <yloc>3440</yloc>
+      <xloc>2656</xloc>
+      <yloc>4336</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>File Metadata 2</name>
+    <type>FileMetadataPlugin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <defaultCharset>ISO-8859-1</defaultCharset>
+    <delimiterCandidate>
+      <candidate>	</candidate>
+    </delimiterCandidate>
+    <delimiterCandidate>
+      <candidate>;</candidate>
+    </delimiterCandidate>
+    <delimiterCandidate>
+      <candidate>,</candidate>
+    </delimiterCandidate>
+    <enclosureCandidate>
+      <candidate>"</candidate>
+    </enclosureCandidate>
+    <enclosureCandidate>
+      <candidate>'</candidate>
+    </enclosureCandidate>
+    <fileName>C:\Users\m.khalafi\Downloads\Untitled discover search.csv</fileName>
+    <filenameInField>N</filenameInField>
+    <limitRows>10000</limitRows>
+    <attributes/>
+    <GUI>
+      <xloc>3120</xloc>
+      <yloc>6000</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
