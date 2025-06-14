@@ -324,6 +324,51 @@
       <to>JavaScript</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>datagrid</from>
+      <to>JSON output</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>datagrid 2</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>datagrid 2 2</from>
+      <to>Merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inputTransform1 3</from>
+      <to>Merge rows (diff)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inputTransform2 2</from>
+      <to>Merge rows (diff)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inputTransform1 4</from>
+      <to>Multiway merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inputTransform2 3</from>
+      <to>Multiway merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inputTransform3</from>
+      <to>Multiway merge join</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>inputTransform3 2</from>
+      <to>Null if</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <transform>
     <name>Add XML</name>
@@ -1719,6 +1764,36 @@ insert into khalafi values ('abdee');</sql>
     <GUI>
       <xloc>4304</xloc>
       <yloc>7856</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Get JDBC Metadata</name>
+    <type>JdbcMetadata</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <alwaysPassInputRow>N</alwaysPassInputRow>
+    <argumentSourceFields>N</argumentSourceFields>
+    <arguments>
+</arguments>
+    <connection>postgres database</connection>
+    <methodName>getCatalogs</methodName>
+    <outputFields>
+      <outputField>
+        <name>TABLE_CAT</name>
+        <rename>TABLE_CAT</rename>
+      </outputField>
+    </outputFields>
+    <removeArgumentFields>N</removeArgumentFields>
+    <attributes/>
+    <GUI>
+      <xloc>6352</xloc>
+      <yloc>10640</yloc>
     </GUI>
   </transform>
   <transform>
@@ -3597,6 +3672,130 @@ insert into khalafi values ('abdee');</sql>
     </GUI>
   </transform>
   <transform>
+    <name>JSON input</name>
+    <type>JsonInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <include>N</include>
+    <include_field/>
+    <rownum>N</rownum>
+    <addresultfile>N</addresultfile>
+    <readurl>N</readurl>
+    <removeSourceField>N</removeSourceField>
+    <IsIgnoreEmptyFile>N</IsIgnoreEmptyFile>
+    <doNotFailIfNoFile>Y</doNotFailIfNoFile>
+    <ignoreMissingPath>Y</ignoreMissingPath>
+    <defaultPathLeafToNull>Y</defaultPathLeafToNull>
+    <rownum_field/>
+    <file>
+      <name/>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+      <name>C:\Users\mohammad\Desktop\hop\outputs\a.json</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>field1</name>
+        <path>$.field1</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>field2</name>
+        <path>$.field2</path>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <IsInFields>N</IsInFields>
+    <IsAFile>N</IsAFile>
+    <valueField/>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+    <attributes/>
+    <GUI>
+      <xloc>7104</xloc>
+      <yloc>10208</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>JSON output</name>
+    <type>JsonOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <addToResult>N</addToResult>
+    <createParentFolder>N</createParentFolder>
+    <dateInFilename>N</dateInFilename>
+    <doNotOpenNewFileInit>Y</doNotOpenNewFileInit>
+    <encoding>UTF-8</encoding>
+    <extension>json</extension>
+    <fields>
+      <field>
+        <element>inputField1</element>
+        <name>inputField1</name>
+      </field>
+      <field>
+        <element>inputField2</element>
+        <name>inputField2</name>
+      </field>
+    </fields>
+    <fileAppended>N</fileAppended>
+    <fileAsCommand>N</fileAsCommand>
+    <fileName>C:\Users\mohammad\Desktop\hop\outputs\jo</fileName>
+    <jsonBloc>data</jsonBloc>
+    <nrRowsInBloc>100</nrRowsInBloc>
+    <operation_type>writetofile</operation_type>
+    <outputValue>outputValue</outputValue>
+    <partNrInFilename>N</partNrInFilename>
+    <specifyingFormat>N</specifyingFormat>
+    <timeInFilename>N</timeInFilename>
+    <transformNrInFilename>N</transformNrInFilename>
+    <attributes/>
+    <GUI>
+      <xloc>7200</xloc>
+      <yloc>10048</yloc>
+    </GUI>
+  </transform>
+  <transform>
     <name>JavaScript</name>
     <type>ScriptValueMod</type>
     <description/>
@@ -3640,6 +3839,60 @@ var b = 2134;
     <GUI>
       <xloc>5968</xloc>
       <yloc>10544</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Merge join</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <keys_1>
+      <key>inputField1</key>
+    </keys_1>
+    <keys_2>
+      <key>inputField1</key>
+    </keys_2>
+    <transform1>datagrid</transform1>
+    <transform2>datagrid 2</transform2>
+    <attributes/>
+    <GUI>
+      <xloc>7648</xloc>
+      <yloc>9840</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Merge rows (diff)</name>
+    <type>MergeRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <keys>
+      <key>inputField1</key>
+    </keys>
+    <values>
+      <value>inputField1</value>
+    </values>
+    <flag_field>flagfield</flag_field>
+    <reference>InputTransform1</reference>
+    <compare>InputTransform2</compare>
+    <compare>
+    </compare>
+    <attributes/>
+    <GUI>
+      <xloc>8224</xloc>
+      <yloc>9568</yloc>
     </GUI>
   </transform>
   <transform>
@@ -3710,8 +3963,8 @@ var b = 2134;
     </GUI>
   </transform>
   <transform>
-    <name>Get JDBC Metadata</name>
-    <type>JdbcMetadata</type>
+    <name>Multiway merge join</name>
+    <type>MultiwayMergeJoin</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -3720,23 +3973,466 @@ var b = 2134;
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <alwaysPassInputRow>N</alwaysPassInputRow>
-    <argumentSourceFields>N</argumentSourceFields>
-    <arguments>
-</arguments>
-    <connection>postgres database</connection>
-    <methodName>getCatalogs</methodName>
-    <outputFields>
-      <outputField>
-        <name>TABLE_CAT</name>
-        <rename>TABLE_CAT</rename>
-      </outputField>
-    </outputFields>
-    <removeArgumentFields>N</removeArgumentFields>
+    <join_type>INNER</join_type>
+    <transform0>inputTransform1</transform0>
+    <transform1>inputTransform2</transform1>
+    <transform2>inputTransform3</transform2>
+    <number_input>3</number_input>
+    <keys>
+      <key>inputField1</key>
+      <key>inputField1</key>
+      <key>inputField1</key>
+    </keys>
     <attributes/>
     <GUI>
-      <xloc>6352</xloc>
-      <yloc>10640</yloc>
+      <xloc>8752</xloc>
+      <yloc>9344</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>datagrid</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abc</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>acd</item>
+      </line>
+      <line>
+        <item>122</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>7024</xloc>
+      <yloc>10096</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>datagrid 2</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abc</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>acd</item>
+      </line>
+      <line>
+        <item>122</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>7312</xloc>
+      <yloc>9776</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>datagrid 2 2</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>33</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>7376</xloc>
+      <yloc>9904</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>inputTransform1 3</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abc</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>acd</item>
+      </line>
+      <line>
+        <item>122</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>7904</xloc>
+      <yloc>9584</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>inputTransform1 4</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abc</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>acd</item>
+      </line>
+      <line>
+        <item>122</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>8400</xloc>
+      <yloc>9344</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>inputTransform2 2</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>33</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>7968</xloc>
+      <yloc>9712</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>inputTransform2 3</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>33</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>8464</xloc>
+      <yloc>9472</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>inputTransform3</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>33</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>8464</xloc>
+      <yloc>9216</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>Null if</name>
+    <type>NullIf</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>inputField1</name>
+        <value>12</value>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>9136</xloc>
+      <yloc>9168</yloc>
+    </GUI>
+  </transform>
+  <transform>
+    <name>inputTransform3 2</name>
+    <type>DataGrid</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <data>
+      <line>
+        <item>12</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>32</item>
+        <item>abv</item>
+      </line>
+      <line>
+        <item>33</item>
+        <item>mii</item>
+      </line>
+    </data>
+    <fields>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField1</name>
+        <type>Integer</type>
+      </field>
+      <field>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+        <name>inputField2</name>
+        <type>String</type>
+      </field>
+    </fields>
+    <attributes/>
+    <GUI>
+      <xloc>8864</xloc>
+      <yloc>9072</yloc>
     </GUI>
   </transform>
   <transform_error_handling>
