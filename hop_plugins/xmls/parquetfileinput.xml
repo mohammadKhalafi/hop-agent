@@ -1,0 +1,36 @@
+<transform>
+    <name>Parquet File Input</name>
+    <type>ParquetFileInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+        <method>none</method>
+        <schema_name/>
+    </partitioning>
+    <fields>
+        <field>
+            <source_field>parquetFileField1</source_field>
+            <target_field>parquetFileField2</target_field>
+            <target_format/>
+            <target_length/>
+            <target_precision/>
+            <target_type>Integer</target_type>
+        </field>
+        <field>
+            <source_field>parquetFileField2</source_field>
+            <target_field>parquetFileField2</target_field>
+            <target_format/>
+            <target_length/>
+            <target_precision/>
+            <target_type>String</target_type>
+        </field>
+    </fields>
+    <filename_field>inputFieldFromInputTransformHaveFileAddress</filename_field>
+    <attributes></attributes>
+    <GUI>
+        <xloc>0</xloc>
+        <yloc>0</yloc>
+    </GUI>
+</transform>

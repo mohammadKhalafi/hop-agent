@@ -1,0 +1,24 @@
+<transform>
+    <name>Process files</name>
+    <type>ProcessFiles</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <addresultfilenames>N</addresultfilenames>
+    <createparentfolder>N</createparentfolder>
+    <operation_type>copy</operation_type>
+    <overwritetargetfile>N</overwritetargetfile>
+    <simulate>N</simulate>
+    <sourcefilenamefield>sourceFileAddressInput</sourcefilenamefield>
+    <targetfilenamefield>targetFileAddressInput</targetfilenamefield>
+    <attributes></attributes>
+    <GUI>
+      <xloc>0</xloc>
+      <yloc>0</yloc>
+    </GUI>
+</transform>

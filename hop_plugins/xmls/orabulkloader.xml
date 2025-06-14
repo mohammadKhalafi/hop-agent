@@ -1,0 +1,50 @@
+<transform>
+    <name>Oracle bulk loader</name>
+    <type>OraBulkLoader</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <alt_rec_term/>
+    <bad_file/>
+    <bind_size>0</bind_size>
+    <character_set/>
+    <commit>100000</commit>
+    <connection>oracle connection name</connection>
+    <control_file>control${Internal.Transform.CopyNr}.cfg</control_file>
+    <data_file>load${Internal.Transform.CopyNr}.dat</data_file>
+    <direct_path>N</direct_path>
+    <discard_file/>
+    <encoding/>
+    <erase_files>Y</erase_files>
+    <errors>50</errors>
+    <fail_on_error>N</fail_on_error>
+    <fail_on_warning>N</fail_on_warning>
+    <load_action>APPEND</load_action>
+    <load_method>AUTO_END</load_method>
+    <log_file/>
+    <mapping>
+    <date_mask/>
+    <field_name>inputField1</field_name>
+    <stream_name>databaseTableField1</stream_name>
+    </mapping>
+    <mapping>
+    <date_mask/>
+    <field_name>inputField2</field_name>
+    <stream_name>databaseTableField2</stream_name>
+    </mapping>
+    <parallel>N</parallel>
+    <read_size>0</read_size>
+    <shema>schemaNameInDatabase</shema>
+    <sqlldr>sqlldr</sqlldr>
+    <table>tableNameInDatabaseToInsertInfo</table>
+    <attributes></attributes>
+    <GUI>
+      <xloc>0</xloc>
+      <yloc>0</yloc>
+    </GUI>
+</transform>

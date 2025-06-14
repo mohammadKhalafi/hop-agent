@@ -1,0 +1,29 @@
+<transform>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+        <field>
+        <case_sensitive>N</case_sensitive>
+        <in_stream_name>inputFieldFromInputTransform</in_stream_name>
+        <is_unicode>N</is_unicode>
+        <replace_by_string>string to search</replace_by_string>
+        <replace_string>string to replace</replace_string>
+        <set_empty_string>N</set_empty_string>
+        <use_regex>N</use_regex>
+        <whole_word>N</whole_word>
+        </field>
+    </fields>
+    <attributes></attributes>
+    <GUI>
+        <xloc>0</xloc>
+        <yloc>0</yloc>
+    </GUI>
+</transform>

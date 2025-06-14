@@ -1,0 +1,52 @@
+<transform>
+  <name>Properties input</name>
+  <type>PropertyInput</type>
+  <description/>
+  <distribute>Y</distribute>
+  <custom_distribution/>
+  <copies>1</copies>
+  <partitioning>
+    <method>none</method>
+    <schema_name/>
+  </partitioning>
+  <encoding>UTF-8</encoding>
+  <fields>
+    <field>
+      <column>key</column>
+      <length>-1</length>
+      <name>Key</name>
+      <precision>-1</precision>
+      <repeat>N</repeat>
+      <trim_type>none</trim_type>
+      <type>String</type>
+    </field>
+    <field>
+      <column>value</column>
+      <length>-1</length>
+      <name>Value</name>
+      <precision>-1</precision>
+      <repeat>N</repeat>
+      <trim_type>none</trim_type>
+      <type>String</type>
+      </field>
+  </fields>
+  <file>
+    <file_required>N</file_required>
+    <include_subfolders>N</include_subfolders>
+    <name>properties file address</name>
+  </file>
+  <file_type>property</file_type>
+  <filefield>N</filefield>
+  <include>N</include>
+  <ini_section>N</ini_section>
+  <isaddresult>Y</isaddresult>
+  <limit>0</limit>
+  <resetrownumber>N</resetrownumber>
+  <resolvevaluevariable>N</resolvevaluevariable>
+  <rownum>N</rownum>
+  <attributes></attributes>
+  <GUI>
+    <xloc>0</xloc>
+    <yloc>0</yloc>
+  </GUI>
+</transform>
