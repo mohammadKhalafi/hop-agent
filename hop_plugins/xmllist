@@ -7,3 +7,6 @@ MailInput
 postgres bulk loader
 run ssh
 get server status
+
+check:
+table input ,table output
