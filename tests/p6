@@ -1,0 +1,1 @@
+i have a parquet file in address "E:\folder\p.parquet". it has one string field field1. read the file as a table.

@@ -10,12 +10,12 @@
     <schema_name/>
   </partitioning>
   <commit>100</commit>
-  <connection>database connection type</connection>
+  <connection>connection name</connection>
   <lookup>
   <key>
   <condition>=</condition>
   <field>databaseTableField</field>
-  <name>inputTableField</name>
+  <name>inputTransformField</name>
   </key>
   <schema>schemaName</schema>
   <table>tableName</table>

@@ -1,0 +1,3 @@
+i want to delete some rows of a table in postgres database. 
+connection name is postgres and table name is mytable.the table is in public schema.
+and have one column with name field1. i want to delete rows with field1 value a.
