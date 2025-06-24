@@ -52,7 +52,7 @@ def search(query):
     print(query)
     final_query = enrich_query(query) 
     print(final_query)
-    results = minilm_search(final_query, 10)
+    results = minilm_search(final_query, 20)
     for file, score in results:
         print(f"Match: {file} (Score: {score})")
     return [str(file)[:-4] for file, score in results]

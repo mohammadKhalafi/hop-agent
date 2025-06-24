@@ -1,31 +1,31 @@
 <transform>
-<name>Avro Encode</name>
-<type>AvroEncode</type>
-<description/>
-<distribute>Y</distribute>
-<custom_distribution/>
-<copies>1</copies>
-<partitioning>
-    <method>none</method>
-    <schema_name/>
-</partitioning>
-<documentation></documentation>
-<fields>
-<field>
-<source_field>field1</source_field>
-<target_field_name>avroField1</target_field_name>
-</field>
-<field>
-<source_field>field2</source_field>
-<target_field_name>avroField2</target_field_name>
-</field>
-</fields>
-<namespace>namespace</namespace>
-<output_field>outputField</output_field>
-<schema_name>hopSchema</schema_name>
-<attributes></attributes>
-<GUI>
-    <xloc>0</xloc>
-    <yloc>0</yloc>
-</GUI>
+    <name>Avro Encode</name>
+    <type>AvroEncode</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+        <method>none</method>
+        <schema_name/>
+    </partitioning>
+    <documentation></documentation>
+    <fields>
+        <field>
+            <source_field>field1</source_field>
+            <target_field_name>avroField1</target_field_name>
+        </field>
+        <field>
+            <source_field>field2</source_field>
+            <target_field_name>avroField2</target_field_name>
+        </field>
+    </fields>
+    <namespace>namespace</namespace>
+    <output_field>outputField</output_field>
+    <schema_name>hopSchema</schema_name>
+    <attributes></attributes>
+    <GUI>
+        <xloc>0</xloc>
+        <yloc>0</yloc>
+    </GUI>
 </transform>

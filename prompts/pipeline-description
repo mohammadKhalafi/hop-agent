@@ -8,6 +8,7 @@ The user will provide a query, and you will return a **strategic overview descri
 - Do not include plugins outside this list, even if they might logically fit — strictly stay within the provided plugin keys.
 - Avoid filler or vague statements about performance, efficiency, or optimization (e.g. “ensures efficient processing”, “for optimal results”, etc.).  
   Focus solely on describing the data flow and component interaction.
+- You may want to use datagrid plugin for provide manual data. many plugins get input data from previous transform (like zipfile transform that get input addresses from input transfrom) and data grid can help with this.
 
 **Response Format**:
 
